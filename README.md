@@ -4,5 +4,7 @@ Development course. The code was developed by Steve Goddard for the WARP sensor 
 research project. It was first written in Swift and rewritten in Java. It was then 
 rewritten again in an object-oriented programming style. It was a quick
 hack, and it needs a lot of cleanup and refactoring. A perfect code base to teach
-the value of software developement fundamentals!
+the value of software development fundamentals!
 <br>
+<br>
+Adding arguments to the Run Configuration allows you to execute more with your code. -i gives an input file and -o an output. -v is verbose, -sch priority is the priority scheduler, and --all runs all options. Whenever using --all, you will want to use -sch priority or change Warp to not run every option in the --all, otherwise, you will end up with a load of files. 
