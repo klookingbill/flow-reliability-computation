@@ -3,6 +3,8 @@
  */
 package edu.uiowa.cs.warp;
 
+//import java.util.Collections;
+
 /**
  * Reads the input file, whose name is passed as input parameter to the constructor, and builds a
  * Description object based on the contents. Each line of the file is an entry (string) in the
@@ -53,4 +55,17 @@ public class WorkLoadDescription extends VisualizationObject {
     this.inputFileName = gf.getGraphFileName();
     description = new Description(inputGraphString);
   }
+  
+  public static void main(String[] args) {
+	  WorkLoadDescription myWorkLoad = new WorkLoadDescription("StressTest.txt");
+	  Description myDescription = myWorkLoad.description;
+	  System.out.println(myDescription.getFirst());
+	  
+	  
+	  
+	  //Collections.sort(al);
+  }
 }
+  
+  
+
