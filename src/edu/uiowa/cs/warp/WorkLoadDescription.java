@@ -3,7 +3,9 @@
  */
 package edu.uiowa.cs.warp;
 
-//import java.util.Collections;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Reads the input file, whose name is passed as input parameter to the constructor, and builds a
@@ -59,11 +61,13 @@ public class WorkLoadDescription extends VisualizationObject {
   public static void main(String[] args) {
 	  WorkLoadDescription myWorkLoad = new WorkLoadDescription("StressTest.txt");
 	  Description myDescription = myWorkLoad.description;
-	  System.out.println(myDescription.getFirst());
-	  
-	  
-	  
-	  //Collections.sort(al);
+	  System.out.println(myDescription.getFirst().split(" ")[0]);
+	  myDescription.remove(0);
+	  myDescription.remove(myDescription.size()-1);
+	  Collections.sort(myDescription);
+	  for (int i=1; i<myDescription.size()+1; i++) {
+		  System.out.print("Flow " + i + ": " + myDescription.get(i-1));
+	  }
   }
 }
   
