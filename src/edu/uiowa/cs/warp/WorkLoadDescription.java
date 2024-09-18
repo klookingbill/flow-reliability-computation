@@ -3,8 +3,6 @@
  */
 package edu.uiowa.cs.warp;
 
-
-import java.util.ArrayList;
 import java.util.Collections;
 
 /**
@@ -61,9 +59,15 @@ public class WorkLoadDescription extends VisualizationObject {
   public static void main(String[] args) {
 	  WorkLoadDescription myWorkLoad = new WorkLoadDescription("StressTest.txt");
 	  Description myDescription = myWorkLoad.description;
+	  
+	  /* Deletes end of line behind graph name */
 	  System.out.println(myDescription.getFirst().split(" ")[0]);
+	  
+	  /* First and last lines of file don't hold a flow */
 	  myDescription.remove(0);
 	  myDescription.remove(myDescription.size()-1);
+	  
+	  /* Imported Collections.sort() method alphabetizes array lists */
 	  Collections.sort(myDescription);
 	  for (int i=1; i<myDescription.size()+1; i++) {
 		  System.out.print("Flow " + i + ": " + myDescription.get(i-1));
