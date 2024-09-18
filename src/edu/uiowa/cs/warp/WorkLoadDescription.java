@@ -72,7 +72,7 @@ public class WorkLoadDescription extends VisualizationObject {
 	  for (int i=1; i<myDescription.size()+1; i++) {
 		  System.out.print("Flow " + i + ": " + myDescription.get(i-1));
 	  }
-  }
+  } 
 }
   
   
