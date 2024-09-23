@@ -5,11 +5,14 @@ package edu.uiowa.cs.warp;
 
 /**
  * @author sgoddard
+ * @author jcbates
  * @version 1.5
+ * ProgramVisualiztion builds graph based on data; checks if flows have passed their deadlines
  * 
  */
 public class ProgramVisualization extends VisualizationObject {
 
+  //Hello World
   private static final String SOURCE_SUFFIX = ".dsl";
   private ProgramSchedule sourceCode;
   private Program program;
@@ -22,11 +25,18 @@ public class ProgramVisualization extends VisualizationObject {
     this.deadlinesMet = warp.deadlinesMet();
   }
 
+  /**
+   * @return new Guivisualization with title, header, and data passed in
+   */
   @Override
   public GuiVisualization displayVisualization() {
     return new GuiVisualization(createTitle(), createColumnHeader(), createVisualizationData());
   }
 
+  /**
+   * Creates a new header and adds in information 
+   * @return returns created header
+   */
   @Override
   protected Description createHeader() {
     Description header = new Description();
@@ -44,6 +54,10 @@ public class ProgramVisualization extends VisualizationObject {
     return header;
   }
 
+  /**
+   * Checks if flows have met their deadline or not
+   * @return returns created footer
+   */
   @Override
   protected Description createFooter() {
     Description footer = new Description();
@@ -58,7 +72,10 @@ public class ProgramVisualization extends VisualizationObject {
     return footer;
   }
 
-
+  /**
+   * Adds time slits to each column header 
+   * @returns new column names
+   */
   @Override
   protected String[] createColumnHeader() {
     var orderedNodes = program.toWorkLoad().getNodeNamesOrderedAlphabetically();
@@ -71,6 +88,10 @@ public class ProgramVisualization extends VisualizationObject {
     return columnNames;
   }
 
+  /**
+   * Creates the actual visualization of the data 
+   * @return visualization of data
+   */
   @Override
   protected String[][] createVisualizationData() {
     if (visualizationData == null) {
@@ -88,6 +109,10 @@ public class ProgramVisualization extends VisualizationObject {
     return visualizationData;
   }
 
+  /**
+   * Returns title
+   * @return returns the title of the graph
+   */
   private String createTitle() {
     return String.format("WARP program for graph %s\n", program.getName());
   }

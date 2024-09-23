@@ -21,7 +21,9 @@ import java.util.stream.Collectors;
  * constructors are m = 0.9, e2e = 0.99, and numFaults = 1 when the second constructor is used.
  * 
  * @author sgoddard
+ * @jcbates
  * @version 1.4
+ *
  *
  */
 public class WorkLoad extends WorkLoadDescription implements ReliabilityParameters {
@@ -249,17 +251,19 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     var node = nodes.get(name); // get the node object
     return node.getChannel();
   }
-
+  
+  /**
+	add a new flow node to the Flows dictionary. Only name, priority, and index are changed from
+    default values priority is set to the number of flows already added (index), 0 for first flow
+    This will create a default priority equal to the order listed in the input graph file. We
+    also set index to the same value so we can preserve that order as a secondary sort key. The
+    initalPriority field is probably not needed, but it might be useful in the future?? If the
+    optional flow parameters (priority, period, ...) is set, then this default priority will be
+    over written
+ *  @param flowName
+ */
+  
   public void addFlow(String flowName) {
-    /*
-     * add a new flow node to the Flows dictionary. Only name, priority, and index are changed from
-     * default values priority is set to the number of flows already added (index), 0 for first flow
-     * This will create a default priority equal to the order listed in the input graph file. We
-     * also set index to the same value so we can preserve that order as a secondary sort key. The
-     * initalPriority field is probably not needed, but it might be useful in the future?? If the
-     * optional flow parameters (priority, period, ...) is set, then this default priority will be
-     * over written
-     */
     if (flows.containsKey(flowName)) {
       System.out.printf("\n\tWarning! A flow with name %s already exists. "
           + "It has been replaced with a new flow\n.");
@@ -282,7 +286,11 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     return intForFlowNames;
   }
 
-
+/**
+ * Adds node to flow creating one if no node exists 
+ * @param flowName
+ * @param nodeName
+ */
   public void addNodeToFlow(String flowName, String nodeName) {
     if (!Utilities.isInteger(nodeName) && intForNodeNames) {
       /* set false because name not is a number; && above makes sure we only set it once */
@@ -306,7 +314,13 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     flowNode.linkTxAndTotalCost.add(DEFAULT_TX_NUM);
   }
 
-
+/**
+ * Iterates over nodes and returns the priority node 
+ * 
+ * @param flowName
+ * @param nodeName
+ * @return the node priority 
+ */
   public Integer getFlowPriority(String flowName, String nodeName) {
     var priority = 0;
     var flow = getFlow(flowName);
@@ -356,16 +370,31 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     return flowNode.getPeriod();
   }
 
+  /**
+   * gets flow deadline from flowname
+   * @param flowName
+   * @return flowDeadline 
+   */
   public Integer getFlowDeadline(String flowName) {
     var flowNode = getFlow(flowName);
     return flowNode.getDeadline();
   }
 
+  /**
+   * Retrieves the phase of a flow node based on the specified flow name.
+   * @param flowName
+   * @return Flow node
+   */
   public Integer getFlowPhase(String flowName) {
     var flowNode = getFlow(flowName);
     return flowNode.getPhase();
   }
 
+  /**
+   * Retrieves priority of a specified node within a given flow
+   * @param flowName
+   * @return flow node 
+   */
   public Integer getFlowTxAttemptsPerLink(String flowName) {
     var flowNode = getFlow(flowName);
     return flowNode.numTxPerLink;
@@ -721,7 +750,11 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     // could use new String[list.size()], but due to JVM optimizations new (new String[0] is better
   }
 
-  // public function to return the dictionary of nodes
+  /**
+   * return the dictionary of nodes
+   * @param nodeName
+   * @return node index 
+   */
   public Integer getNodeIndex(String nodeName) {
     var index = 0;
     var node = nodes.get(nodeName); // could throw an exception if null, but just return 0 for now

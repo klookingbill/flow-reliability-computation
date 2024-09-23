@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 /**
  * @author sgoddard
+ * @author jcbates
+ * Allows for Schedulable Objects to be compared to flow charataristics and tracks faults  
  *
  */
 public class Flow extends SchedulableObject implements Comparable<Flow>{
@@ -102,6 +104,7 @@ public class Flow extends SchedulableObject implements Comparable<Flow>{
 	}
 
 	/**
+	 * @param takes in an edge 
 	 * Add and edge to the flow.
 	 */
 	public void addEdge(Edge edge) {
@@ -113,6 +116,7 @@ public class Flow extends SchedulableObject implements Comparable<Flow>{
 	}
 	
 	/**
+	 * @param takes in a node
 	 * Add and edge to the flow.
 	 */
 	public void addNode(Node node) {
@@ -164,12 +168,18 @@ public class Flow extends SchedulableObject implements Comparable<Flow>{
 		this.linkTxAndTotalCost = linkTxAndTotalCost;
 	}
 
+	/**
+	 * @param Compares flow priorities  
+	 */
 	@Override
     public int compareTo(Flow flow) {
     	// ascending order (0 is highest priority)
         return flow.getPriority() > this.getPriority() ? -1 : 1;
     }
     
+	/**
+	 * toString Method
+	 */
     @Override
     public String toString() {
         return getName();
