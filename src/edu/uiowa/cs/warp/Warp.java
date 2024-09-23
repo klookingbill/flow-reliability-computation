@@ -35,6 +35,7 @@ import edu.uiowa.cs.warp.Visualization.WorkLoadChoices;
 
 /**
  * @author sgoddard
+ * @author klookingbill
  * @version 1.8 Fall 2024
  *
  */
