@@ -34,10 +34,10 @@ import edu.uiowa.cs.warp.Visualization.WorkLoadChoices;
 
 
 /**
+ * 
  * @author sgoddard
- * @author klookingbill
  * @version 1.8 Fall 2024
- *
+ * 
  */
 public class Warp {
 
@@ -74,7 +74,10 @@ public class Warp {
   private static String inputFile; // inputFile from which the graph workload is read
   private static ScheduleChoices schedulerSelected; // Scheduler requested
 
-
+  /**
+   * 
+   * @param args
+   */
   public static void main(String[] args) {
     // parse command-line options and set WARP system parameters
     setWarpParameters(args);
@@ -205,6 +208,14 @@ public class Warp {
     }
   }
 
+  /**
+   * Creates holder objects to store results, creates the parser to process and comprehend 
+   * the input data, checks that all arguments are valid and sets values for parser, checks 
+   * which flags are present and stores as Boolean value, check if schedulerSelected value 
+   * is null, cannot run if null, then checks value of schedulerSelected to see what the 
+   * value wants to do and runs method before breaks
+   * @param args
+   */
   private static void setWarpParameters(String[] args) { // move command line parsing into this
                                                          // function--need to set up globals?
 
