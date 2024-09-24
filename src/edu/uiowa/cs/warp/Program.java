@@ -63,6 +63,10 @@ public class Program implements SystemAttributes {
     this.deadlineMisses = new Description();
   }
 
+  /**
+   * Returns the work load 
+   * @return workLoad
+   */
   public WorkLoad toWorkLoad() {
     return workLoad;
   }
@@ -1142,6 +1146,10 @@ public class Program implements SystemAttributes {
     scheduleBuilt = schedule;
   }
 
+  /**
+   * Returns the built schulde
+   * @return scheduleBuilt
+   */
   public ProgramSchedule getSchedule() {
     return scheduleBuilt;
   }
@@ -1202,6 +1210,10 @@ public class Program implements SystemAttributes {
     return workLoad.getNumFaults();
   }
 
+  /**
+   * Retrieves a mapping of node names to their respective indices in the schedule table.
+   * @return nodeIndexMap
+   */
   public HashMap<String, Integer> getNodeMapIndex() {
     var orderedNodes = workLoad.getNodeNamesOrderedAlphabetically(); // create an array of node
                                                                      // names
