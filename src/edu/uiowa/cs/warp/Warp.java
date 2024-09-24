@@ -3,7 +3,7 @@
  * system generates node communication programs WARP uses programs to specify a network’s behavior
  * and includes a synthesis procedure to automatically generate such programs from a high-level
  * specification of the system’s workload and topology. WARP has three unique features: <br>
- * (1) WARP uses a domain-specific language to specify stateful programs that include conditional
+ * (1) WARP uses a domain-specific language to specify state for programs that include conditional
  * statements to control when a flow’s packets are transmitted. The execution paths of programs
  * depend on the pattern of packet losses observed at run-time, thereby enabling WARP to readily
  * adapt to packet losses due to short-term variations in link quality. <br>
@@ -15,11 +15,14 @@
  * program based on the observation that nodes can independently synthesize the same program when
  * they share the same workload and topology information. Simulations show that WARP improves
  * network throughput for data collection, dissemination, and mixed workloads on two realistic
- * topologies. Testbed experiments show that WARP reduces the time to add new flows by 5 times over
+ * topologies. Test bed experiments show that WARP reduces the time to add new flows by 5 times over
  * a state-of-the-art centralized control plane and guarantees the real-time and reliability of all
  * flows.
  */
 
+/**
+ * Iowa package for Warp 
+ */
 package edu.uiowa.cs.warp;
 
 import argparser.ArgParser;
@@ -42,7 +45,6 @@ import edu.uiowa.cs.warp.Visualization.WorkLoadChoices;
  * are requested. 
  * @author sgoddard
  * @version 1.8 Fall 2024
- * 
  */
 public class Warp {
 
@@ -78,15 +80,15 @@ public class Warp {
   private static Boolean verboseMode; // verbose mode flag (mainly for running in IDE)
   private static String inputFile; // inputFile from which the graph workload is read
   private static ScheduleChoices schedulerSelected; // Scheduler requested
-
+  
   /**
-   * Main method sets warp parameters with given input args and prints out the parameters
+   * Main method sets warp parameters with given input arguments and prints out the parameters
    * if in verbose mode. It creates and visualizes the new workload. If the all output files 
    * flag is requested, it visualizes all workLoad Program choices and creates and visualizes
    * the Warp System with all warp System choices. If not all output files are requested, it
    * still visualizes the ones asked for of warp workload, source program, and other requested
    * output items.
-   * @param args
+   * @param args Command-line arguments passed to the application.
    */
   public static void main(String[] args) {
     // parse command-line options and set WARP system parameters
