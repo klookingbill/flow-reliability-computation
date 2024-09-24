@@ -6,7 +6,10 @@ package edu.uiowa.cs.warp;
 import java.io.File;
 
 /**
- * Handles all visualizations in Warp program ...
+ * Handles all visualizations dealt with in the Warp program. This includes creating
+ * visualizations with WarpInterface warp, Workload workload. Its main function
+ * is checking the input to determine which type of visualization is being requested 
+ * and running appropriate visualization.
  * @author sgoddard
  * @version 1.5
  */
@@ -176,7 +179,12 @@ public class VisualizationImplementation implements Visualization {
     visualizationObject = obj;
   }
 
-  
+  /**
+   * Creates newDirectory of the workingDirectory and input outputDirectory
+   * and returns a fileNameTemplate of the newDirectory.
+   * @param outputDirectory
+   * @return fileNameTemplate of the input outputDirectory
+   */
   private String createFileNameTemplate(String outputDirectory) {
     String fileNameTemplate;
     var workingDirectory = fm.getBaseDirectory();
