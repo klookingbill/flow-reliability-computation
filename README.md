@@ -12,4 +12,4 @@ Adding arguments to the Run Configuration allows you to execute more with your c
 <br>
 
 Java Doc comments made by jcbates: Workload.java, Flow.java, ProgramVisualization, and Program.java
-Java Doc comments made by klookbilling: Warp.java and VisualizationImplementation.java  
+Java Doc comments made by klookingbill: Warp.java and VisualizationImplementation.java  
