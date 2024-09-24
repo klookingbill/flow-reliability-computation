@@ -1,4 +1,5 @@
 # CS2820 Fall 2024 WARP Project Code
+
 This code base will be used for the University of Iowa CS 2820 Introduction to Software
 Development course. The code was developed by Steve Goddard for the WARP sensor network 
 research project. It was first written in Swift and rewritten in Java. It was then 
@@ -14,5 +15,7 @@ priority or change Warp to not run every option in the --all, otherwise, you wil
 with a load of files. 
 <br>
 <br>
-@klookingbill - Warp.java, VisualizationImplementation.java
-@jcbates - Flow.java, ProgramVisualization.java, WorkLoad.java, Program.java
+Java Doc comments made by jcbates: Workload.java, Flow.java, ProgramVisualization, and Program.java
+<br>
+Java Doc comments made by klookingbill: Warp.java and VisualizationImplementation.java  
+
