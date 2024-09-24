@@ -8,3 +8,8 @@ the value of software development fundamentals!
 <br>
 <br>
 Adding arguments to the Run Configuration allows you to execute more with your code. -i gives an input file and -o an output. -v is verbose, -sch priority is the priority scheduler, and --all runs all options. Whenever using --all, you will want to use -sch priority or change Warp to not run every option in the --all, otherwise, you will end up with a load of files. 
+<br> 
+<br>
+
+Java Doc comments made by jcbates: Workload.java, Flow.java, ProgramVisualization, and Program.java
+Java Doc comments made by klookbilling: Warp.java and VisualizationImplementation.java  
