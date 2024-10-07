@@ -4,12 +4,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class WorkLoadTest {
+public class WorkLoadTest {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
-		assertTrue();
+	public void addFlowTest() {
+		//Flow myFlow = new Flow(myFlow, );
+		fail();
 	}
 
 }
