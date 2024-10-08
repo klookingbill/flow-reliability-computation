@@ -72,17 +72,32 @@ public class WorkLoadTest {
 	}
 	
 	@Test
-	void getTotalTxAttemptsInFlowTest() {
-		Integer actual = workload.getTotalTxAttemptsInFlow("F9");
-		// how do you find the totalcost??
-		Integer exp = 14;
-		assertEquals(actual, exp, "Produced the incorrect total cost");
+	void getTotalTxAttemptsInFlowOneFlowTest() {
+		Integer actual = workload.getTotalTxAttemptsInFlow("F1");
+		Integer exp = 4;
+		assertEquals(exp, actual, "Produces the incorrect total cost");
+	}
+	
+	//@Test
+	void getTotalTxAttemptsInFlowMultiFlowsTest() {
+		workload.getTotalTxAttemptsInFlow("F1");
+		workload.getTotalTxAttemptsInFlow("F2");
+		workload.getTotalTxAttemptsInFlow("F3");
+	}
+	
+	//@Test
+	void getTotalTxAttemptsInFlowNullTest() {
+		Integer actual = workload.getTotalTxAttemptsInFlow("F11");
+		Integer exp = -1;
+		assertEquals(exp, actual, "Finds incorrect cost of nonexisting flow");
 	}
 	
 	@Test
-	//void getTotalTxAttemptsInFlow
-	
-	
+	void getFlowPriorityTest() {
+		var actual = workload.getFlowPriority("F1", "A");
+		var exp = 0;
+		assertEquals(exp, actual, "Returns incorrect priority for src node");
+	}
 	
 	
 	
