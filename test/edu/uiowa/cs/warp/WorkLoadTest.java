@@ -26,7 +26,7 @@ public class WorkLoadTest {
 	}
 	
 	@Test
-	void addFlowTest() {
+	void addFlowAddTest() {
 		workload.addFlow("F11");
 		ArrayList<String> actual = workload.getFlowNamesInOriginalOrder();
 		ArrayList<String> exp = new ArrayList<> (Arrays.asList("F1", "F5", "F2", "F4", "F3",
@@ -60,16 +60,39 @@ public class WorkLoadTest {
 		workload.addNodeToFlow("F1", "E");
 		String[] actual = workload.getNodesInFlow("F1");
 		String[] exp = {"B", "C", "D", "E"};
-		assertArrayEquals(exp, actual, "Did not correctly insert new node into existing flow");
+		assertArrayEquals(exp, actual, "Incorrectly inserted existing node into existing flow");
 	}
 	
 	@Test
 	void addNodeToFlowDoesntExistTest() {
-		workload.addNodeToFlow("F11", "A");
-		String[] actual = workload.getNodesInFlow("F11");
-		String[] exp = {"A"};
-		assertArrayEquals(exp, actual, "Incorrectly inserted new node into new flow");
+		workload.addNodeToFlow("F1", "newNode");
+		String[] actual = workload.getNodesInFlow("F1");
+		String[] exp = {"B", "C", "D", "newNode"};
+		assertArrayEquals(exp, actual, "Incorrectly inserted new node into existing flow");
 	}
+	
+	@Test
+	void getTotalTxAttemptsInFlowTest() {
+		Integer actual = workload.getTotalTxAttemptsInFlow("F9");
+		// how do you find the totalcost??
+		Integer exp = 14;
+		assertEquals(actual, exp, "Produced the incorrect total cost");
+	}
+	
+	@Test
+	//void getTotalTxAttemptsInFlow
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	//@Test 
 	@Timeout(5) 
