@@ -37,5 +37,21 @@ Junit Tests Completed by jcbates:
 <br>testGetNodeIndexNonExistentNode, 
 <br>testGetFlowNamesEmpty, 
 <br>testGetFlowNames
-
+<br>
+<br>
 Junit Test Completed by klookingbill:
+<br>addFlowAddTest
+<br>addFlowOverridingTest
+<br>addFlowMultipleAddsTest
+<br>addNodeToFlowExistsTest
+<br>addNodeToFlowDoesntExistTest
+<br>getTotalTxAttemptsInFlowOneFlowTest
+<br>getTotalTxAttemptsInFlowMultiFlowsTest
+<br>getFlowPriorityTest
+<br>setFlowPriorityTest
+<br>getFlowTxAttemptsPerLinkTest
+<br>getFlowTxAttemptsPerLinkEmptyTest
+<br>setFlowsInRMorderCorrectOrderTest
+<br>setFlowsInRMorderAddFlowsTest
+<br>getNodeNamesOrderedAlphabeticallyTest
+<br>getNodeNamesOrderedAlphabeticallyAdditionalFlowsTest
