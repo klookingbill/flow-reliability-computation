@@ -54,25 +54,41 @@ testSetFlowDeadlineUpdateExistingFlow
 <br>
 # **Junit Test Completed by klookingbill:**
 ### Tests for addFlow()
-addFlowAddTest
+These tests check that the method can successfully add a non-existing flow to "StressTest4.txt" file, add a pre-existing flow to the file, and add multiple new flows to the file. 
+<br>
+<br>addFlowAddTest
 <br>addFlowOverridingTest
 <br>addFlowMultipleAddsTest
 ### Tests for addNodeToFlow()
-addNodeToFlowExistsTest
+These methods tests that a node that already exists in the "StressTest4.txt" file can successfully be added to a flow and that a node that does not already exist in the file is also correctly added to a flow.
+<br>
+<br>addNodeToFlowExistsTest
 <br>addNodeToFlowDoesntExistTest
 ### Tests for getTotalTxAttemptsInFlow()
-getTotalTxAttemptsInFlowOneFlowTest
+These tests check that the total transmission attempts is correctly calculated for a single flow and for multiple nodes. 
+<br>
+<br>getTotalTxAttemptsInFlowOneFlowTest
 <br>getTotalTxAttemptsInFlowMultiFlowsTest
 ### Tests for getFlowPriority()
-getFlowPriorityTest
+Because of the simplicity of this method, I have one test that makes sure the priority of a specified node is correctly computed.
+<br>
+<br>getFlowPriorityTest
 ### Tests for setFlowPriority()
-setFlowPriorityTest
+My test checks that the priority of the given node is equal to the input of the given priority.
+<br>
+<br>setFlowPriorityTest
 ### Tests for getFlowTxAttemptsPerLink()
-getFlowTxAttemptsPerLinkTest
+These tests check that the method correctly finds the priority of the specified flow and that it will also find the correct priority of an empty flow.
+<br>
+<br>getFlowTxAttemptsPerLinkTest
 <br>getFlowTxAttemptsPerLinkEmptyTest
 ### Tests for setFlowsInRMorder()
-setFlowsInRMorderCorrectOrderTest
+One of my tests checks that the method correctly orders the flows in a given file with just the flows in the file. The second test checks that the method still accurately orders the flows even when adding in new flows.
+<br>
+<br>setFlowsInRMorderCorrectOrderTest
 <br>setFlowsInRMorderAddFlowsTest
 ### Tests for getNodeNamesOrderedAlphabetically()
-getNodeNamesOrderedAlphabeticallyTest
+My first test ensures that the method correctly orders the initially existing flows in the file in alphabetical order. The second test checks that the method still orders correctly even when adding in new flows to the file. 
+<br>
+<br>getNodeNamesOrderedAlphabeticallyTest
 <br>getNodeNamesOrderedAlphabeticallyAdditionalFlowsTest
