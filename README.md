@@ -17,5 +17,25 @@ with a load of files.
 <br>
 Java Doc comments made by jcbates: Workload.java, Flow.java, ProgramVisualization, and Program.java
 <br>
+<br>
 Java Doc comments made by klookingbill: Warp.java and VisualizationImplementation.java  
+10/8/2024
+<br>
+Junit Tests Completed by jcbates: 
+<br>testSetFlowDeadlineUpdateExistingFlow, 
+<br>testSetFlowDeadlineValidFlow,
+<br>testGetFlowDeadlineInvalidFlow, 
+<br>testGetFlowDeadlineValidFlow, 
+<br>testMaxFlowLengthNoFlows, 
+<br>testMaxFlowLengthStressTest4, 
+<br>testGetHyperPeriodEmptyFlow, 
+<br>testGetHyperPeriodValidFlows, 
+<br>testGetNodesInFlowNullFlow, 
+<br>testGetNodesInFlowNonExistentFlow, 
+<br>testGetNodesInFlowValidFlowF1, 
+<br>testGetNodeIndexExistingNode,
+<br>testGetNodeIndexNonExistentNode, 
+<br>testGetFlowNamesEmpty, 
+<br>testGetFlowNames
 
+Junit Test Completed by klookingbill:
