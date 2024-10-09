@@ -21,37 +21,45 @@ Java Doc comments made by jcbates: Workload.java, Flow.java, ProgramVisualizatio
 Java Doc comments made by klookingbill: Warp.java and VisualizationImplementation.java  
 10/8/2024
 <br>
-Junit Tests Completed by jcbates: 
-<br>testSetFlowDeadlineUpdateExistingFlow, 
-<br>testSetFlowDeadlineValidFlow,
-<br>testGetFlowDeadlineInvalidFlow, 
-<br>testGetFlowDeadlineValidFlow, 
-<br>testMaxFlowLengthNoFlows, 
-<br>testMaxFlowLengthStressTest4, 
-<br>testGetHyperPeriodEmptyFlow, 
-<br>testGetHyperPeriodValidFlows, 
-<br>testGetNodesInFlowNullFlow, 
-<br>testGetNodesInFlowNonExistentFlow, 
-<br>testGetNodesInFlowValidFlowF1, 
-<br>testGetNodeIndexExistingNode,
-<br>testGetNodeIndexNonExistentNode, 
-<br>testGetFlowNamesEmpty, 
+# **Junit Tests Completed by jcbates:**
+testSetFlowDeadlineUpdateExistingFlow 
+<br>testSetFlowDeadlineValidFlow
+<br>testGetFlowDeadlineInvalidFlow
+<br>testGetFlowDeadlineValidFlow
+<br>testMaxFlowLengthNoFlows 
+<br>testMaxFlowLengthStressTest4
+<br>testGetHyperPeriodEmptyFlow
+<br>testGetHyperPeriodValidFlows
+<br>testGetNodesInFlowNullFlow 
+<br>testGetNodesInFlowNonExistentFlow
+<br>testGetNodesInFlowValidFlowF1 
+<br>testGetNodeIndexExistingNode
+<br>testGetNodeIndexNonExistentNode
+<br>testGetFlowNamesEmpty
 <br>testGetFlowNames
 <br>
 <br>
-Junit Test Completed by klookingbill:
-<br>addFlowAddTest
+# **Junit Test Completed by klookingbill:**
+### Tests for addFlow()
+addFlowAddTest
 <br>addFlowOverridingTest
 <br>addFlowMultipleAddsTest
-<br>addNodeToFlowExistsTest
+### Tests for addNodeToFlow()
+addNodeToFlowExistsTest
 <br>addNodeToFlowDoesntExistTest
-<br>getTotalTxAttemptsInFlowOneFlowTest
+### Tests for getTotalTxAttemptsInFlow()
+getTotalTxAttemptsInFlowOneFlowTest
 <br>getTotalTxAttemptsInFlowMultiFlowsTest
-<br>getFlowPriorityTest
-<br>setFlowPriorityTest
-<br>getFlowTxAttemptsPerLinkTest
+### Tests for getFlowPriority()
+getFlowPriorityTest
+### Tests for setFlowPriority()
+setFlowPriorityTest
+### Tests for getFlowTxAttemptsPerLink()
+getFlowTxAttemptsPerLinkTest
 <br>getFlowTxAttemptsPerLinkEmptyTest
-<br>setFlowsInRMorderCorrectOrderTest
+### Tests for setFlowsInRMorder()
+setFlowsInRMorderCorrectOrderTest
 <br>setFlowsInRMorderAddFlowsTest
-<br>getNodeNamesOrderedAlphabeticallyTest
+### Tests for getNodeNamesOrderedAlphabetically()
+getNodeNamesOrderedAlphabeticallyTest
 <br>getNodeNamesOrderedAlphabeticallyAdditionalFlowsTest
