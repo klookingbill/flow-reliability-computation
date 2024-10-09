@@ -22,32 +22,32 @@ Java Doc comments made by klookingbill: Warp.java and VisualizationImplementatio
 10/8/2024
 <br>
 # **Junit Tests Completed by jcbates:**
-### Tests for setFlowDeadline
+### Tests for setFlowDeadline()
 testSetFlowDeadlineUpdateExistingFlow 
 <br>testSetFlowDeadlineValidFlow
 
-### Tests for getFlowDeadline
+### Tests for getFlowDeadline()
 <br>testGetFlowDeadlineInvalidFlow
 <br>testGetFlowDeadlineValidFlow
 
-### Tests for testMaxFlowLength
+### Tests for testMaxFlowLength()
 <br>testMaxFlowLengthNoFlows 
 <br>testMaxFlowLengthStressTest4
 
-### Tests for getHyperPeriod
+### Tests for getHyperPeriod()
 <br>testGetHyperPeriodEmptyFlow
 <br>testGetHyperPeriodValidFlows
 
-### Tests for getNodesInFlow
+### Tests for getNodesInFlow()
 <br>testGetNodesInFlowNullFlow 
 <br>testGetNodesInFlowNonExistentFlow
 <br>testGetNodesInFlowValidFlowF1 
 
-### Tests for getNodesInFlow
+### Tests for getNodesInFlow()
 <br>testGetNodeIndexExistingNode
 <br>testGetNodeIndexNonExistentNode
 
-### Tests for getFlowNames
+### Tests for getFlowNames()
 <br>testGetFlowNamesEmpty
 <br>testGetFlowNames
 <br>
