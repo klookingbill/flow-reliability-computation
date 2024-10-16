@@ -1,105 +1,61 @@
-/**
- * WARP: On-the-fly Program Synthesis for Agile, Real-time, and Reliable Wireless Networks. This
- * system generates node communication programs WARP uses programs to specify a network’s behavior
- * and includes a synthesis procedure to automatically generate such programs from a high-level
- * specification of the system’s workload and topology. WARP has three unique features: <br>
- * (1) WARP uses a domain-specific language to specify state for programs that include conditional
- * statements to control when a flow’s packets are transmitted. The execution paths of programs
- * depend on the pattern of packet losses observed at run-time, thereby enabling WARP to readily
- * adapt to packet losses due to short-term variations in link quality. <br>
- * (2) Our synthesis technique uses heuristics to improve network performance by considering
- * multiple packet loss patterns and associated execution paths when determining the transmissions
- * performed by nodes. Furthermore, the generated programs ensure that the likelihood of a flow
- * delivering its packets by its deadline exceeds a user-specified threshold. <br>
- * (3) WARP can adapt to workload and topology changes without explicitly reconstructing a network’s
- * program based on the observation that nodes can independently synthesize the same program when
- * they share the same workload and topology information. Simulations show that WARP improves
- * network throughput for data collection, dissemination, and mixed workloads on two realistic
- * topologies. Test bed experiments show that WARP reduces the time to add new flows by 5 times over
- * a state-of-the-art centralized control plane and guarantees the real-time and reliability of all
- * flows.
- */
-
-/**
- * Iowa package for Warp 
- * 
- */
 package edu.uiowa.cs.warp;
 
-import argparser.ArgParser;
-import argparser.BooleanHolder;
-import argparser.DoubleHolder;
-import argparser.IntHolder;
-import argparser.StringHolder;
-import edu.uiowa.cs.warp.SystemAttributes.ScheduleChoices;
-import edu.uiowa.cs.warp.Visualization.SystemChoices;
-import edu.uiowa.cs.warp.Visualization.WorkLoadChoices;
-
-
 
 /**
- * The Warp class sets default values of constants and also sets the warp parameters for the
+* The Warp class sets default values of constants and also sets the warp parameters for the
  * given input. It creates and visualizes any requested output files and runs verification
  * checks to make sure deadlines and reliability targets are met, and that there are no 
  * channel conflicts. Runs additional tests to make sure everything will run smoothly. This
  * class also prints out all warp parameters along with Boolean expressions for if any flags
  * are requested. 
  * @author sgoddard
- * @version 1.8 Fall 2024
- */
-public class Warp {
+ * @version 1.8 Fall 2024 */public class Warp {
+private static final Integer NUM_CHANNELS = 16;
 
-  private static final Integer NUM_CHANNELS = 16; // default number of wireless channels available
-                                                  // for scheduling (command line option)
-  private static final Double MIN_LQ = 0.9; // default minimum Link Quality in system (command line
-                                            // option)
-  private static final Double E2E = 0.99; // default end-to-end reliability for all flows (command
-                                          // line option)
-  private static final String DEFAULT_OUTPUT_SUB_DIRECTORY = "OutputFiles/";
-  private static final ScheduleChoices DEFAULT_SCHEDULER = ScheduleChoices.PRIORITY;
-  /* default number of faults to be tolerated per transmission (command-line option */
-  private static final Integer DEFAULT_FAULTS_TOLERATED = 0;
+private static final Double MIN_LQ = 0.9;
 
-  private static Integer nChannels; // number of wireless channels available for scheduling
-  private static Integer numFaults; // number of faults tolerated per edge
-  private static Double minLQ; // global variable for minimum Link Quality in system, later we can
-                               // add local minLQ for each link
-  private static Double e2e; // global variable for minimum Link Quality in system, later we can add
-                             // local minLQ for each link
-  private static String outputSubDirectory; // default output subdirectory (from working directory)
-                                            // where output files will be placed (e.g., gv, wf, ra)
-  private static Boolean guiRequested; // Gui Visualization selected
-  private static Boolean gvRequested; // GraphVis file requested flag
-  private static Boolean wfRequested; // WARP file requested flag
-  private static Boolean raRequested; // Reliability Analysis file requested flag
-  private static Boolean laRequested; // Latency Analysis file requested flag
-  private static Boolean caRequested; // Channel Analysis file requested flag
-  private static Boolean simRequested; // Simulation file requested flag
-  private static Boolean allRequested; // all out files requested flag
-  private static Boolean latencyRequested; // latency report requested flag
-  private static Boolean schedulerRequested = false;
-  private static Boolean verboseMode; // verbose mode flag (mainly for running in IDE)
-  private static String inputFile; // inputFile from which the graph workload is read
-  private static ScheduleChoices schedulerSelected; // Scheduler requested
-  
-  /**
-   * Main method sets warp parameters with given input arguments and prints out the parameters
-   * if in verbose mode. It creates and visualizes the new workload. If the all output files 
-   * flag is requested, it visualizes all workLoad Program choices and creates and visualizes
-   * the Warp System with all warp System choices. If not all output files are requested, it
-   * still visualizes the ones asked for of warp workload, source program, and other requested
-   * output items.
-   * @param args Command-line arguments passed to the application.
-   */
-  public static void main(String[] args) {
-    // parse command-line options and set WARP system parameters
+private static final Double E2E = 0.99;
+
+private static final String DEFAULT_OUTPUT_SUB_DIRECTORY = "OutputFiles/";
+
+private static final ScheduleChoices DEFAULT_SCHEDULER = ScheduleChoices.PRIORITY;
+
+private static final Integer DEFAULT_FAULTS_TOLERATED = 0;
+
+private static Integer nChannels;
+private static Integer numFaults;
+private static Double minLQ;
+private static Double e2e;
+private static String outputSubDirectory;
+public static Boolean guiRequested;
+private static Boolean gvRequested;
+private static Boolean wfRequested;
+private static Boolean raRequested;
+private static Boolean laRequested;
+private static Boolean caRequested;
+private static Boolean simRequested;
+private static Boolean allRequested;
+private static Boolean latencyRequested;
+private static Boolean schedulerRequested = false;
+private static Boolean verboseMode;
+private static String inputFile;
+private static ScheduleChoices schedulerSelected;
+/**
+* Main method sets warp parameters with given input arguments and prints out the parameters
+ *    * if in verbose mode. It creates and visualizes the new workload. If the all output files 
+ *    * flag is requested, it visualizes all workLoad Program choices and creates and visualizes
+ *    * the Warp System with all warp System choices. If not all output files are requested, it
+ *    * still visualizes the ones asked for of warp workload, source program, and other requested
+ *    * output items.
+ *    * @param args Command-line arguments passed to the application. */public static void main(String[] args) {
+// parse command-line options and set WARP system parameters
     setWarpParameters(args);
-
+   
     // and print out the values if in verbose mode
     if (verboseMode) {
       printWarpParameters();
     }
-
+   
     // Create and visualize the workload
     // inputFile string, which may be null,
     WorkLoad workLoad = new WorkLoad(numFaults, minLQ, e2e, inputFile);
@@ -148,127 +104,19 @@ public class Warp {
         visualize(warp, SystemChoices.RELIABILITIES);
       }
     }
+   
+     }
 
-  }
-
-  /**
-   * Creates a visualization instance of input WorkLoad workLoad and WorkLoadChoices
-   * choice. If the visualization is null and if verboseMode holds True, prints out
-   * viz as a String, otherwise, convert viz to a file and if gui flag is requested,
-   * convert viz to a display.
-   * @param workLoad
-   * @param choice
-   */
-  private static void visualize(WorkLoad workLoad, WorkLoadChoices choice) {
-    var viz =
-        VisualizationFactory.createVisualization(workLoad, outputSubDirectory, choice);
-    if (viz != null) {
-      if (verboseMode) {
-        System.out.println(viz.toString());
-      }
-      viz.toFile();
-      if (guiRequested) {
-        viz.toDisplay();
-      }
-    }
-  }
-
-  /**
-   * Creates a visualization instance of input WarpInterface warp with SystemChoices 
-   * choice. If visualization is null, turns viz to a file, and if gui and schedule 
-   * flags are requested, turn viz into a display.
-   * @param warp
-   * @param choice
-   */
-  private static void visualize(WarpInterface warp, SystemChoices choice) {
-    var viz = VisualizationFactory.createVisualization(warp, outputSubDirectory, choice);
-    if (viz != null) {
-      viz.toFile();
-      if (guiRequested && schedulerRequested) {
-        /* Only display window when a specific scheduler has been requested */
-        viz.toDisplay();
-      }
-    }
-  }
-
-  /**
-   * Runs verification checks over if deadlines are met, if reliability targets
-   * are met, and if there are channel conflicts for the input WarpInterface warp.
-   * @param warp
-   */
-  private static void verifyPerformanceRequirements(WarpInterface warp) {
-    verifyDeadlines(warp);
-    verifyReliabilities(warp);
-    verifyNoChannelConflicts(warp);
-  }
-
-  /**
-   * Checks that the reliability targets are met in input warp. If reliability
-   * is not met, prints an error statement. If verboseMode is True with the input, 
-   * prints out statement that flows meet reliability in this instance.
-   * @param warp
-   */
-  private static void verifyReliabilities(WarpInterface warp) {
-    if (schedulerSelected != ScheduleChoices.RTHART) {
-      /* RealTime HART doesn't adhere to reliability targets */
-      if (!warp.reliabilitiesMet()) {
-        System.err.printf(
-            "\n\tERROR: Not all flows meet the end-to-end "
-                + "reliability of %s under %s scheduling.\n",
-            String.valueOf(e2e), schedulerSelected.toString());
-      } else if (verboseMode) {
-        System.out.printf(
-            "\n\tAll flows meet the end-to-end reliability " + "of %s under %s scheduling.\n",
-            String.valueOf(e2e), schedulerSelected.toString());
-      }
-    }
-  }
-
-  /**
-   * Checks if the deadlines are met in input warp. If deadlines are not met, prints
-   * out an error message and visualizes a Deadline Report. If verboseMode is true for
-   * input, prints out a message telling the deadlines are all met.
-   * @param warp
-   */
-  private static void verifyDeadlines(WarpInterface warp) {
-    if (!warp.deadlinesMet()) {
-      System.err.printf("\n\tERROR: Not all flows meet their deadlines under %s scheduling.\n",
-          schedulerSelected.toString());
-      visualize(warp, SystemChoices.DEADLINE_REPORT);
-    } else if (verboseMode) {
-      System.out.printf("\n\tAll flows meet their deadlines under %s scheduling.\n",
-          schedulerSelected.toString());
-    }
-  }
-
-  /**
-   * Determines if there is a channel conflict in the WarpInterface warp given 
-   * as input. Creates a Channel Analysis visualization if not already requested.
-   * @param warp
-   */
-  private static void verifyNoChannelConflicts(WarpInterface warp) {
-    if (warp.toChannelAnalysis().isChannelConflict()) {
-      System.err
-          .printf("\n\tERROR: Channel conficts exists. See Channel Visualization for details.\n");
-      if (!caRequested) { // only need to create the visualization if not already requested
-        visualize(warp, SystemChoices.CHANNEL);
-      }
-    } else if (verboseMode) {
-      System.out.printf("\n\tNo channel conflicts detected.\n");
-    }
-  }
-
-  /**
-   * Creates holder objects to store results and creates the parser to process and comprehend 
-   * the input data. Also checks that all arguments are valid and sets values for parser. It 
-   * checks which flags are present and stores this as a Boolean value. Additionally, checks 
-   * if schedulerSelected value is null and cannot run is null. Then checks value of 
-   * schedulerSelected to see what the value wants to do and runs method before it breaks.
-   * @param args
-   */
-  private static void setWarpParameters(String[] args) { // move command line parsing into this
+/**
+* Creates holder objects to store results and creates the parser to process and comprehend 
+ *    * the input data. Also checks that all arguments are valid and sets values for parser. It 
+ *    * checks which flags are present and stores this as a Boolean value. Additionally, checks 
+ *    * if schedulerSelected value is null and cannot run is null. Then checks value of 
+ *    * schedulerSelected to see what the value wants to do and runs method before it breaks.
+ *    * @param args */private static void setWarpParameters(String[] args) {
+// move command line parsing into this
                                                          // function--need to set up globals?
-
+   
     // create holder objects for storing results ...
     // BooleanHolder debug = new BooleanHolder();
     StringHolder schedulerSelected = new StringHolder();
@@ -288,7 +136,7 @@ public class Warp {
     BooleanHolder verbose = new BooleanHolder();
     StringHolder input = new StringHolder();
     StringHolder output = new StringHolder();
-
+   
     // create the parser and specify the allowed options ...
     ArgParser parser = new ArgParser("java -jar warp.jar");
     parser.addOption("-sch, --schedule %s {priority,rm,dm,rtHart,poset} #scheduler options",
@@ -323,11 +171,11 @@ public class Warp {
         verbose);
     // parser.addOption ("-d, -debug, --debug %v #Debug mode: base directory =
     // $HOME/Documents/WARP/", debug);
-
-
+   
+   
     // match the arguments ...
     parser.matchAllArgs(args);
-
+   
     // Set WARP system configuration options
     if (channels.value > 0) {
       nChannels = channels.value; // set option specified
@@ -354,7 +202,7 @@ public class Warp {
     } else {
       outputSubDirectory = DEFAULT_OUTPUT_SUB_DIRECTORY; // set to default
     }
-
+   
     guiRequested = gui.value; // GraphVis file requested flag
     gvRequested = gv.value; // GraphVis file requested flag
     wfRequested = wf.value; // WARP file requested flag
@@ -373,23 +221,23 @@ public class Warp {
         case "priority":
           Warp.schedulerSelected = ScheduleChoices.PRIORITY;
           break;
-
+   
         case "rm":
           Warp.schedulerSelected = ScheduleChoices.RM;
           break;
-
+   
         case "dm":
           Warp.schedulerSelected = ScheduleChoices.DM;
           break;
-
+   
         case "rtHart":
           Warp.schedulerSelected = ScheduleChoices.RTHART;
           break;
-
+   
         case "poset":
           Warp.schedulerSelected = ScheduleChoices.POSET_PRIORITY;
           break;
-
+   
         default:
           Warp.schedulerSelected = ScheduleChoices.PRIORITY;
           break;
@@ -397,15 +245,14 @@ public class Warp {
     } else { // null value when no scheduler specified; so use default
       Warp.schedulerSelected = DEFAULT_SCHEDULER;
     }
-  }
+     }
 
-  /**
-   * Prints out all system configuration parameters including the scheduler, channels,
-   * number of faults, minimum Link Quality, end-to-end reliability, and if any flags
-   * are requested. Prints out the input file if given and if there is not one, it 
-   * alerts that one will be needed.
-   */
-  private static void printWarpParameters() { // print all system configuration parameters
+/**
+* Prints out all system configuration parameters including the scheduler, channels,
+ *    * number of faults, minimum Link Quality, end-to-end reliability, and if any flags
+ *    * are requested. Prints out the input file if given and if there is not one, it 
+ *    * alerts that one will be needed. */private static void printWarpParameters() {
+// print all system configuration parameters
     // Print out each of the system configuration values
     System.out.println("WARP system configuration values:");
     System.out.println("\tScheduler=" + schedulerSelected);
@@ -430,6 +277,101 @@ public class Warp {
     System.out.println("\toutputSubDirectory=" + outputSubDirectory);
     System.out.println("\tverbose flag=" + verboseMode);
     // System.out.println ("\tdebug flag=" + debugMode);
-  }
+     }
+
+/**
+* Creates a visualization instance of input WorkLoad workLoad and WorkLoadChoices
+ *    * choice. If the visualization is null and if verboseMode holds True, prints out
+ *    * viz as a String, otherwise, convert viz to a file and if gui flag is requested,
+ *    * convert viz to a display.
+ *    * @param workLoad
+ *    * @param choice */private static void visualize(WorkLoad workLoad, WorkLoadChoices choice) {
+var viz =
+        VisualizationFactory.createVisualization(workLoad, outputSubDirectory, choice);
+    if (viz != null) {
+      if (verboseMode) {
+        System.out.println(viz.toString());
+      }
+      viz.toFile();
+      if (guiRequested) {
+        viz.toDisplay();
+      }
+    }
+     }
+
+/**
+* Creates a visualization instance of input WarpInterface warp with SystemChoices 
+ *    * choice. If visualization is null, turns viz to a file, and if gui and schedule 
+ *    * flags are requested, turn viz into a display.
+ *    * @param warp
+ *    * @param choice */private static void visualize(WarpInterface warp, SystemChoices choice) {
+var viz = VisualizationFactory.createVisualization(warp, outputSubDirectory, choice);
+    if (viz != null) {
+      viz.toFile();
+      if (guiRequested && schedulerRequested) {
+        /* Only display window when a specific scheduler has been requested */
+        viz.toDisplay();
+      }
+    }
+     }
+
+/**
+* Runs verification checks over if deadlines are met, if reliability targets
+ *    * are met, and if there are channel conflicts for the input WarpInterface warp.
+ *    * @param warp */private static void verifyPerformanceRequirements(WarpInterface warp) {
+verifyDeadlines(warp);
+    verifyReliabilities(warp);
+    verifyNoChannelConflicts(warp);
+     }
+
+/**
+* Checks that the reliability targets are met in input warp. If reliability
+ *    * is not met, prints an error statement. If verboseMode is True with the input, 
+ *    * prints out statement that flows meet reliability in this instance.
+ *    * @param warp */private static void verifyReliabilities(WarpInterface warp) {
+if (schedulerSelected != ScheduleChoices.RTHART) {
+      /* RealTime HART doesn't adhere to reliability targets */
+      if (!warp.reliabilitiesMet()) {
+        System.err.printf(
+            "\n\tERROR: Not all flows meet the end-to-end "
+                + "reliability of %s under %s scheduling.\n",
+            String.valueOf(e2e), schedulerSelected.toString());
+      } else if (verboseMode) {
+        System.out.printf(
+            "\n\tAll flows meet the end-to-end reliability " + "of %s under %s scheduling.\n",
+            String.valueOf(e2e), schedulerSelected.toString());
+      }
+    }
+     }
+
+/**
+* Checks if the deadlines are met in input warp. If deadlines are not met, prints
+ *    * out an error message and visualizes a Deadline Report. If verboseMode is true for
+ *    * input, prints out a message telling the deadlines are all met.
+ *    * @param warp */private static void verifyDeadlines(WarpInterface warp) {
+if (!warp.deadlinesMet()) {
+      System.err.printf("\n\tERROR: Not all flows meet their deadlines under %s scheduling.\n",
+          schedulerSelected.toString());
+      visualize(warp, SystemChoices.DEADLINE_REPORT);
+    } else if (verboseMode) {
+      System.out.printf("\n\tAll flows meet their deadlines under %s scheduling.\n",
+          schedulerSelected.toString());
+    }
+     }
+
+/**
+* Determines if there is a channel conflict in the WarpInterface warp given 
+ *    * as input. Creates a Channel Analysis visualization if not already requested.
+ *    * @param warp */private static void verifyNoChannelConflicts(WarpInterface warp) {
+if (warp.toChannelAnalysis().isChannelConflict()) {
+      System.err
+          .printf("\n\tERROR: Channel conficts exists. See Channel Visualization for details.\n");
+      if (!caRequested) { // only need to create the visualization if not already requested
+        visualize(warp, SystemChoices.CHANNEL);
+      }
+    } else if (verboseMode) {
+      System.out.printf("\n\tNo channel conflicts detected.\n");
+    }
+     }
 
 }

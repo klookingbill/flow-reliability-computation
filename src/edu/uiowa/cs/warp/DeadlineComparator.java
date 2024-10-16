@@ -2,13 +2,10 @@ package edu.uiowa.cs.warp;
 
 import java.util.Comparator;
 
-public class DeadlineComparator<T extends SchedulableObject> implements Comparator<T> {
-
-	// Overriding compare() method of Comparator 
-	// for ascending order of release time
-	@Override
-	public int compare(T obj1, T obj2) {	
-		/* only sort by period, as we only want shortest period */
-		return obj1.deadlineComparison(obj2); 
-	}
+public class DeadlineComparator <T extends SchedulableObject> implements Comparator <T>  {
+@Override
+public int compare (T obj1, T obj2)
+{
+return obj1.deadlineComparison(obj2); 
+   	}
 }

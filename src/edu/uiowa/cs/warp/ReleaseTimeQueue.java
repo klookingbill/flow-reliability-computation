@@ -1,23 +1,18 @@
 package edu.uiowa.cs.warp;
 
-public class ReleaseTimeQueue <T extends SchedulableObject> extends java.util.PriorityQueue<T> {
+import java.util.PriorityQueue;
+import java.util.Collection;
 
-	private static final long serialVersionUID = 1L;
+public class ReleaseTimeQueue <T extends SchedulableObject>  extends PriorityQueue <T>  {
+private static final long serialVersionUID = 1L;
 
-	/**
-	 * Construct a priority queue of schedulable objects based 
-	 * on release time.
-	 */
-	ReleaseTimeQueue() {
-		super(1, new ReleaseTimeComparator<T>());
-	}
-	
-	/**
-	 * Construct a priority queue of schedulable objects based
-	 * on release time and initialized with a collection.
-	 */
-	ReleaseTimeQueue(java.util.Collection<T> schedulableObjects) {
-		super(new ReleaseTimeComparator<T>());
-		this.addAll(schedulableObjects);
-	}
+/*package*/ ReleaseTimeQueue () {
+super(1, new ReleaseTimeComparator<T>());
+   	}
+
+/*package*/ ReleaseTimeQueue (Collection <T> schedulableObjects) {
+super(new ReleaseTimeComparator<T>());
+   		this.addAll(schedulableObjects);
+   	}
+
 }

@@ -1,23 +1,12 @@
-/**
- * 
- */
 package edu.uiowa.cs.warp;
 
+
 /**
- * @author sgoddard
+* @author sgoddard
  * @version 1.8 Fall 2024
- *
- */
-interface ReliabilityParameters {
+ *  * *//*package*/ interface ReliabilityParameters {
+public Double getMinPacketReceptionRate();
 
-	/**
-	 * @return the minPacketReceptionRate
-	 */
-	public Double getMinPacketReceptionRate();
+public Double getE2e();
 
-	/**
-	 * @return the e2e
-	 */
-	public Double getE2e();
-	
 }

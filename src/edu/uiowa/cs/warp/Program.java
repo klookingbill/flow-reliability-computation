@@ -1,139 +1,40 @@
 package edu.uiowa.cs.warp;
 
-import edu.uiowa.cs.utilities.Utilities;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 
-
 /**
- * @author sgoddard
- *
- */
-// Old Scheduler Worked as class Scheduler{} on Feb 17
-public class Program implements SystemAttributes {
+* @author sgoddard
+ *  * */public class Program implements SystemAttributes {
+private static final String UNKNOWN = "Unknown";
 
-  private static final String UNKNOWN = "Unknown";
-  private static final String SLEEP_INSTRUCTION = "sleep";
-  private static final String WAIT_FRAGMENT = "wait(";
-  private static final String ELSE_PULL_FRAGMENT = "else pull(";
+private static final String SLEEP_INSTRUCTION = "sleep";
 
-  // Global flags and data structures
-  // FileManager wfm; // class to provide basic WARP file management functions
-  WorkLoad workLoad; // WarpScheduler build schedules for flows in WARPflows class
-  ProgramSchedule scheduleBuilt;
-  ScheduleChoices SchedulerSelected; // set the type of scheduler selected
-  String schChoice; // Name of the scheduler selected for output file name
-  String schedulerName; // test string of scheduler selected
-  Integer nTransmissions;
-  Boolean realTimeHARTflag;
-  Boolean optimizationRequested;
-  Channels channelsAvailable; // channels available for each time slot
-  Integer nChannels;
-  Boolean verbose;
-  Boolean reportLatency;
-  private Description deadlineMisses;
+private static final String WAIT_FRAGMENT = "wait(";
 
-  Program(WorkLoad workLoad, Integer nChannels, ScheduleChoices choice, Boolean verbose,
-      Boolean reportLatency) {
-    setDefaultParameters(workLoad, nChannels, verbose, reportLatency);
-    buildProgram(choice);
-  }
+private static final String ELSE_PULL_FRAGMENT = "else pull(";
 
-  Program(WorkLoad workLoad, Integer nChannels, ScheduleChoices choice) {
-    setDefaultParameters(workLoad, nChannels, false, false);
-    buildProgram(choice);
-  }
+/*package*/ WorkLoad workLoad;
+/*package*/ ProgramSchedule scheduleBuilt;
+/*package*/ ScheduleChoices SchedulerSelected;
+/*package*/ String schChoice;
+/*package*/ String schedulerName;
+/*package*/ Integer nTransmissions;
+/*package*/ Boolean realTimeHARTflag;
+/*package*/ Boolean optimizationRequested;
+/*package*/ Channels channelsAvailable;
+/*package*/ Integer nChannels;
+/*package*/ Boolean verbose;
+/*package*/ Boolean reportLatency;
+private Description deadlineMisses;
+/**
+* Returns the work load 
+ *    * @return workLoad */public WorkLoad toWorkLoad() {
+return workLoad;
+     }
 
-  private void setDefaultParameters(WorkLoad workLoad, Integer nChannels, Boolean verbose,
-      Boolean reportLatency) {
-    this.workLoad = workLoad; // flows for which schedules will be built
-    this.scheduleBuilt = new ProgramSchedule();
-    this.SchedulerSelected = ScheduleChoices.PRIORITY; // set the type of scheduler selected
-    workLoad.setFlowsInPriorityOrder();
-    this.schedulerName = "Priority";
-    this.schChoice = "Priority";
-    this.nTransmissions = 0;
-    this.realTimeHARTflag = false;
-    this.optimizationRequested = true;
-    this.nChannels = nChannels;
-    this.verbose = verbose;
-    this.channelsAvailable = new Channels(nChannels, verbose);
-    this.reportLatency = reportLatency;
-    this.deadlineMisses = new Description();
-  }
-
-  /**
-   * Returns the work load 
-   * @return workLoad
-   */
-  public WorkLoad toWorkLoad() {
-    return workLoad;
-  }
-
-  public void buildProgram(ScheduleChoices choice) {
-    /*
-     * Switch on the scheduler choice. If it is POSET-based scheduler, create the POSET that matches
-     * the name and then use the newer schedule object to convert the POSET to a program. If it is
-     * an original scheduler choice, build set the scheduler type and build the schedule and WARP
-     * program by calling buildOriginalProgram();
-     */
-    switch (choice) { // select the requested scheduler
-      case WARP_POSET_PRIORITY: // fall through
-      case WARP_POSET_RM: // fall through
-      case WARP_POSET_DM: // fall through
-        setScheduleSelected(choice);
-        var poset1 = new WarpPoset(workLoad);
-        var schedule1 = new NonPreemptiveSchedule(poset1, this.nChannels);
-        var newProgram = schedule1.toProgram();
-        setSchedule(newProgram); // store the schedule built
-        break;
-      case CONNECTIVITY_POSET_PRIORITY: // fall through
-      case CONNECTIVITY_POSET_RM: // fall through
-      case CONNECTIVITY_POSET_DM: // fall through
-      case POSET_PRIORITY: // fall through
-      case POSET_RM: // fall through
-      case POSET_DM:
-        setScheduleSelected(choice);
-        // var poset = new BasicPoset(workLoad);
-        var poset2 = new ConnectivityPoset(workLoad);
-        var schedule2 = new NonPreemptiveSchedule(poset2, this.nChannels);
-        newProgram = schedule2.toProgram();
-        setSchedule(newProgram); // store the schedule built
-        break;
-      //// case CONNECTIVITY_POSET_PREEMPTIVE_PRIORITY: // fall through
-      //// case CONNECTIVITY_POSET_PREEMPTIVE_RM: // fall through
-      //// case CONNECTIVITY_POSET_PREEMPTIVE_DM: // fall through
-      // var poset3 = new ConnectivityPoset(workLoad);
-      // var schedule3 = new PreemptiveSchedule(poset3, this.nChannels);
-      // newProgram = schedule3.toProgram();
-      // setSchedule(newProgram); // store the schedule built
-      // break;
-      case PRIORITY:
-        selectPriority();
-        buildOriginalProgram(); // build the requested schedule
-        break;
-      case RM:
-        selectRM();
-        buildOriginalProgram(); // build the requested schedule
-        break;
-      case DM:
-        selectDM();
-        buildOriginalProgram(); // build the requested schedule
-        break;
-      case RTHART:
-        selectRtHART();
-        buildOriginalProgram(); // build the requested schedule
-        break;
-      default:
-        selectPriority();
-        buildOriginalProgram(); // build the requested schedule
-        break; // break from switch
-    }
-  }
-
-  public void buildOriginalProgram() { // builds a Priority schedule
-
+public void buildOriginalProgram() {
+// builds a Priority schedule
+   
     if (verbose) {
       var scheduleDetails =
           String.format("\nSystem schedule for graph %s created with the following parameters:\n",
@@ -190,7 +91,7 @@ public class Program implements SystemAttributes {
     }
     // create an instance of the Warp DSL class for parsing instructions
     var dsl = new WarpDSL();
-
+   
     for (String flowName : prioritizedFlows) { // loop through all of the nodes in priority order
       var nodesInFlow = workLoad.getNodesInFlow(flowName);
       var nNodesInFlow = nodesInFlow.length;
@@ -201,7 +102,7 @@ public class Program implements SystemAttributes {
         if (realtimeHART) {
           nTx = workLoad.getFlowTxAttemptsPerLink(flowName);
         } // else we will computer nTx from the linkTx array for the flow as we go
-
+   
       } else {
         nTx = nTransmissions;
       }
@@ -299,7 +200,7 @@ public class Program implements SystemAttributes {
             }
             String channel = findNextAvailableChannel(schedule, instructionNodeName,
                 instructionIndex, nodeIndex.get(currentNodeName), nodeIndex.get(snk));
-
+   
             // Now check if we have a valid channel. If not we need to find a new time slot further
             // down the schedule.
             // So, initialize the search to start at the current slot and then increase by one each
@@ -348,7 +249,7 @@ public class Program implements SystemAttributes {
             } else {
               newInstruction = hasPushInstruction(flowName, currentNodeName, snk, channel);
             }
-
+   
             // if optimization flag is set, look to see if any optimizations are possible
             if (optimizationRequested && instructionIndex > 0) {
               var priorInstructionTimeSlotArrayList = schedule.get(instructionIndex - 1);
@@ -710,53 +611,160 @@ public class Program implements SystemAttributes {
       }
     }
     setSchedule(schedule); // store the schedule built
-  }
+     }
 
-  private String waitInstruction(String channel) {
-    var size = channel.length();
+private String waitInstruction(String channel) {
+var size = channel.length();
     if (!Utilities.isInteger(channel)) {
       System.out.println("channel length is " + String.valueOf(size));
       System.err.println("ERROR: channel is not an Integer: " + channel);
     }
     return String.format("wait(#%s)", channel);
-  }
+     }
 
-
-  private String elseWaitInstruction(String channel) {
-    var size = channel.length();
+private String elseWaitInstruction(String channel) {
+var size = channel.length();
     if (!Utilities.isInteger(channel)) {
       System.err.println("ERROR: channel is not an Integer: " + channel);
       System.err.println("\t channel size is not an Integer: " + String.valueOf(size));
     }
     return String.format(" else wait(#%s)", channel);
-  }
+     }
 
-  private String elsePullClause(String flow, String src, String snk, String channel) {
-    return String.format(" else pull(%s: %s -> %s, #%s)", flow, src, snk, channel);
-  }
+private String elsePullClause(String flow, String src, String snk, String channel) {
+return String.format(" else pull(%s: %s -> %s, #%s)", flow, src, snk, channel);
+     }
 
-  private String hasPushInstruction(String flow, String src, String snk, String channel) {
-    return String.format("if has(%1$s) push(%1$s: %2$s -> %3$s, #%4$s)", flow, src, snk, channel);
-  }
+private String hasPushInstruction(String flow, String src, String snk, String channel) {
+return String.format("if has(%1$s) push(%1$s: %2$s -> %3$s, #%4$s)", flow, src, snk, channel);
+     }
 
-  private String pushInstruction(String flow, String src, String snk, String channel) {
-    return String.format("push(%1$s: %2$s -> %3$s, #%4$s)", flow, src, snk, channel);
-  }
+private String pushInstruction(String flow, String src, String snk, String channel) {
+return String.format("push(%1$s: %2$s -> %3$s, #%4$s)", flow, src, snk, channel);
+     }
 
-  private String getFirstChannelInInstruction(String Instruction) {
-    var beginIndex = Instruction.indexOf('#') + 1; // get index of the start of the channel #
+private String getFirstChannelInInstruction(String Instruction) {
+var beginIndex = Instruction.indexOf('#') + 1; // get index of the start of the channel #
     var endIndex = Instruction.indexOf(')', beginIndex); // get index of the last character of the
                                                          // channel #
     var channel = Instruction.substring(beginIndex, endIndex); // this substring has the 1st channel
     return channel;
-  }
+     }
 
-  private Integer findNextAvailableInstructionTimeSlot(ProgramSchedule schedule,
-      Integer startLocation, Integer nodeInFlow, Integer transIndex, Integer nTx,
-      Integer[] previousNodeInstruction, Integer[] currentNodeInstruction, String sleepInstruction,
-      Boolean realtimeHART, Boolean optimizationRequested, Integer srcNodeIndex,
-      Integer snkNodeIndex) {
-    var currentTime = startLocation; // Make sure we don't start looking before the starting
+public void selectPriority() {
+setScheduleSelected(ScheduleChoices.PRIORITY);
+     }
+
+public void selectRM() {
+setScheduleSelected(ScheduleChoices.RM);
+     }
+
+public void selectDM() {
+setScheduleSelected(ScheduleChoices.DM);
+     }
+
+public void selectRtHART() {
+setScheduleSelected(ScheduleChoices.RTHART);
+     }
+
+/**
+* Returns the built schulde
+ *    * @return scheduleBuilt */public ProgramSchedule getSchedule() {
+return scheduleBuilt;
+     }
+
+@Override
+public String getSchedulerName ()
+{
+return schedulerName;
+     }
+public String getSchChoice() {
+return schChoice;
+     }
+
+@Override
+public Integer getNumChannels ()
+{
+return nChannels;
+     }
+@Override
+public Integer getNumTransmissions ()
+{
+return nTransmissions;
+     }
+private Boolean getRealTimeHartFlag() {
+return realTimeHARTflag;
+     }
+
+private void setRealTimeHartFlag(Boolean flag) {
+realTimeHARTflag = flag;
+     }
+
+@Override
+public Double getMinPacketReceptionRate ()
+{
+return workLoad.getMinPacketReceptionRate();
+     }
+@Override
+public Double getE2e ()
+{
+return workLoad.getE2e();
+     }
+@Override
+public String getName ()
+{
+return workLoad.getName();
+     }
+@Override
+public Boolean getOptimizationFlag ()
+{
+return optimizationRequested;
+     }
+public Description deadlineMisses() {
+return deadlineMisses;
+     }
+
+@Override
+public Integer getNumFaults ()
+{
+return workLoad.getNumFaults();
+     }
+/**
+* Retrieves a mapping of node names to their respective indices in the schedule table.
+ *    * @return nodeIndexMap */public HashMap <String, Integer> getNodeMapIndex() {
+var orderedNodes = workLoad.getNodeNamesOrderedAlphabetically(); // create an array of node
+                                                                     // names
+    // sorted alphabetically
+    var nodeIndexMap = new HashMap<String, Integer>(); // create a new mapping from node names to
+                                                       // index in schedule
+    // table
+    var nNodes = orderedNodes.length;
+    for (int index = 0; index < nNodes; index++) { // set up the node to index mapping
+      var name = orderedNodes[index];
+      nodeIndexMap.put(name, index); // add name, index mapping to NodeIndex map
+    }
+    return nodeIndexMap;
+     }
+
+private void setDefaultParameters(WorkLoad workLoad, Integer nChannels, Boolean verbose, Boolean reportLatency) {
+this.workLoad = workLoad; // flows for which schedules will be built
+    this.scheduleBuilt = new ProgramSchedule();
+    this.SchedulerSelected = ScheduleChoices.PRIORITY; // set the type of scheduler selected
+    workLoad.setFlowsInPriorityOrder();
+    this.schedulerName = "Priority";
+    this.schChoice = "Priority";
+    this.nTransmissions = 0;
+    this.realTimeHARTflag = false;
+    this.optimizationRequested = true;
+    this.nChannels = nChannels;
+    this.verbose = verbose;
+    this.channelsAvailable = new Channels(nChannels, verbose);
+    this.reportLatency = reportLatency;
+    this.deadlineMisses = new Description();
+     }
+
+private Integer findNextAvailableInstructionTimeSlot(ProgramSchedule schedule, Integer startLocation, Integer nodeInFlow, Integer transIndex, Integer nTx, Integer[] previousNodeInstruction, Integer[] currentNodeInstruction, String sleepInstruction, Boolean realtimeHART, Boolean optimizationRequested, Integer srcNodeIndex, Integer snkNodeIndex) {
+var currentTime = startLocation; // Make sure we don't start looking before the starting
                                      // location
     if (transIndex > 0) {
       currentTime = Math.max(startLocation, currentNodeInstruction[transIndex - 1]); // Make sure we
@@ -949,11 +957,10 @@ public class Program implements SystemAttributes {
       }
     }
     return currentTime;
-  }
+     }
 
-  private Boolean slotIsAvailable(InstructionTimeSlot currentInstructionTimeSlot,
-      Integer srcNodeIndex, Integer snkNodeIndex) {
-    var vacantSlot = false; // assume slot is not vacant ----// Flag indicating time slot search is
+private Boolean slotIsAvailable(InstructionTimeSlot currentInstructionTimeSlot, Integer srcNodeIndex, Integer snkNodeIndex) {
+var vacantSlot = false; // assume slot is not vacant ----// Flag indicating time slot search is
                             // done
     if (SLEEP_INSTRUCTION.equals(currentInstructionTimeSlot.get(srcNodeIndex))
         && SLEEP_INSTRUCTION.equals(currentInstructionTimeSlot.get(snkNodeIndex))) { // src and snk
@@ -964,18 +971,16 @@ public class Program implements SystemAttributes {
       vacantSlot = true;
     }
     return vacantSlot;
-  }
+     }
 
-  private String findNextAvailableChannel(ProgramSchedule schedule, String nodeName,
-      Integer currentTime, Integer srcNodeIndex, Integer snkNodeIndex) {
-
-    var newChannel = UNKNOWN; // indicates no channel was available. The caller will need to check
+private String findNextAvailableChannel(ProgramSchedule schedule, String nodeName, Integer currentTime, Integer srcNodeIndex, Integer snkNodeIndex) {
+var newChannel = UNKNOWN; // indicates no channel was available. The caller will need to check
                               // this result
-
+   
     // create an instance of the Warp DSL class for parsing instructions
     var dsl = new WarpDSL();
     InstructionTimeSlot priorInstructionTimeSlot;
-
+   
     var channels = channelsAvailable.getChannelSet(currentTime);
     if (currentTime > 0) { // get the prior schedule time slot to see what channels were used in
                            // that slot, which have to be avoided here
@@ -983,7 +988,7 @@ public class Program implements SystemAttributes {
       priorInstructionTimeSlot = schedule.get(priorTime); // get a copy of the prior time slot
       var srcPriorInstruction = priorInstructionTimeSlot.get(srcNodeIndex);
       var snkPriorInstruction = priorInstructionTimeSlot.get(snkNodeIndex);
-
+   
       // extract the channels used by the src and snk nodes in the prior time slot and store them in
       // an array
       var instructionParametersArrayList = dsl.getInstructionParameters(srcPriorInstruction); // get
@@ -1047,26 +1052,85 @@ public class Program implements SystemAttributes {
       }
     }
     return newChannel; // returns UNKNOWN to indicate no channel found. This should never happen.
-  }
+     }
 
-  public void selectPriority() {
-    setScheduleSelected(ScheduleChoices.PRIORITY);
-  }
+private void setSchedule(ProgramSchedule schedule) {
+scheduleBuilt = schedule;
+     }
 
-  public void selectRM() {
-    setScheduleSelected(ScheduleChoices.RM);
-  }
+/*package*/ Program (WorkLoad workLoad, Integer nChannels, ScheduleChoices choice, Boolean verbose, Boolean reportLatency) {
+setDefaultParameters(workLoad, nChannels, verbose, reportLatency);
+    buildProgram(choice);
+     }
 
-  public void selectDM() {
-    setScheduleSelected(ScheduleChoices.DM);
-  }
+/*package*/ Program (WorkLoad workLoad, Integer nChannels, ScheduleChoices choice) {
+setDefaultParameters(workLoad, nChannels, false, false);
+    buildProgram(choice);
+     }
 
-  public void selectRtHART() {
-    setScheduleSelected(ScheduleChoices.RTHART);
-  }
+public void buildProgram(ScheduleChoices choice) {
+/*
+     * Switch on the scheduler choice. If it is POSET-based scheduler, create the POSET that matches
+     * the name and then use the newer schedule object to convert the POSET to a program. If it is
+     * an original scheduler choice, build set the scheduler type and build the schedule and WARP
+     * program by calling buildOriginalProgram();
+     */
+    switch (choice) { // select the requested scheduler
+      case WARP_POSET_PRIORITY: // fall through
+      case WARP_POSET_RM: // fall through
+      case WARP_POSET_DM: // fall through
+        setScheduleSelected(choice);
+        var poset1 = new WarpPoset(workLoad);
+        var schedule1 = new NonPreemptiveSchedule(poset1, this.nChannels);
+        var newProgram = schedule1.toProgram();
+        setSchedule(newProgram); // store the schedule built
+        break;
+      case CONNECTIVITY_POSET_PRIORITY: // fall through
+      case CONNECTIVITY_POSET_RM: // fall through
+      case CONNECTIVITY_POSET_DM: // fall through
+      case POSET_PRIORITY: // fall through
+      case POSET_RM: // fall through
+      case POSET_DM:
+        setScheduleSelected(choice);
+        // var poset = new BasicPoset(workLoad);
+        var poset2 = new ConnectivityPoset(workLoad);
+        var schedule2 = new NonPreemptiveSchedule(poset2, this.nChannels);
+        newProgram = schedule2.toProgram();
+        setSchedule(newProgram); // store the schedule built
+        break;
+      //// case CONNECTIVITY_POSET_PREEMPTIVE_PRIORITY: // fall through
+      //// case CONNECTIVITY_POSET_PREEMPTIVE_RM: // fall through
+      //// case CONNECTIVITY_POSET_PREEMPTIVE_DM: // fall through
+      // var poset3 = new ConnectivityPoset(workLoad);
+      // var schedule3 = new PreemptiveSchedule(poset3, this.nChannels);
+      // newProgram = schedule3.toProgram();
+      // setSchedule(newProgram); // store the schedule built
+      // break;
+      case PRIORITY:
+        selectPriority();
+        buildOriginalProgram(); // build the requested schedule
+        break;
+      case RM:
+        selectRM();
+        buildOriginalProgram(); // build the requested schedule
+        break;
+      case DM:
+        selectDM();
+        buildOriginalProgram(); // build the requested schedule
+        break;
+      case RTHART:
+        selectRtHART();
+        buildOriginalProgram(); // build the requested schedule
+        break;
+      default:
+        selectPriority();
+        buildOriginalProgram(); // build the requested schedule
+        break; // break from switch
+    }
+     }
 
-  private void setScheduleSelected(ScheduleChoices choice) {
-    switch (choice) {
+private void setScheduleSelected(ScheduleChoices choice) {
+switch (choice) {
       case PRIORITY:
         schedulerName = "Priority";
         schChoice = "-Priority";
@@ -1140,93 +1204,6 @@ public class Program implements SystemAttributes {
         break;
     }
     SchedulerSelected = choice;
-  }
-
-  private void setSchedule(ProgramSchedule schedule) {
-    scheduleBuilt = schedule;
-  }
-
-  /**
-   * Returns the built schulde
-   * @return scheduleBuilt
-   */
-  public ProgramSchedule getSchedule() {
-    return scheduleBuilt;
-  }
-
-  @Override
-  public String getSchedulerName() {
-    return schedulerName;
-  }
-
-  public String getSchChoice() {
-    return schChoice;
-  }
-
-  @Override
-  public Integer getNumChannels() {
-    return nChannels;
-  }
-
-  @Override
-  public Integer getNumTransmissions() {
-    return nTransmissions;
-  }
-
-  private Boolean getRealTimeHartFlag() {
-    return realTimeHARTflag;
-  }
-
-  private void setRealTimeHartFlag(Boolean flag) {
-    realTimeHARTflag = flag;
-  }
-
-  @Override
-  public Double getMinPacketReceptionRate() {
-    return workLoad.getMinPacketReceptionRate();
-  }
-
-  @Override
-  public Double getE2e() {
-    return workLoad.getE2e();
-  }
-
-  @Override
-  public String getName() {
-    return workLoad.getName();
-  }
-
-  @Override
-  public Boolean getOptimizationFlag() {
-    return optimizationRequested;
-  }
-
-  public Description deadlineMisses() {
-    return deadlineMisses;
-  }
-
-  @Override
-  public Integer getNumFaults() {
-    return workLoad.getNumFaults();
-  }
-
-  /**
-   * Retrieves a mapping of node names to their respective indices in the schedule table.
-   * @return nodeIndexMap
-   */
-  public HashMap<String, Integer> getNodeMapIndex() {
-    var orderedNodes = workLoad.getNodeNamesOrderedAlphabetically(); // create an array of node
-                                                                     // names
-    // sorted alphabetically
-    var nodeIndexMap = new HashMap<String, Integer>(); // create a new mapping from node names to
-                                                       // index in schedule
-    // table
-    var nNodes = orderedNodes.length;
-    for (int index = 0; index < nNodes; index++) { // set up the node to index mapping
-      var name = orderedNodes[index];
-      nodeIndexMap.put(name, index); // add name, index mapping to NodeIndex map
-    }
-    return nodeIndexMap;
-  }
+     }
 
 }
