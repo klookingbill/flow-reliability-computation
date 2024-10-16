@@ -95,27 +95,23 @@ My first test ensures that the method correctly orders the initially existing fl
 <br>
 <br>
 ### 10/15/24
-<br>
 # UML Diagrams
 <br>
 I used UML Lab to create UML diagrams for classes: SchedulableObject, WorkLoad, and the third diagram shows all of the Reliability classes.
 <br>
-<br>
+
 ### SchedulableObject
-<br>
 The SchedulableObject model maps out all of this class's children and public elements. I was able to create a model with these specifications by 
 hiding the non-public elements from the model. 
 <br>
-<br>
+
 ### WorkLoad
-<br>
 The WorkLoad model not only shows the WorkLoad class methods, but it also entails its parent classes and associated classes. This model shows all
 elements, no matter their visibility level - public or private. The WorkLoad model has significantly more elements becausTThee of the numerous parent
 and associated classes. 
 <br>
-<br>
+
 ### Reliability
-<br>
 The final model shows not just one class but rather all of the Reliability*.java classes. With the different classes in the model, I then added in 
 the parent classes and associated classes only for the ReliabilityVisualization class. For the ReliabilityAnalysis class, I added in a new public 
 method titled, getReliabilities, that returns a Reliability Table. I then generated code from this which added the method to the 
