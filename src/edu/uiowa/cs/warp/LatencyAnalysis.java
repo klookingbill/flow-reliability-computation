@@ -1,19 +1,40 @@
 package edu.uiowa.cs.warp;
 
+import edu.uiowa.cs.warp.WarpDSL.InstructionParameters;
 import java.util.HashMap;
 
 /**
-* @author sgoddard2
- * @version 1.3 */public class LatencyAnalysis {
-private static String DEADLINE_MISS = " => DEADLINE MISS";
+ * @author sgoddard2
+ * @version 1.3
+ */
+public class LatencyAnalysis {
+
+  private static String DEADLINE_MISS = " => DEADLINE MISS";
   private static String FLOW_SEPARATOR = "******************************\n";
-private Description latencyReport;
-private Program program;
-private WorkLoad workload;
-private ProgramSchedule programTable;
-private HashMap <String, Integer> nodeIndex;
-public Description latencyReport() {
-/*
+  private Description latencyReport;
+  private Program program;
+  private WorkLoad workload;
+  private ProgramSchedule programTable;
+  private HashMap<String, Integer> nodeIndex;
+
+  LatencyAnalysis(WarpInterface warp) {
+    this.latencyReport = new Description();
+    this.program = warp.toProgram();
+    this.workload = warp.toWorkload();
+    this.programTable = program.getSchedule();
+    this.nodeIndex = program.getNodeMapIndex();
+  }
+
+  LatencyAnalysis(Program program) {
+    this.latencyReport = new Description();
+    this.program = program;
+    this.workload = program.toWorkLoad();
+    this.programTable = program.getSchedule();
+    this.nodeIndex = program.getNodeMapIndex();
+  }
+
+  public Description latencyReport() {
+    /*
      * Build a latency report. Flows are output in priority order (based on the priority used to
      * build the program. The latency for each instance of the flow is reported as follows
      * "Maximum latency for FlowName:Instance is Latency"
@@ -28,11 +49,11 @@ public Description latencyReport() {
      * report is: "UNKNOWN latency for FlowName:Instance; Not enough transmissions attempted"
      * 
      */
-   
+
     var flows = workload.getFlowNamesInPriorityOrder();
     for (String flowName : flows) {
       var time = 0;
-   
+
       var nodes = workload.getNodesInFlow(flowName); // names of nodes in flow
       var flowSnkIndex = nodes.length - 1;
       /* get snk of last link in the flow, which is also the Flow snk node */
@@ -80,7 +101,7 @@ public Description latencyReport() {
           } else {
             time++;
           }
-   
+
         }
         if (numTxProcessed < numTxRequired) {
           /*
@@ -98,11 +119,11 @@ public Description latencyReport() {
       latencyReport.add(flowSeparator);
     }
     return latencyReport;
-     }
+  }
 
-public Integer numMatchingTx(String flow, String src, String snk, String instr) {
-var numTx = 0;
-   
+  public Integer numMatchingTx(String flow, String src, String snk, String instr) {
+    var numTx = 0;
+
     if (flow == null || src == null || snk == null || instr == null) {
       /* make sure all parameters are valid */
       return numTx;
@@ -113,7 +134,7 @@ var numTx = 0;
      */
     var dsl = new WarpDSL();
     var instructionParametersArray = dsl.getInstructionParameters(instr);
-   
+
     for (InstructionParameters entry : instructionParametersArray) {
       String flowName = entry.getFlow();
       if (flowName.equals(flow)) {
@@ -129,22 +150,6 @@ var numTx = 0;
       }
     }
     return numTx;
-     }
-
-/*package*/ LatencyAnalysis (WarpInterface warp) {
-this.latencyReport = new Description();
-    this.program = warp.toProgram();
-    this.workload = warp.toWorkload();
-    this.programTable = program.getSchedule();
-    this.nodeIndex = program.getNodeMapIndex();
-     }
-
-/*package*/ LatencyAnalysis (Program program) {
-this.latencyReport = new Description();
-    this.program = program;
-    this.workload = program.toWorkLoad();
-    this.programTable = program.getSchedule();
-    this.nodeIndex = program.getNodeMapIndex();
-     }
+  }
 
 }

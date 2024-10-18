@@ -1,25 +1,30 @@
+/**
+ * 
+ */
 package edu.uiowa.cs.warp;
 
-
 /**
-* @author sgoddard
- * @version 1.4 */public interface WarpInterface extends SystemAttributes {
-public WorkLoad toWorkload();
+ * @author sgoddard
+ * @version 1.4
+ */
+public interface WarpInterface extends SystemAttributes {
 
-public Program toProgram();
+  public WorkLoad toWorkload();
 
-public ReliabilityAnalysis toReliabilityAnalysis();
+  public Program toProgram();
 
-public SimulatorInput toSimulator();
+  public ReliabilityAnalysis toReliabilityAnalysis();
 
-public LatencyAnalysis toLatencyAnalysis();
+  public SimulatorInput toSimulator();
 
-public ChannelAnalysis toChannelAnalysis();
+  public LatencyAnalysis toLatencyAnalysis();
 
-public void toSensorNetwork();
+  public ChannelAnalysis toChannelAnalysis();
 
-public Boolean reliabilitiesMet();
+  public void toSensorNetwork(); // deploys code
 
-public Boolean deadlinesMet();
+  public Boolean reliabilitiesMet();
+
+  public Boolean deadlinesMet();
 
 }

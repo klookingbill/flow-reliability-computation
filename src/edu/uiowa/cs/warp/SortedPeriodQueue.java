@@ -1,18 +1,24 @@
 package edu.uiowa.cs.warp;
 
-import java.util.PriorityQueue;
-import java.util.Collection;
+public class SortedPeriodQueue <T extends SchedulableObject> extends java.util.PriorityQueue<T> {
 
-public class SortedPeriodQueue <T extends SchedulableObject>  extends PriorityQueue <T>  {
-private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-/*package*/ SortedPeriodQueue () {
-super(1, new PeriodComparator<T>());
-   	}
-
-/*package*/ SortedPeriodQueue (Collection <T> schedulableObjects) {
-super(new PeriodComparator<T>());
-   		this.addAll(schedulableObjects);
-   	}
+	/**
+	 * Construct a priority queue of schedulable objects based 
+	 * on release time.
+	 */
+	SortedPeriodQueue() {
+		super(1, new PeriodComparator<T>());
+	}
+	
+	/**
+	 * Construct a priority queue of schedulable objects based
+	 * on release time and initialized with a collection.
+	 */
+	SortedPeriodQueue(java.util.Collection<T> schedulableObjects) {
+		super(new PeriodComparator<T>());
+		this.addAll(schedulableObjects);
+	}
 
 }

@@ -1,30 +1,39 @@
 package edu.uiowa.cs.warp;
 
-
 public class ScheduleTime {
-private Integer startTime;
+	private Integer startTime;
+	private Integer endTime;
 
-public void setStartTime(Integer value) {
-   this.startTime = value;
-}
+	ScheduleTime(Integer startTime, Integer endTime) {
+		this.startTime = startTime;
+		this.endTime = endTime;
+	}
 
-public Integer getStartTime() {
-   return this.startTime;
-}
+	/**
+	 * @return the startTime
+	 */
+	public Integer getStartTime() {
+		return startTime;
+	}
 
-private Integer endTime;
+	/**
+	 * @return the endTime
+	 */
+	public Integer getEndTime() {
+		return endTime;
+	}
 
-public void setEndTime(Integer value) {
-   this.endTime = value;
-}
+	/**
+	 * @param startTime the startTime to set
+	 */
+	public void setStartTime(Integer startTime) {
+		this.startTime = startTime;
+	}
 
-public Integer getEndTime() {
-   return this.endTime;
-}
-
-/*package*/ ScheduleTime (Integer startTime, Integer endTime) {
-this.startTime = startTime;
-   		this.endTime = endTime;
-   	}
-
+	/**
+	 * @param endTime the endTime to set
+	 */
+	public void setEndTime(Integer endTime) {
+		this.endTime = endTime;
+	}
 }

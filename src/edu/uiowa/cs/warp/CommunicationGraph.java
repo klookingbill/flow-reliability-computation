@@ -1,31 +1,50 @@
 package edu.uiowa.cs.warp;
 
-
 /**
-* @author sgoddard2
- *  * */public class CommunicationGraph extends VisualizationObject {
-/*package*/ FileManager wfm;
-/*package*/ String graphFileName;
-/*package*/ Boolean verbose;
-/*package*/ WorkLoad workLoad;
-@Override
-public Description createHeader ()
-{
-Description header = new Description();
-   		header.add(String.format("WARP_%s{\n",workLoad.getName()));
-   		return header;
-   	}
-@Override
-public Description createFooter ()
-{
-Description footer = new Description();
-   		footer.add("}\n");
-   		return footer;
-   	}
-@Override
-public Description visualization ()
-{
-Description content = new Description();
+ * @author sgoddard2
+ *
+ */
+public class CommunicationGraph extends VisualizationObject {
+
+	FileManager wfm; // Warp File Manager object
+	String graphFileName; // name of the input graph file
+	Boolean verbose; // verbose flag
+	WorkLoad workLoad; // used access flows as the some of the output files are built
+	
+	public CommunicationGraph(FileManager fm, WorkLoad workLoad) {
+		// constructor for GraphFile class
+		super(fm, workLoad, ".wf");
+		this.wfm = fm;
+		this.workLoad = workLoad;
+		verbose = false; // initialize verbose to false
+	}
+	
+	public CommunicationGraph(FileManager fm, WorkLoad workLoad, Boolean verbose) {
+		// constructor for GraphFile class
+		super(fm, workLoad, ".wf");
+		this.wfm = fm;
+		this.workLoad = workLoad;
+		this.verbose = verbose; // initialize verbose to false
+	}
+	
+	@Override
+	public Description createHeader ( )  {
+		Description header = new Description();
+		header.add(String.format("WARP_%s{\n",workLoad.getName()));
+		return header;
+	}
+	
+	@Override
+	public Description createFooter ( )  {
+		Description footer = new Description();
+		footer.add("}\n");
+		return footer;
+	}
+	
+	@Override
+    public Description visualization ( )  {
+        // start the gv file by adding the 1st line to the contents string
+    	Description content = new Description();
         String line = String.format(
         	"// M = %s and End-to-End reliability = %s\n",
         	String.valueOf(workLoad.getMinPacketReceptionRate()),
@@ -66,8 +85,9 @@ Description content = new Description();
         }
         return content;
     }
-public String createWarpFileContent() {
-String wfFileContents = fileVisualization().toString();
+    
+    public String createWarpFileContent ( )  {
+    	String wfFileContents = fileVisualization().toString();
         if (verbose) {
         	System.out.println("************************************");
         	System.out.println("Warp File Contents:");
@@ -76,21 +96,5 @@ String wfFileContents = fileVisualization().toString();
         }
         return wfFileContents;
     }
-
-public CommunicationGraph (FileManager fm, WorkLoad workLoad) {
-// constructor for GraphFile class
-   		super(fm, workLoad, ".wf");
-   		this.wfm = fm;
-   		this.workLoad = workLoad;
-   		verbose = false; // initialize verbose to false
-   	}
-
-public CommunicationGraph (FileManager fm, WorkLoad workLoad, Boolean verbose) {
-// constructor for GraphFile class
-   		super(fm, workLoad, ".wf");
-   		this.wfm = fm;
-   		this.workLoad = workLoad;
-   		this.verbose = verbose; // initialize verbose to false
-   	}
 
 }

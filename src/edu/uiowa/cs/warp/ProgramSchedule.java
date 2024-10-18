@@ -1,15 +1,17 @@
 package edu.uiowa.cs.warp;
 
+public class ProgramSchedule extends Table<String,InstructionTimeSlot> {
 
-public class ProgramSchedule extends Table <String,InstructionTimeSlot>  {
-private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-public ProgramSchedule () {
-super();
-   	}
-
-/*package*/ ProgramSchedule (Integer row, Integer column) {
-super(row,column);
-   	}
-
+	// default constructor
+	public ProgramSchedule() {
+		super();
+	}
+	
+	ProgramSchedule(Integer row, Integer column) {
+		super(row,column);
+	}
+	
 }
+

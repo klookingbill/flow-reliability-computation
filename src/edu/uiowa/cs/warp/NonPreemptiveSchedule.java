@@ -1,13 +1,13 @@
 package edu.uiowa.cs.warp;
 
-
 /**
-* PreemptiveSchedule is an instance of the abstract class Schedule.
+ * PreemptiveSchedule is an instance of the abstract class Schedule.
  * 
  * @author sgoddard2
- *  * */public class NonPreemptiveSchedule extends Schedule {
-/*package*/ NonPreemptiveSchedule (Poset poset, Integer numChannels) {
-super(poset, numChannels);
-   	}
-
+ *
+ */
+public class NonPreemptiveSchedule extends Schedule {
+	NonPreemptiveSchedule(Poset poset, Integer numChannels) {
+		super(poset, numChannels);
+	}
 }
