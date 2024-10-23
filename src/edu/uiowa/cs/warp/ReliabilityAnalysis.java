@@ -41,16 +41,19 @@ import java.util.ArrayList;
  *
  */
 public class ReliabilityAnalysis {
-  // TODO Auto-generated class
+  private Double e2e;
+  private Double minPacketReceptionRate;
+  private Integer numFaults;
 
   public ReliabilityAnalysis (Double e2e, Double minPacketReceptionRate) {
-   // TODO implement this operation
-   throw new UnsupportedOperationException("not implemented");
+    this.e2e = e2e;
+    this.minPacketReceptionRate = minPacketReceptionRate;
   }
 
   public ReliabilityAnalysis (Integer numFaults) {
-    // TODO implement this operation
-    throw new UnsupportedOperationException("not implemented");
+	this.e2e = 0.99;
+	this.minPacketReceptionRate = 0.9;
+    this.numFaults = numFaults;
   }
 
   public ArrayList<Integer> numTxPerLinkAndTotalTxCost(Flow flow) {
