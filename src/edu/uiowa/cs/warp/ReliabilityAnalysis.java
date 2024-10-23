@@ -41,9 +41,9 @@ import java.util.ArrayList;
  *
  */
 public class ReliabilityAnalysis {
-  private Double e2e;
-  private Double minPacketReceptionRate;
-  private Integer numFaults;
+  private Double e2e = 0.0;
+  private Double minPacketReceptionRate = 0.0;
+  private Integer numFaults = 0;
 
   public ReliabilityAnalysis (Double e2e, Double minPacketReceptionRate) {
     this.e2e = e2e;
