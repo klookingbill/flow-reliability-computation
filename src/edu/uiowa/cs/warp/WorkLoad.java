@@ -938,4 +938,36 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     }
     return maxLength;
   }
+  
+  /*
+   * beginning of testing area
+   */
+
+  public static void main(String[] args) {
+	  
+    Node node1 = new Node("n1", 1, 0);
+	Node node2 = new Node("n2", 2, 1);
+	Node node3 = new Node("n3", 3, 2);
+
+	Flow flow = new Flow("test", 1, 0);
+	flow.addNode(node1);
+	flow.addNode(node2);
+	flow.addNode(node3);
+
+	int numFaults = 2;    
+	double e2e = 0.95;   
+	double M = 0.8;       
+	WorkLoad workLoad = new WorkLoad(numFaults, M, e2e, "StressTest.txt");
+
+    //test getFixedTxPerLinkAndTotalTxCost
+	ArrayList<Integer> fixedTxCosts = workLoad.getFixedTxPerLinkAndTotalTxCost(flow);
+	System.out.println("getFixedTxPerLinkAndTotalTxCost:");
+	System.out.println(fixedTxCosts);
+
+	//test numTxAttemptsPerLinkAndTotalTxAttempts
+	ArrayList<Integer> txAttempts = workLoad.numTxAttemptsPerLinkAndTotalTxAttempts(flow, e2e, M, true);
+	System.out.println("numTxAttemptsPerLinkAndTotalTxAttempts:");
+	System.out.println(txAttempts);
+  }
 }
+
