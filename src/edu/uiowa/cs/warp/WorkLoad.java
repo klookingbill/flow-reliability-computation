@@ -673,6 +673,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
                                                                           // will be 0 with this
                                                                           // statement
     var timeSlot = 0; // start time at 0
+    //System.out.println(reliabilityWindow.size());
     while (e2eReliabilityState < e2e) { // change to while and increment increment timeSlot becuase
                                         // we don't know how long this schedule window will last
       var prevReliabilityRow = currentReliabilityRow;
@@ -683,13 +684,14 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
                                                                                                // working
                                                                                                // through
                                                                                                // a
-                                                                                               // schedule
+      //System.out.println(timeSlot); 
+      System.out.println(reliabilityWindow.size());
+      // schedule
       // Now use each flow:src->sink to update reliability computations
       // this is the update formula for the state probabilities
       // nextState = (1 - M) * prevState + M*NextHighestFlowState
       // use MinLQ for M in above equation
       // NewSinkNodeState = (1-M)*PrevSnkNodeState + M*PrevSrcNodeState
-
       for (int nodeIndex = 0; nodeIndex < (nNodesInFlow - 1); nodeIndex++) { // loop through each
                                                                              // node in the flow and
                                                                              // update the sates for
@@ -721,7 +723,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
           nextSnkState = prevSnkNodeState; // snkNode has met its reliability. Thus move on to the
                                            // next node and record the reliability met
         }
-
+        //System.out.println(reliabilityWindow.size());
         if (currentReliabilityRow[flowSrcNodeindex] < prevReliabilityRow[flowSrcNodeindex]) { // probabilities
                                                                                               // are
                                                                                               // non-decreasing
@@ -769,6 +771,12 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
       }
       timeSlot += 1; // increase to next time slot
     }
+    /*
+    for(int i=0;i<(nPushes.length);i++) {
+    	System.out.println(nPushes[i]);
+    }
+    */
+    //System.out.println(nNodesInFlow);
     var size = reliabilityWindow.size();
     nPushes[nNodesInFlow] = size; // The total (worst-case) cost to transmit E2E in isolation with
                                   // specified reliability target is the number of rows in the
@@ -955,15 +963,15 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
 	flow.addNode(node3);
 
 	int numFaults = 2;    
-	double e2e = 0.95;   
-	double M = 0.8;       
+	double e2e = 0.99;   
+	double M = 0.9;       
 	WorkLoad workLoad = new WorkLoad(numFaults, M, e2e, "StressTest.txt");
-
+/*
     //test getFixedTxPerLinkAndTotalTxCost
 	ArrayList<Integer> fixedTxCosts = workLoad.getFixedTxPerLinkAndTotalTxCost(flow);
 	System.out.println("getFixedTxPerLinkAndTotalTxCost:");
 	System.out.println(fixedTxCosts);
-
+*/
 	//test numTxAttemptsPerLinkAndTotalTxAttempts
 	ArrayList<Integer> txAttempts = workLoad.numTxAttemptsPerLinkAndTotalTxAttempts(flow, e2e, M, true);
 	System.out.println("numTxAttemptsPerLinkAndTotalTxAttempts:");
