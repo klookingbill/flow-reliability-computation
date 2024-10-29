@@ -4,6 +4,9 @@
     <contents xsi:type="ecore:EAnnotation" xmi:id="_uSaLMIpcEe-HyqLczdFqrA" source="visual-filters/hideNonPublicElements" references="_YomKKIpcEe-HyqLczdFqrA _YosQxopcEe-HyqLczdFqrA _YohRv4pcEe-HyqLczdFqrA _YohSPYpcEe-HyqLczdFqrA _Yoh43opcEe-HyqLczdFqrA _Yoh454pcEe-HyqLczdFqrA _Yok8DIpcEe-HyqLczdFqrA _Yok8J4pcEe-HyqLczdFqrA _Yok8LIpcEe-HyqLczdFqrA _Yok8MopcEe-HyqLczdFqrA _YosQzIpcEe-HyqLczdFqrA _YosQ0IpcEe-HyqLczdFqrA _YosQ1IpcEe-HyqLczdFqrA _YosQ2IpcEe-HyqLczdFqrA _YosQ3IpcEe-HyqLczdFqrA _YosQ4IpcEe-HyqLczdFqrA _YosQ5IpcEe-HyqLczdFqrA _YosQ6YpcEe-HyqLczdFqrA _YosQ7opcEe-HyqLczdFqrA _YosQ84pcEe-HyqLczdFqrA _YosQ-YpcEe-HyqLczdFqrA _YosQ_4pcEe-HyqLczdFqrA _YosRD4pcEe-HyqLczdFqrA _YosRHopcEe-HyqLczdFqrA _YovUE4pcEe-HyqLczdFqrA _YovUKIpcEe-HyqLczdFqrA _VcUbbIpcEe-HyqLczdFqrA _VcUbcIpcEe-HyqLczdFqrA _VcUbdIpcEe-HyqLczdFqrA _VcUbeIpcEe-HyqLczdFqrA _VcUbfIpcEe-HyqLczdFqrA _VcUbgIpcEe-HyqLczdFqrA _VcUbkYpcEe-HyqLczdFqrA _VcUblopcEe-HyqLczdFqrA _VcUbm4pcEe-HyqLczdFqrA _VcUbrIpcEe-HyqLczdFqrA _VcUbt4pcEe-HyqLczdFqrA _VcVCdYpcEe-HyqLczdFqrA _VcVCh4pcEe-HyqLczdFqrA _VcVCnIpcEe-HyqLczdFqrA _VcVDEIpcEe-HyqLczdFqrA">
       <details xmi:id="_uSaLMYpcEe-HyqLczdFqrA" key="isActive" value="true"/>
     </contents>
+    <contents xsi:type="ecore:EAnnotation" xmi:id="_dx_N0JY5Ee-ik6OZfiGLiw" source="dangling-refs">
+      <contents xsi:type="com.yattasolutions.uml.diagrams.classifier:SimpleTypeVisual" xmi:id="_Yok8J4pcEe-HyqLczdFqrA"/>
+    </contents>
   </eAnnotations>
   <modelElement href="SchedulableObject.uml#_QGkesIpcEe-HyqLczdFqrA"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_T0lBgIpcEe-HyqLczdFqrA" sourceAnchor="265.0,0.0" targetAnchor="529.0,330.0" target="_VcUbaYpcEe-HyqLczdFqrA" source="_VcUbaYpcEe-HyqLczdFqrA">
@@ -27,19 +30,6 @@
       <cardinality xmi:id="_VcTNQopcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_VcD8sIpcEe-HyqLczdFqrA" targetItem="_VcVCn4pcEe-HyqLczdFqrA" sourceItem="_VbulgIpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_VcL4gYpcEe-HyqLczdFqrA" targetItem="_VcVCs4pcEe-HyqLczdFqrA" sourceItem="_VcL4gIpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_VcL4g4pcEe-HyqLczdFqrA" targetItem="_VcVCuIpcEe-HyqLczdFqrA" sourceItem="_VcL4gopcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_VcMfkYpcEe-HyqLczdFqrA" targetItem="_VcVCvopcEe-HyqLczdFqrA" sourceItem="_VcMfkIpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_VcNGoIpcEe-HyqLczdFqrA" targetItem="_VcVCw4pcEe-HyqLczdFqrA" sourceItem="_VcMfkopcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_VcNGoopcEe-HyqLczdFqrA" targetItem="_VcVCyIpcEe-HyqLczdFqrA" sourceItem="_VcNGoYpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_VcNtsYpcEe-HyqLczdFqrA" targetItem="_VcVCzYpcEe-HyqLczdFqrA" sourceItem="_VcNtsIpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_VcOUwIpcEe-HyqLczdFqrA" targetItem="_VcVC04pcEe-HyqLczdFqrA" sourceItem="_VcNtsopcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_VcOUwopcEe-HyqLczdFqrA" targetItem="_VcVC2YpcEe-HyqLczdFqrA" sourceItem="_VcOUwYpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_VcO70IpcEe-HyqLczdFqrA" targetItem="_VcVC34pcEe-HyqLczdFqrA" sourceItem="_VcOUw4pcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_VcO70opcEe-HyqLczdFqrA" targetItem="_VcVC5YpcEe-HyqLczdFqrA" sourceItem="_VcO70YpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_VcPi4YpcEe-HyqLczdFqrA" targetItem="_VcVC64pcEe-HyqLczdFqrA" sourceItem="_VcPi4IpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_VcQxAIpcEe-HyqLczdFqrA" targetItem="_VcVDEIpcEe-HyqLczdFqrA" sourceItem="_VcQJ8IpcEe-HyqLczdFqrA"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_VcT0UIpcEe-HyqLczdFqrA" source="_VcUbaYpcEe-HyqLczdFqrA">
     <modelElement href="SchedulableObject.uml#_QaijkYpcEe-HyqLczdFqrA"/>
     <stereotypes xmi:id="_VcT0UYpcEe-HyqLczdFqrA" name="Reference">
@@ -53,6 +43,12 @@
     </sourceRole>
     <targetRole xmi:id="_VcT0VopcEe-HyqLczdFqrA" aggregationKind="NONE" name="endTimes" navigable="true">
       <modelElement href="SchedulableObject.uml#_QZFyE4pcEe-HyqLczdFqrA"/>
+      <stereotypes xmi:id="_VlJIMJY5Ee-ik6OZfiGLiw" name="Generics">
+        <modelElement href="SchedulableObject.uml#_QZFyFIpcEe-HyqLczdFqrA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_VlJIMZY5Ee-ik6OZfiGLiw" name="LegacyStyledElement">
+        <modelElement href="SchedulableObject.uml#_QZFyFYpcEe-HyqLczdFqrA"/>
+      </stereotypes>
       <visibility xmi:id="_VcT0V4pcEe-HyqLczdFqrA" label="-"/>
       <cardinality xmi:id="_VcT0WIpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
     </targetRole>
@@ -70,6 +66,9 @@
     </sourceRole>
     <targetRole xmi:id="_VcUbZopcEe-HyqLczdFqrA" aggregationKind="NONE" name="subObjects" navigable="true">
       <modelElement href="SchedulableObject.uml#_QZGZIIpcEe-HyqLczdFqrA"/>
+      <stereotypes xmi:id="_VlJvQJY5Ee-ik6OZfiGLiw" name="Generics">
+        <modelElement href="SchedulableObject.uml#_QZGZIYpcEe-HyqLczdFqrA"/>
+      </stereotypes>
       <visibility xmi:id="_VcUbZ4pcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_VcUbaIpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
     </targetRole>
@@ -80,19 +79,6 @@
     <bendpoints xmi:id="_wBaDoIpcEe-HyqLczdFqrA" sourceY="-16" targetX="728" targetY="34"/>
     <bendpoints xmi:id="_wBaDoYpcEe-HyqLczdFqrA" sourceX="-728" sourceY="-16" targetY="34"/>
   </edges>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YobLAYpcEe-HyqLczdFqrA" targetItem="_YohRz4pcEe-HyqLczdFqrA" sourceItem="_YobLAIpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YobLA4pcEe-HyqLczdFqrA" targetItem="_YohR1YpcEe-HyqLczdFqrA" sourceItem="_YobLAopcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YobyEYpcEe-HyqLczdFqrA" targetItem="_YohR24pcEe-HyqLczdFqrA" sourceItem="_YobyEIpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YobyE4pcEe-HyqLczdFqrA" targetItem="_YohR4YpcEe-HyqLczdFqrA" sourceItem="_YobyEopcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YobyFYpcEe-HyqLczdFqrA" targetItem="_YohR54pcEe-HyqLczdFqrA" sourceItem="_YobyFIpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YocZIYpcEe-HyqLczdFqrA" targetItem="_YohR7YpcEe-HyqLczdFqrA" sourceItem="_YocZIIpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YocZI4pcEe-HyqLczdFqrA" targetItem="_YohR84pcEe-HyqLczdFqrA" sourceItem="_YocZIopcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YocZJYpcEe-HyqLczdFqrA" targetItem="_YohSBYpcEe-HyqLczdFqrA" sourceItem="_YocZJIpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YodAMIpcEe-HyqLczdFqrA" targetItem="_YohSDYpcEe-HyqLczdFqrA" sourceItem="_YocZJopcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YodAMopcEe-HyqLczdFqrA" targetItem="_YohSFYpcEe-HyqLczdFqrA" sourceItem="_YodAMYpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YodANIpcEe-HyqLczdFqrA" targetItem="_YohSHYpcEe-HyqLczdFqrA" sourceItem="_YodAM4pcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YodnQYpcEe-HyqLczdFqrA" targetItem="_YohSKopcEe-HyqLczdFqrA" sourceItem="_YodnQIpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Yoe1YYpcEe-HyqLczdFqrA" targetItem="_Yoh4_4pcEe-HyqLczdFqrA" sourceItem="_Yoe1YIpcEe-HyqLczdFqrA"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_YogqkIpcEe-HyqLczdFqrA" source="_YohRqYpcEe-HyqLczdFqrA">
     <modelElement href="SchedulableObject.uml#_QaNMYIpcEe-HyqLczdFqrA"/>
     <stereotypes xmi:id="_YogqkYpcEe-HyqLczdFqrA" name="Reference">
@@ -106,6 +92,9 @@
     </sourceRole>
     <targetRole xmi:id="_YogqlopcEe-HyqLczdFqrA" aggregationKind="NONE" name="coordinators" navigable="true">
       <modelElement href="SchedulableObject.uml#_QYTu8YpcEe-HyqLczdFqrA"/>
+      <stereotypes xmi:id="_VlJvQZY5Ee-ik6OZfiGLiw" name="Generics">
+        <modelElement href="SchedulableObject.uml#_QYUWAIpcEe-HyqLczdFqrA"/>
+      </stereotypes>
       <visibility xmi:id="_Yogql4pcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YogqmIpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
     </targetRole>
@@ -123,6 +112,9 @@
     </sourceRole>
     <targetRole xmi:id="_Yogqn4pcEe-HyqLczdFqrA" aggregationKind="NONE" name="edges" navigable="true">
       <modelElement href="SchedulableObject.uml#_QYUWAYpcEe-HyqLczdFqrA"/>
+      <stereotypes xmi:id="_VlJvQpY5Ee-ik6OZfiGLiw" name="Generics">
+        <modelElement href="SchedulableObject.uml#_QYUWAopcEe-HyqLczdFqrA"/>
+      </stereotypes>
       <visibility xmi:id="_YogqoIpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YogqoYpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
     </targetRole>
@@ -140,6 +132,9 @@
     </sourceRole>
     <targetRole xmi:id="_YohRpopcEe-HyqLczdFqrA" aggregationKind="NONE" name="additionalScheduleTimes" navigable="true">
       <modelElement href="SchedulableObject.uml#_QYUWA4pcEe-HyqLczdFqrA"/>
+      <stereotypes xmi:id="_VlKWUJY5Ee-ik6OZfiGLiw" name="Generics">
+        <modelElement href="SchedulableObject.uml#_QYUWBIpcEe-HyqLczdFqrA"/>
+      </stereotypes>
       <visibility xmi:id="_YohRp4pcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YohRqIpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
     </targetRole>
@@ -181,6 +176,9 @@
     <targetRole xmi:id="_YomKKIpcEe-HyqLczdFqrA" aggregationKind="NONE" name="edgePredecessor" navigable="true">
       <modelElement href="SchedulableObject.uml#_QYeuFYpcEe-HyqLczdFqrA"/>
       <visualProperties xmi:id="_Y9Jd0YpcEe-HyqLczdFqrA" position="-110.99999999999977,5.5" visible="false"/>
+      <stereotypes xmi:id="_VlKWUZY5Ee-ik6OZfiGLiw" name="LegacyStyledElement">
+        <modelElement href="SchedulableObject.uml#_QYfVIIpcEe-HyqLczdFqrA"/>
+      </stereotypes>
       <visibility xmi:id="_Yop0iYpcEe-HyqLczdFqrA" label="~"/>
       <cardinality xmi:id="_Yop0iIpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
     </targetRole>
@@ -191,7 +189,6 @@
     <bendpoints xmi:id="_wBaqsIpcEe-HyqLczdFqrA" sourceY="-27" targetX="-26" targetY="34"/>
     <bendpoints xmi:id="_wBaqsYpcEe-HyqLczdFqrA" sourceX="26" sourceY="-27" targetY="34"/>
   </edges>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YomKIopcEe-HyqLczdFqrA" targetItem="_YosQyYpcEe-HyqLczdFqrA" sourceItem="_YomKIYpcEe-HyqLczdFqrA"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_YomKI4pcEe-HyqLczdFqrA" source="_YosQyYpcEe-HyqLczdFqrA">
     <modelElement href="SchedulableObject.uml#_QaQPtIpcEe-HyqLczdFqrA"/>
     <stereotypes xmi:id="_YopNc4pcEe-HyqLczdFqrA" name="Reference">
@@ -205,6 +202,12 @@
     </sourceRole>
     <targetRole xmi:id="_YopNcopcEe-HyqLczdFqrA" aggregationKind="NONE" name="nodes" navigable="true">
       <modelElement href="SchedulableObject.uml#_QYdf9opcEe-HyqLczdFqrA"/>
+      <stereotypes xmi:id="_VlKWUpY5Ee-ik6OZfiGLiw" name="Generics">
+        <modelElement href="SchedulableObject.uml#_QYeHAIpcEe-HyqLczdFqrA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_VlKWU5Y5Ee-ik6OZfiGLiw" name="LegacyStyledElement">
+        <modelElement href="SchedulableObject.uml#_QYeHAYpcEe-HyqLczdFqrA"/>
+      </stereotypes>
       <visibility xmi:id="_Yoqbk4pcEe-HyqLczdFqrA" label="~"/>
       <cardinality xmi:id="_YoqbkopcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
     </targetRole>
@@ -222,6 +225,12 @@
     </sourceRole>
     <targetRole xmi:id="_Yop0gIpcEe-HyqLczdFqrA" aggregationKind="NONE" name="linkTxAndTotalCost" navigable="true">
       <modelElement href="SchedulableObject.uml#_QYeHAopcEe-HyqLczdFqrA"/>
+      <stereotypes xmi:id="_VlKWVJY5Ee-ik6OZfiGLiw" name="Generics">
+        <modelElement href="SchedulableObject.uml#_QYeHA4pcEe-HyqLczdFqrA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_VlKWVZY5Ee-ik6OZfiGLiw" name="LegacyStyledElement">
+        <modelElement href="SchedulableObject.uml#_QYeHBIpcEe-HyqLczdFqrA"/>
+      </stereotypes>
       <visibility xmi:id="_YoqbmYpcEe-HyqLczdFqrA" label="~"/>
       <cardinality xmi:id="_YoqbmIpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
     </targetRole>
@@ -239,25 +248,16 @@
     </sourceRole>
     <targetRole xmi:id="_Yop0hIpcEe-HyqLczdFqrA" aggregationKind="NONE" name="edges" navigable="true">
       <modelElement href="SchedulableObject.uml#_QYeuEIpcEe-HyqLczdFqrA"/>
+      <stereotypes xmi:id="_VlK9YJY5Ee-ik6OZfiGLiw" name="Generics">
+        <modelElement href="SchedulableObject.uml#_QYeuEYpcEe-HyqLczdFqrA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_VlK9YZY5Ee-ik6OZfiGLiw" name="LegacyStyledElement">
+        <modelElement href="SchedulableObject.uml#_QYeuEopcEe-HyqLczdFqrA"/>
+      </stereotypes>
       <visibility xmi:id="_Yoqbn4pcEe-HyqLczdFqrA" label="~"/>
       <cardinality xmi:id="_YoqbnopcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YomxMopcEe-HyqLczdFqrA" targetItem="_YosRD4pcEe-HyqLczdFqrA" sourceItem="_YomxMYpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YonYQYpcEe-HyqLczdFqrA" targetItem="_YosRHopcEe-HyqLczdFqrA" sourceItem="_YonYQIpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YonYQ4pcEe-HyqLczdFqrA" targetItem="_YosRJIpcEe-HyqLczdFqrA" sourceItem="_YonYQopcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YonYRYpcEe-HyqLczdFqrA" targetItem="_YosRKYpcEe-HyqLczdFqrA" sourceItem="_YonYRIpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YonYR4pcEe-HyqLczdFqrA" targetItem="_YosRLopcEe-HyqLczdFqrA" sourceItem="_YonYRopcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YonYSYpcEe-HyqLczdFqrA" targetItem="_YosRM4pcEe-HyqLczdFqrA" sourceItem="_YonYSIpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YonYS4pcEe-HyqLczdFqrA" targetItem="_YosROYpcEe-HyqLczdFqrA" sourceItem="_YonYSopcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Yon_UYpcEe-HyqLczdFqrA" targetItem="_YosRP4pcEe-HyqLczdFqrA" sourceItem="_Yon_UIpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Yon_U4pcEe-HyqLczdFqrA" targetItem="_YosRRYpcEe-HyqLczdFqrA" sourceItem="_Yon_UopcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Yon_VYpcEe-HyqLczdFqrA" targetItem="_YosRS4pcEe-HyqLczdFqrA" sourceItem="_Yon_VIpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Yon_V4pcEe-HyqLczdFqrA" targetItem="_YosRUYpcEe-HyqLczdFqrA" sourceItem="_Yon_VopcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Yon_WYpcEe-HyqLczdFqrA" targetItem="_YosRXopcEe-HyqLczdFqrA" sourceItem="_Yon_WIpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YoomYIpcEe-HyqLczdFqrA" targetItem="_YosRZIpcEe-HyqLczdFqrA" sourceItem="_Yon_WopcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YoomYopcEe-HyqLczdFqrA" targetItem="_YosRdIpcEe-HyqLczdFqrA" sourceItem="_YoomYYpcEe-HyqLczdFqrA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YoomZIpcEe-HyqLczdFqrA" targetItem="_YosReopcEe-HyqLczdFqrA" sourceItem="_YoomY4pcEe-HyqLczdFqrA"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_YosQwIpcEe-HyqLczdFqrA" sourceAnchor="0.0,155.0" targetAnchor="242.0,108.0" target="_YovUEIpcEe-HyqLczdFqrA" source="_YosQyYpcEe-HyqLczdFqrA">
     <modelElement href="SchedulableObject.uml#_QaRd0YpcEe-HyqLczdFqrA"/>
     <stereotypes xmi:id="_YosQwYpcEe-HyqLczdFqrA" name="Reference">
@@ -275,6 +275,9 @@
     <targetRole xmi:id="_YosQxopcEe-HyqLczdFqrA" aggregationKind="NONE" name="nodePredecessor" navigable="true">
       <modelElement href="SchedulableObject.uml#_QYeuE4pcEe-HyqLczdFqrA"/>
       <visualProperties xmi:id="_Y9KE4opcEe-HyqLczdFqrA" position="5.0,-46.5" visible="false"/>
+      <stereotypes xmi:id="_VlK9YpY5Ee-ik6OZfiGLiw" name="LegacyStyledElement">
+        <modelElement href="SchedulableObject.uml#_QYeuFIpcEe-HyqLczdFqrA"/>
+      </stereotypes>
       <visibility xmi:id="_YosQx4pcEe-HyqLczdFqrA" label="~"/>
       <cardinality xmi:id="_YosQyIpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
     </targetRole>
@@ -298,145 +301,64 @@
     </sourceRole>
     <targetRole xmi:id="_YouF8opcEe-HyqLczdFqrA" aggregationKind="NONE" name="edges" navigable="true">
       <modelElement href="SchedulableObject.uml#_QYlbx4pcEe-HyqLczdFqrA"/>
+      <stereotypes xmi:id="_VlK9Y5Y5Ee-ik6OZfiGLiw" name="Generics">
+        <modelElement href="SchedulableObject.uml#_QYmC0IpcEe-HyqLczdFqrA"/>
+      </stereotypes>
       <visibility xmi:id="_YoutA4pcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YoutAopcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_VbulgIpcEe-HyqLczdFqrA" sourceConnectionVisual="_VcD8sIpcEe-HyqLczdFqrA" text="@return the endTimes queue" item="_VcVCn4pcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ970YpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_VcL4gIpcEe-HyqLczdFqrA" sourceConnectionVisual="_VcL4gYpcEe-HyqLczdFqrA" text="@return the name" item="_VcVCs4pcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ970opcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_VcL4gopcEe-HyqLczdFqrA" sourceConnectionVisual="_VcL4g4pcEe-HyqLczdFqrA" text="@param name the name to set" item="_VcVCuIpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ9704pcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_VcMfkIpcEe-HyqLczdFqrA" sourceConnectionVisual="_VcMfkYpcEe-HyqLczdFqrA" text="@return the releaseTime" item="_VcVCvopcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ971IpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_VcMfkopcEe-HyqLczdFqrA" sourceConnectionVisual="_VcNGoIpcEe-HyqLczdFqrA" text="@return the phase" item="_VcVCw4pcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ971YpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_VcNGoYpcEe-HyqLczdFqrA" sourceConnectionVisual="_VcNGoopcEe-HyqLczdFqrA" text="@return the startTime" item="_VcVCyIpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ971opcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_VcNtsIpcEe-HyqLczdFqrA" sourceConnectionVisual="_VcNtsYpcEe-HyqLczdFqrA" text="@param endTime the endTime to set" item="_VcVCzYpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ9714pcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_VcNtsopcEe-HyqLczdFqrA" sourceConnectionVisual="_VcOUwIpcEe-HyqLczdFqrA" text="@param startTime the startTime to set" item="_VcVC04pcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ972IpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_VcOUwYpcEe-HyqLczdFqrA" sourceConnectionVisual="_VcOUwopcEe-HyqLczdFqrA" text="@param releaseTime the releaseTime to set" item="_VcVC2YpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ972YpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_VcOUw4pcEe-HyqLczdFqrA" sourceConnectionVisual="_VcO70IpcEe-HyqLczdFqrA" text="@param period the period to set" item="_VcVC34pcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ972opcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_VcO70YpcEe-HyqLczdFqrA" sourceConnectionVisual="_VcO70opcEe-HyqLczdFqrA" text="@param phase the phase to set" item="_VcVC5YpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ9724pcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_VcPi4IpcEe-HyqLczdFqrA" sourceConnectionVisual="_VcPi4YpcEe-HyqLczdFqrA" text="@param releaseTime the releaseTime to set" item="_VcVC64pcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ973IpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_VcQJ8IpcEe-HyqLczdFqrA" sourceConnectionVisual="_VcQxAIpcEe-HyqLczdFqrA" text="Constructor that creates a copy of schedulable &#xA;&#x9; * parameters of the input obj, but setting its&#xA;&#x9; * lastUpdateTime to input time.&#xA;&#x9; * &#xA;&#x9; * @param obj&#xA;&#x9; * @param time" item="_VcVDEIpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ970IpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YobLAIpcEe-HyqLczdFqrA" sourceConnectionVisual="_YobLAYpcEe-HyqLczdFqrA" text="@return the edgesByReleaseTime" item="_YohRz4pcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ3OIIpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YobLAopcEe-HyqLczdFqrA" sourceConnectionVisual="_YobLA4pcEe-HyqLczdFqrA" text="@return the edgesByReleaseTime" item="_YohR1YpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ3OIYpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YobyEIpcEe-HyqLczdFqrA" sourceConnectionVisual="_YobyEYpcEe-HyqLczdFqrA" text="@return the edgesByPeriod" item="_YohR24pcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ3OIopcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YobyEopcEe-HyqLczdFqrA" sourceConnectionVisual="_YobyE4pcEe-HyqLczdFqrA" text="@return the edgesByDeadline" item="_YohR4YpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ3OI4pcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YobyFIpcEe-HyqLczdFqrA" sourceConnectionVisual="_YobyFYpcEe-HyqLczdFqrA" text="@return the edgesByPriority" item="_YohR54pcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ3OJIpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YocZIIpcEe-HyqLczdFqrA" sourceConnectionVisual="_YocZIYpcEe-HyqLczdFqrA" text="Increase the phase of each edge by the input parameter.&#xA;&#x9; * &#xA;&#x9; * @param additionalOffset" item="_YohR7YpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ3OJYpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YocZIopcEe-HyqLczdFqrA" sourceConnectionVisual="_YocZI4pcEe-HyqLczdFqrA" text="Updates priority and release time of &#xA;&#x9; * this activation.&lt;br>&#xA;&#x9; * &#xA;&#x9; * The priority of the element is equal to the&#xA;&#x9; * edge priority with the earliest release time.&#xA;&#x9; * Thus, it can change dynamically. &lt;br>&#xA;&#x9; *&#xA;&#x9; * The release time of the element is equal to the&#xA;&#x9; * edge priority with the earliest release time.&#xA;&#x9; * Thus, it can change dynamically. &lt;br>" item="_YohR84pcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ3OJopcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YocZJIpcEe-HyqLczdFqrA" sourceConnectionVisual="_YocZJYpcEe-HyqLczdFqrA" text="getNextScheduleTime returns the next entry in the additional&#xA;&#x9; * schedule time array list whose start time is greater than the input&#xA;&#x9; * parameter time. MAX_INT is returned if such a time&#xA;&#x9; * is not found&#xA;&#x9; * @param next&#xA;&#x9; * @param time&#xA;&#x9; * @return next schedule time or MAX_VALUEs if not found" item="_YohSBYpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ3OKIpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YocZJopcEe-HyqLczdFqrA" sourceConnectionVisual="_YodAMIpcEe-HyqLczdFqrA" text="getMatchingEndTime returns the next end time in the additional&#xA;&#x9; * schedule time array list that is greater than the input&#xA;&#x9; * parameter time. MAX_INT is returned if such a time&#xA;&#x9; * is not found&#xA;&#x9; * @param next&#xA;&#x9; * @param time&#xA;&#x9; * @return next start time or MAX_VALUE if not found" item="_YohSDYpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ31MIpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YodAMYpcEe-HyqLczdFqrA" sourceConnectionVisual="_YodAMopcEe-HyqLczdFqrA" text="getNextStartTime returns the next start time in the additional&#xA;&#x9; * schedule time array list that is greater than the input&#xA;&#x9; * parameter time. MAX_INT is returned if such a time&#xA;&#x9; * is not found&#xA;&#x9; * @param next&#xA;&#x9; * @param time&#xA;&#x9; * @return next start time or MAX_VALUE if not found" item="_YohSFYpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ31MYpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YodAM4pcEe-HyqLczdFqrA" sourceConnectionVisual="_YodANIpcEe-HyqLczdFqrA" text="getNextEndTime returns the next end time in the additional&#xA;&#x9; * schedule time array list that is greater than the input&#xA;&#x9; * parameter time. MAX_INT is returned if such a time&#xA;&#x9; * is not found&#xA;&#x9; * @param next&#xA;&#x9; * @param time&#xA;&#x9; * @return next start time or MAX_VALUE if not found" item="_YohSHYpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ31MopcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YodnQIpcEe-HyqLczdFqrA" sourceConnectionVisual="_YodnQYpcEe-HyqLczdFqrA" text="Returns the maximum number of transmissions&#xA;&#x9; * needed on any link in activation to ensure e2e &#xA;&#x9; * reliability is met." item="_YohSKopcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ31M4pcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Yoe1YIpcEe-HyqLczdFqrA" sourceConnectionVisual="_Yoe1YYpcEe-HyqLczdFqrA" text="@param additionalScheduleTimes" item="_Yoh4_4pcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ3OJ4pcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YomKIYpcEe-HyqLczdFqrA" sourceConnectionVisual="_YomKIopcEe-HyqLczdFqrA" text="@author sgoddard&#xA;@author jcbates&#xA;Allows for Schedulable Objects to be compared to flow charataristics and tracks faults  &#xA; *" item="_YosQyYpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ5DUIpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YomxMYpcEe-HyqLczdFqrA" sourceConnectionVisual="_YomxMopcEe-HyqLczdFqrA" text="Constructor that sets name, priority, and index" item="_YosRD4pcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ5DUYpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YonYQIpcEe-HyqLczdFqrA" sourceConnectionVisual="_YonYQYpcEe-HyqLczdFqrA" text="Constructor" item="_YosRHopcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ5DUopcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YonYQopcEe-HyqLczdFqrA" sourceConnectionVisual="_YonYQ4pcEe-HyqLczdFqrA" text="@return the initialPriority" item="_YosRJIpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ5DU4pcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YonYRIpcEe-HyqLczdFqrA" sourceConnectionVisual="_YonYRYpcEe-HyqLczdFqrA" text="@return the index" item="_YosRKYpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ5DVIpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YonYRopcEe-HyqLczdFqrA" sourceConnectionVisual="_YonYR4pcEe-HyqLczdFqrA" text="@return the numTxPerLink" item="_YosRLopcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ5DVYpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YonYSIpcEe-HyqLczdFqrA" sourceConnectionVisual="_YonYSYpcEe-HyqLczdFqrA" text="@return the nodes" item="_YosRM4pcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ5DVopcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YonYSopcEe-HyqLczdFqrA" sourceConnectionVisual="_YonYS4pcEe-HyqLczdFqrA" text="@return the nodes" item="_YosROYpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ5DV4pcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Yon_UIpcEe-HyqLczdFqrA" sourceConnectionVisual="_Yon_UYpcEe-HyqLczdFqrA" text="@return the linkTxAndTotalCost" item="_YosRP4pcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ5DWopcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Yon_UopcEe-HyqLczdFqrA" sourceConnectionVisual="_Yon_U4pcEe-HyqLczdFqrA" text="@param initialPriority the initialPriority to set" item="_YosRRYpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ5DW4pcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Yon_VIpcEe-HyqLczdFqrA" sourceConnectionVisual="_Yon_VYpcEe-HyqLczdFqrA" text="@param index the index to set" item="_YosRS4pcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ5DXIpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Yon_VopcEe-HyqLczdFqrA" sourceConnectionVisual="_Yon_V4pcEe-HyqLczdFqrA" text="@param numTxPerLink the numTxPerLink to set" item="_YosRUYpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ5DXYpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Yon_WIpcEe-HyqLczdFqrA" sourceConnectionVisual="_Yon_WYpcEe-HyqLczdFqrA" text="@param takes in an edge &#xA;&#x9; * Add and edge to the flow." item="_YosRXopcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ5DWIpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Yon_WopcEe-HyqLczdFqrA" sourceConnectionVisual="_YoomYIpcEe-HyqLczdFqrA" text="@param takes in a node&#xA;&#x9; * Add and edge to the flow." item="_YosRZIpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ5DWYpcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YoomYYpcEe-HyqLczdFqrA" sourceConnectionVisual="_YoomYopcEe-HyqLczdFqrA" text="@param nodes the nodes to set" item="_YosRdIpcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ5DXopcEe-HyqLczdFqrA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YoomY4pcEe-HyqLczdFqrA" sourceConnectionVisual="_YoomZIpcEe-HyqLczdFqrA" text="@param linkTxAndTotalCost the linkTxAndTotalCost to set" item="_YosReopcEe-HyqLczdFqrA">
-    <modelElement href="SchedulableObject.uml#_QZ5DX4pcEe-HyqLczdFqrA"/>
-  </nodes>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Yio0EJY5Ee-ik6OZfiGLiw" targetItem="_YohRz4pcEe-HyqLczdFqrA" sourceItem="_YioNAJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Yi4rsJY5Ee-ik6OZfiGLiw" targetItem="_YohR1YpcEe-HyqLczdFqrA" sourceItem="_Yi4EoJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YjM0wJY5Ee-ik6OZfiGLiw" targetItem="_YohR24pcEe-HyqLczdFqrA" sourceItem="_YjMNsJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YjgWwJY5Ee-ik6OZfiGLiw" targetItem="_YohR4YpcEe-HyqLczdFqrA" sourceItem="_YjfvsJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Yj0f0ZY5Ee-ik6OZfiGLiw" targetItem="_YohR54pcEe-HyqLczdFqrA" sourceItem="_Yj0f0JY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YkGzsJY5Ee-ik6OZfiGLiw" targetItem="_YohR7YpcEe-HyqLczdFqrA" sourceItem="_YkFlkJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YkSZ4JY5Ee-ik6OZfiGLiw" targetItem="_YohR84pcEe-HyqLczdFqrA" sourceItem="_YkRLwJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YkeAEJY5Ee-ik6OZfiGLiw" targetItem="_YohSBYpcEe-HyqLczdFqrA" sourceItem="_YkdZAJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Ykvs4JY5Ee-ik6OZfiGLiw" targetItem="_YohSDYpcEe-HyqLczdFqrA" sourceItem="_YkuewJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Yk7TEJY5Ee-ik6OZfiGLiw" targetItem="_YohSFYpcEe-HyqLczdFqrA" sourceItem="_Yk6E8JY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YlFrIZY5Ee-ik6OZfiGLiw" targetItem="_YohSHYpcEe-HyqLczdFqrA" sourceItem="_YlFrIJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YlabQJY5Ee-ik6OZfiGLiw" targetItem="_YohSKopcEe-HyqLczdFqrA" sourceItem="_YlWw4JY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YlukUJY5Ee-ik6OZfiGLiw" targetItem="_Yoh4_4pcEe-HyqLczdFqrA" sourceItem="_YltWMJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Ymn8MJY5Ee-ik6OZfiGLiw" targetItem="_YosQyYpcEe-HyqLczdFqrA" sourceItem="_YmnVIJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YnYxMZY5Ee-ik6OZfiGLiw" targetItem="_YosRD4pcEe-HyqLczdFqrA" sourceItem="_YnYxMJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YnZYQZY5Ee-ik6OZfiGLiw" targetItem="_YosRHopcEe-HyqLczdFqrA" sourceItem="_YnZYQJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Ynb0gZY5Ee-ik6OZfiGLiw" targetItem="_YosRJIpcEe-HyqLczdFqrA" sourceItem="_Ynb0gJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YnllgJY5Ee-ik6OZfiGLiw" targetItem="_YosRKYpcEe-HyqLczdFqrA" sourceItem="_Ynfe4JY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YnxLsJY5Ee-ik6OZfiGLiw" targetItem="_YosRLopcEe-HyqLczdFqrA" sourceItem="_Ynp28JY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Yn9Y8JY5Ee-ik6OZfiGLiw" targetItem="_YosRM4pcEe-HyqLczdFqrA" sourceItem="_Yn8x4JY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YoPs0JY5Ee-ik6OZfiGLiw" targetItem="_YosROYpcEe-HyqLczdFqrA" sourceItem="_YoOesJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Yob6EJY5Ee-ik6OZfiGLiw" targetItem="_YosRP4pcEe-HyqLczdFqrA" sourceItem="_YobTAJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YosYwJY5Ee-ik6OZfiGLiw" targetItem="_YosRRYpcEe-HyqLczdFqrA" sourceItem="_Yom5MJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Yo3-8JY5Ee-ik6OZfiGLiw" targetItem="_YosRS4pcEe-HyqLczdFqrA" sourceItem="_Yo3X4JY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YpCXAJY5Ee-ik6OZfiGLiw" targetItem="_YosRUYpcEe-HyqLczdFqrA" sourceItem="_YpBv8JY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YpNWIJY5Ee-ik6OZfiGLiw" targetItem="_YosRXopcEe-HyqLczdFqrA" sourceItem="_YpMvEJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YpYVQZY5Ee-ik6OZfiGLiw" targetItem="_YosRZIpcEe-HyqLczdFqrA" sourceItem="_YpYVQJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YpjUYZY5Ee-ik6OZfiGLiw" targetItem="_YosRdIpcEe-HyqLczdFqrA" sourceItem="_YpjUYJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Yp0aIJY5Ee-ik6OZfiGLiw" targetItem="_YosReopcEe-HyqLczdFqrA" sourceItem="_YpzMAJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YqB1gJY5Ee-ik6OZfiGLiw" targetItem="_VcVCn4pcEe-HyqLczdFqrA" sourceItem="_YqBOcJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YqUJYJY5Ee-ik6OZfiGLiw" targetItem="_VcVCs4pcEe-HyqLczdFqrA" sourceItem="_YqS7QJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YqfIgJY5Ee-ik6OZfiGLiw" targetItem="_VcVCuIpcEe-HyqLczdFqrA" sourceItem="_YqehcJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YqqusZY5Ee-ik6OZfiGLiw" targetItem="_VcVCvopcEe-HyqLczdFqrA" sourceItem="_YqqusJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Yq8bgJY5Ee-ik6OZfiGLiw" targetItem="_VcVCw4pcEe-HyqLczdFqrA" sourceItem="_Yq1GwJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YrGzkJY5Ee-ik6OZfiGLiw" targetItem="_VcVCyIpcEe-HyqLczdFqrA" sourceItem="_YrFlcJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YrRysJY5Ee-ik6OZfiGLiw" targetItem="_VcVCzYpcEe-HyqLczdFqrA" sourceItem="_YrRLoJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YrlUsJY5Ee-ik6OZfiGLiw" targetItem="_VcVC04pcEe-HyqLczdFqrA" sourceItem="_Yrd_8JY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Yrxh8JY5Ee-ik6OZfiGLiw" targetItem="_VcVC2YpcEe-HyqLczdFqrA" sourceItem="_YrwT0JY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YsD10JY5Ee-ik6OZfiGLiw" targetItem="_VcVC34pcEe-HyqLczdFqrA" sourceItem="_YsDOwJY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YsO08JY5Ee-ik6OZfiGLiw" targetItem="_VcVC5YpcEe-HyqLczdFqrA" sourceItem="_YsNm0JY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YsiW8ZY5Ee-ik6OZfiGLiw" targetItem="_VcVC64pcEe-HyqLczdFqrA" sourceItem="_YsiW8JY5Ee-ik6OZfiGLiw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_YskzMZY5Ee-ik6OZfiGLiw" targetItem="_VcVDEIpcEe-HyqLczdFqrA" sourceItem="_YskzMJY5Ee-ik6OZfiGLiw"/>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_YohRqYpcEe-HyqLczdFqrA" name="Activation" associationsOut="_YogqkIpcEe-HyqLczdFqrA _YogqmYpcEe-HyqLczdFqrA _YohRoIpcEe-HyqLczdFqrA" generalizations="_YoZ84IpcEe-HyqLczdFqrA">
     <modelElement href="SchedulableObject.uml#_QJi6MIpcEe-HyqLczdFqrA"/>
     <visualProperties xmi:id="_YohRqopcEe-HyqLczdFqrA" position="1135.0,826.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_YohRq4pcEe-HyqLczdFqrA" label="+"/>
     <attributes xmi:id="_YohRrIpcEe-HyqLczdFqrA" name="coordinators">
       <modelElement href="SchedulableObject.uml#_QYTu8YpcEe-HyqLczdFqrA"/>
-      <stereotypes xmi:id="_YohRrYpcEe-HyqLczdFqrA" name="Generics">
-        <modelElement href="SchedulableObject.uml#_QYUWAIpcEe-HyqLczdFqrA"/>
-      </stereotypes>
+      <stereotypes xmi:id="_VlXKoJY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_VlXxsJY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_Vld4UZY5Ee-ik6OZfiGLiw" name="Generics"/>
       <visibility xmi:id="_YohRropcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YohRr4pcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
       <type xmi:id="_YohRsIpcEe-HyqLczdFqrA" name="ArrayList">
@@ -445,9 +367,9 @@
     </attributes>
     <attributes xmi:id="_YohRsYpcEe-HyqLczdFqrA" name="edges">
       <modelElement href="SchedulableObject.uml#_QYUWAYpcEe-HyqLczdFqrA"/>
-      <stereotypes xmi:id="_YohRsopcEe-HyqLczdFqrA" name="Generics">
-        <modelElement href="SchedulableObject.uml#_QYUWAopcEe-HyqLczdFqrA"/>
-      </stereotypes>
+      <stereotypes xmi:id="_VlYYwJY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_VlYYwZY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_Vld4UpY5Ee-ik6OZfiGLiw" name="Generics"/>
       <visibility xmi:id="_YohRs4pcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YohRtIpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
       <type xmi:id="_YohRtYpcEe-HyqLczdFqrA" name="ArrayList">
@@ -456,9 +378,9 @@
     </attributes>
     <attributes xmi:id="_YohRtopcEe-HyqLczdFqrA" name="additionalScheduleTimes">
       <modelElement href="SchedulableObject.uml#_QYUWA4pcEe-HyqLczdFqrA"/>
-      <stereotypes xmi:id="_YohRt4pcEe-HyqLczdFqrA" name="Generics">
-        <modelElement href="SchedulableObject.uml#_QYUWBIpcEe-HyqLczdFqrA"/>
-      </stereotypes>
+      <stereotypes xmi:id="_VlYYwpY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_VlY_0JY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_VlefYJY5Ee-ik6OZfiGLiw" name="Generics"/>
       <visibility xmi:id="_YohRuIpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YohRuYpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
       <type xmi:id="_YohRuopcEe-HyqLczdFqrA" name="ArrayList">
@@ -510,7 +432,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_YohRz4pcEe-HyqLczdFqrA" comments="_YobLAIpcEe-HyqLczdFqrA" targetConnectionVisual="_YobLAYpcEe-HyqLczdFqrA" name="getEdgesByReleaseTime">
+    <operations xmi:id="_YohRz4pcEe-HyqLczdFqrA" comments="_YioNAJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_Yio0EJY5Ee-ik6OZfiGLiw" name="getEdgesByReleaseTime">
       <modelElement href="SchedulableObject.uml#_QJlWcIpcEe-HyqLczdFqrA"/>
       <stereotypes xmi:id="_YohR0IpcEe-HyqLczdFqrA" name="Generics">
         <modelElement href="SchedulableObject.uml#_QJlWcYpcEe-HyqLczdFqrA"/>
@@ -524,7 +446,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_YohR1YpcEe-HyqLczdFqrA" comments="_YobLAopcEe-HyqLczdFqrA" targetConnectionVisual="_YobLA4pcEe-HyqLczdFqrA" name="getEdgesByLatestReleaseTime">
+    <operations xmi:id="_YohR1YpcEe-HyqLczdFqrA" comments="_Yi4EoJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_Yi4rsJY5Ee-ik6OZfiGLiw" name="getEdgesByLatestReleaseTime">
       <modelElement href="SchedulableObject.uml#_QJlWcopcEe-HyqLczdFqrA"/>
       <stereotypes xmi:id="_YohR1opcEe-HyqLczdFqrA" name="Generics">
         <modelElement href="SchedulableObject.uml#_QJl9gIpcEe-HyqLczdFqrA"/>
@@ -538,7 +460,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_YohR24pcEe-HyqLczdFqrA" comments="_YobyEIpcEe-HyqLczdFqrA" targetConnectionVisual="_YobyEYpcEe-HyqLczdFqrA" name="getEdgesByPeriod">
+    <operations xmi:id="_YohR24pcEe-HyqLczdFqrA" comments="_YjMNsJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YjM0wJY5Ee-ik6OZfiGLiw" name="getEdgesByPeriod">
       <modelElement href="SchedulableObject.uml#_QJl9gYpcEe-HyqLczdFqrA"/>
       <stereotypes xmi:id="_YohR3IpcEe-HyqLczdFqrA" name="Generics">
         <modelElement href="SchedulableObject.uml#_QJl9gopcEe-HyqLczdFqrA"/>
@@ -552,7 +474,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_YohR4YpcEe-HyqLczdFqrA" comments="_YobyEopcEe-HyqLczdFqrA" targetConnectionVisual="_YobyE4pcEe-HyqLczdFqrA" name="getEdgesByDeadline">
+    <operations xmi:id="_YohR4YpcEe-HyqLczdFqrA" comments="_YjfvsJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YjgWwJY5Ee-ik6OZfiGLiw" name="getEdgesByDeadline">
       <modelElement href="SchedulableObject.uml#_QJmkkIpcEe-HyqLczdFqrA"/>
       <stereotypes xmi:id="_YohR4opcEe-HyqLczdFqrA" name="Generics">
         <modelElement href="SchedulableObject.uml#_QJmkkYpcEe-HyqLczdFqrA"/>
@@ -566,7 +488,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_YohR54pcEe-HyqLczdFqrA" comments="_YobyFIpcEe-HyqLczdFqrA" targetConnectionVisual="_YobyFYpcEe-HyqLczdFqrA" name="getEdgesByPriority">
+    <operations xmi:id="_YohR54pcEe-HyqLczdFqrA" comments="_Yj0f0JY5Ee-ik6OZfiGLiw" targetConnectionVisual="_Yj0f0ZY5Ee-ik6OZfiGLiw" name="getEdgesByPriority">
       <modelElement href="SchedulableObject.uml#_QJmkkopcEe-HyqLczdFqrA"/>
       <stereotypes xmi:id="_YohR6IpcEe-HyqLczdFqrA" name="Generics">
         <modelElement href="SchedulableObject.uml#_QJnLoIpcEe-HyqLczdFqrA"/>
@@ -580,7 +502,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_YohR7YpcEe-HyqLczdFqrA" comments="_YocZIIpcEe-HyqLczdFqrA" targetConnectionVisual="_YocZIYpcEe-HyqLczdFqrA" name="increaseEdgePhases">
+    <operations xmi:id="_YohR7YpcEe-HyqLczdFqrA" comments="_YkFlkJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YkGzsJY5Ee-ik6OZfiGLiw" name="increaseEdgePhases">
       <modelElement href="SchedulableObject.uml#_QJnysIpcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_YohR7opcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YohR74pcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -592,7 +514,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_YohR84pcEe-HyqLczdFqrA" comments="_YocZIopcEe-HyqLczdFqrA" targetConnectionVisual="_YocZI4pcEe-HyqLczdFqrA" name="updatePriorityAndRelease">
+    <operations xmi:id="_YohR84pcEe-HyqLczdFqrA" comments="_YkRLwJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YkSZ4JY5Ee-ik6OZfiGLiw" name="updatePriorityAndRelease">
       <modelElement href="SchedulableObject.uml#_QJnysopcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_YohR9IpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YohR9YpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -628,7 +550,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_YohSBYpcEe-HyqLczdFqrA" comments="_YocZJIpcEe-HyqLczdFqrA" targetConnectionVisual="_YocZJYpcEe-HyqLczdFqrA" name="getNextScheduleTime">
+    <operations xmi:id="_YohSBYpcEe-HyqLczdFqrA" comments="_YkdZAJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YkeAEJY5Ee-ik6OZfiGLiw" name="getNextScheduleTime">
       <modelElement href="SchedulableObject.uml#_QJoZwopcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_YohSBopcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YohSB4pcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -646,7 +568,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_YohSDYpcEe-HyqLczdFqrA" comments="_YocZJopcEe-HyqLczdFqrA" targetConnectionVisual="_YodAMIpcEe-HyqLczdFqrA" name="getMatchingEndTime">
+    <operations xmi:id="_YohSDYpcEe-HyqLczdFqrA" comments="_YkuewJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_Ykvs4JY5Ee-ik6OZfiGLiw" name="getMatchingEndTime">
       <modelElement href="SchedulableObject.uml#_QJpA0IpcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_YohSDopcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YohSD4pcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -664,7 +586,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_YohSFYpcEe-HyqLczdFqrA" comments="_YodAMYpcEe-HyqLczdFqrA" targetConnectionVisual="_YodAMopcEe-HyqLczdFqrA" name="getNextStartTime">
+    <operations xmi:id="_YohSFYpcEe-HyqLczdFqrA" comments="_Yk6E8JY5Ee-ik6OZfiGLiw" targetConnectionVisual="_Yk7TEJY5Ee-ik6OZfiGLiw" name="getNextStartTime">
       <modelElement href="SchedulableObject.uml#_QJpA04pcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_YohSFopcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YohSF4pcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -682,7 +604,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_YohSHYpcEe-HyqLczdFqrA" comments="_YodAM4pcEe-HyqLczdFqrA" targetConnectionVisual="_YodANIpcEe-HyqLczdFqrA" name="getNextEndTime">
+    <operations xmi:id="_YohSHYpcEe-HyqLczdFqrA" comments="_YlFrIJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YlFrIZY5Ee-ik6OZfiGLiw" name="getNextEndTime">
       <modelElement href="SchedulableObject.uml#_QJpn4IpcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_YohSHopcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YohSH4pcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -711,7 +633,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_YohSKopcEe-HyqLczdFqrA" comments="_YodnQIpcEe-HyqLczdFqrA" targetConnectionVisual="_YodnQYpcEe-HyqLczdFqrA" name="getDelta">
+    <operations xmi:id="_YohSKopcEe-HyqLczdFqrA" comments="_YlWw4JY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YlabQJY5Ee-ik6OZfiGLiw" name="getDelta">
       <modelElement href="SchedulableObject.uml#_QJqO8IpcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_YohSK4pcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YohSLIpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -936,7 +858,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_Yoh4_4pcEe-HyqLczdFqrA" comments="_Yoe1YIpcEe-HyqLczdFqrA" targetConnectionVisual="_Yoe1YYpcEe-HyqLczdFqrA" name="addScheduleTimes">
+    <operations xmi:id="_Yoh4_4pcEe-HyqLczdFqrA" comments="_YltWMJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YlukUJY5Ee-ik6OZfiGLiw" name="addScheduleTimes">
       <modelElement href="SchedulableObject.uml#_QXblMYpcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_Yoh5AIpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_Yoh5AYpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -952,8 +874,8 @@
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_Yok8CIpcEe-HyqLczdFqrA" name="Edge" associationsIn="_Yok8AIpcEe-HyqLczdFqrA _YoljEIpcEe-HyqLczdFqrA" generalizations="_YoifwIpcEe-HyqLczdFqrA">
     <modelElement href="SchedulableObject.uml#_QKA0QopcEe-HyqLczdFqrA"/>
     <visualProperties xmi:id="_Yok8CYpcEe-HyqLczdFqrA" position="868.0,876.0" size="-1.0,-1.0"/>
-    <stereotypes xmi:id="_Yok8CopcEe-HyqLczdFqrA" name="Patch">
-      <modelElement href="SchedulableObject.uml#_Rjqu0IpcEe-HyqLczdFqrA"/>
+    <stereotypes xmi:id="_ZqTmwJY5Ee-ik6OZfiGLiw" name="Patch">
+      <modelElement href="SchedulableObject.uml#_ZqQjcJY5Ee-ik6OZfiGLiw"/>
     </stereotypes>
     <visibility xmi:id="_Yok8C4pcEe-HyqLczdFqrA" label="+"/>
     <attributes xmi:id="_Yok8DIpcEe-HyqLczdFqrA" defaultValue="&quot;Unknown&quot;" name="UNKNOWN" staticAttribute="true">
@@ -1009,9 +931,8 @@
       <modelElement href="SchedulableObject.uml#_QYbqxYpcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_Yok8JYpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_Yok8JopcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
-      <type xmi:id="_Yok8J4pcEe-HyqLczdFqrA" name="EdgeState">
+      <type xmi:id="_VlPO0JY5Ee-ik6OZfiGLiw" name="EdgeState">
         <modelElement href="SchedulableObject.uml#_QKBbUIpcEe-HyqLczdFqrA"/>
-        <visualProperties xmi:id="_uSiuEIpcEe-HyqLczdFqrA" visible="false"/>
       </type>
     </attributes>
     <attributes xmi:id="_Yok8KIpcEe-HyqLczdFqrA" name="numTx">
@@ -1175,7 +1096,7 @@
       </parameters>
     </operations>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_YosQyYpcEe-HyqLczdFqrA" comments="_YomKIYpcEe-HyqLczdFqrA" targetConnectionVisual="_YomKIopcEe-HyqLczdFqrA" name="Flow" associationsOut="_YoljEIpcEe-HyqLczdFqrA _YomKI4pcEe-HyqLczdFqrA _YomKJIpcEe-HyqLczdFqrA _YomKJYpcEe-HyqLczdFqrA _YosQwIpcEe-HyqLczdFqrA" generalizations="_YomKIIpcEe-HyqLczdFqrA">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_YosQyYpcEe-HyqLczdFqrA" comments="_YmnVIJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_Ymn8MJY5Ee-ik6OZfiGLiw" name="Flow" associationsOut="_YoljEIpcEe-HyqLczdFqrA _YomKI4pcEe-HyqLczdFqrA _YomKJIpcEe-HyqLczdFqrA _YomKJYpcEe-HyqLczdFqrA _YosQwIpcEe-HyqLczdFqrA" generalizations="_YomKIIpcEe-HyqLczdFqrA">
     <modelElement href="SchedulableObject.uml#_QKIJA4pcEe-HyqLczdFqrA"/>
     <visualProperties xmi:id="_YosQyopcEe-HyqLczdFqrA" position="381.0,837.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_YosQy4pcEe-HyqLczdFqrA" label="+"/>
@@ -1272,12 +1193,12 @@
     <attributes xmi:id="_YosQ84pcEe-HyqLczdFqrA" name="nodes">
       <modelElement href="SchedulableObject.uml#_QYdf9opcEe-HyqLczdFqrA"/>
       <visualProperties xmi:id="_uSjVJIpcEe-HyqLczdFqrA" visible="false"/>
-      <stereotypes xmi:id="_YosQ9IpcEe-HyqLczdFqrA" name="Generics">
-        <modelElement href="SchedulableObject.uml#_QYeHAIpcEe-HyqLczdFqrA"/>
-      </stereotypes>
-      <stereotypes xmi:id="_YosQ9YpcEe-HyqLczdFqrA" name="LegacyStyledElement">
-        <modelElement href="SchedulableObject.uml#_QYeHAYpcEe-HyqLczdFqrA"/>
-      </stereotypes>
+      <stereotypes xmi:id="_VlaN8JY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_VlaN8ZY5Ee-ik6OZfiGLiw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_VlaN8pY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_VlaN85Y5Ee-ik6OZfiGLiw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_VlftgJY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_VlftgZY5Ee-ik6OZfiGLiw" name="LegacyStyledElement"/>
       <visibility xmi:id="_YosQ9opcEe-HyqLczdFqrA" label="~"/>
       <cardinality xmi:id="_YosQ94pcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
       <type xmi:id="_YosQ-IpcEe-HyqLczdFqrA" name="ArrayList">
@@ -1287,12 +1208,12 @@
     <attributes xmi:id="_YosQ-YpcEe-HyqLczdFqrA" name="linkTxAndTotalCost">
       <modelElement href="SchedulableObject.uml#_QYeHAopcEe-HyqLczdFqrA"/>
       <visualProperties xmi:id="_uSkjQIpcEe-HyqLczdFqrA" visible="false"/>
-      <stereotypes xmi:id="_YosQ-opcEe-HyqLczdFqrA" name="Generics">
-        <modelElement href="SchedulableObject.uml#_QYeHA4pcEe-HyqLczdFqrA"/>
-      </stereotypes>
-      <stereotypes xmi:id="_YosQ-4pcEe-HyqLczdFqrA" name="LegacyStyledElement">
-        <modelElement href="SchedulableObject.uml#_QYeHBIpcEe-HyqLczdFqrA"/>
-      </stereotypes>
+      <stereotypes xmi:id="_Vla1AJY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_Vla1AZY5Ee-ik6OZfiGLiw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_VlbcEJY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_VlbcEZY5Ee-ik6OZfiGLiw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_VlgUkJY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_VlgUkZY5Ee-ik6OZfiGLiw" name="LegacyStyledElement"/>
       <visibility xmi:id="_YosQ_IpcEe-HyqLczdFqrA" label="~"/>
       <cardinality xmi:id="_YosQ_YpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
       <type xmi:id="_YosQ_opcEe-HyqLczdFqrA" name="ArrayList">
@@ -1302,12 +1223,12 @@
     <attributes xmi:id="_YosQ_4pcEe-HyqLczdFqrA" name="edges">
       <modelElement href="SchedulableObject.uml#_QYeuEIpcEe-HyqLczdFqrA"/>
       <visualProperties xmi:id="_uSkjQYpcEe-HyqLczdFqrA" visible="false"/>
-      <stereotypes xmi:id="_YosRAIpcEe-HyqLczdFqrA" name="Generics">
-        <modelElement href="SchedulableObject.uml#_QYeuEYpcEe-HyqLczdFqrA"/>
-      </stereotypes>
-      <stereotypes xmi:id="_YosRAYpcEe-HyqLczdFqrA" name="LegacyStyledElement">
-        <modelElement href="SchedulableObject.uml#_QYeuEopcEe-HyqLczdFqrA"/>
-      </stereotypes>
+      <stereotypes xmi:id="_VlbcEpY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_VlbcE5Y5Ee-ik6OZfiGLiw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_VlcDIJY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_VlcDIZY5Ee-ik6OZfiGLiw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_Vlg7oJY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_Vlg7oZY5Ee-ik6OZfiGLiw" name="LegacyStyledElement"/>
       <visibility xmi:id="_YosRAopcEe-HyqLczdFqrA" label="~"/>
       <cardinality xmi:id="_YosRA4pcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
       <type xmi:id="_YosRBIpcEe-HyqLczdFqrA" name="ArrayList">
@@ -1316,9 +1237,9 @@
     </attributes>
     <attributes xmi:id="_YosRBYpcEe-HyqLczdFqrA" name="nodePredecessor">
       <modelElement href="SchedulableObject.uml#_QYeuE4pcEe-HyqLczdFqrA"/>
-      <stereotypes xmi:id="_YosRBopcEe-HyqLczdFqrA" name="LegacyStyledElement">
-        <modelElement href="SchedulableObject.uml#_QYeuFIpcEe-HyqLczdFqrA"/>
-      </stereotypes>
+      <stereotypes xmi:id="_VlcqMJY5Ee-ik6OZfiGLiw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_VldRQJY5Ee-ik6OZfiGLiw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_VlhisJY5Ee-ik6OZfiGLiw" name="LegacyStyledElement"/>
       <visibility xmi:id="_YosRB4pcEe-HyqLczdFqrA" label="~"/>
       <cardinality xmi:id="_YosRCIpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
       <type xmi:id="_YosRCYpcEe-HyqLczdFqrA" name="Node">
@@ -1327,16 +1248,16 @@
     </attributes>
     <attributes xmi:id="_YosRCopcEe-HyqLczdFqrA" name="edgePredecessor">
       <modelElement href="SchedulableObject.uml#_QYeuFYpcEe-HyqLczdFqrA"/>
-      <stereotypes xmi:id="_YosRC4pcEe-HyqLczdFqrA" name="LegacyStyledElement">
-        <modelElement href="SchedulableObject.uml#_QYfVIIpcEe-HyqLczdFqrA"/>
-      </stereotypes>
+      <stereotypes xmi:id="_VlZm4JY5Ee-ik6OZfiGLiw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_VlZm4ZY5Ee-ik6OZfiGLiw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_VlhisZY5Ee-ik6OZfiGLiw" name="LegacyStyledElement"/>
       <visibility xmi:id="_YosRDIpcEe-HyqLczdFqrA" label="~"/>
       <cardinality xmi:id="_YosRDYpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
       <type xmi:id="_YosRDopcEe-HyqLczdFqrA" name="Edge">
         <modelElement href="SchedulableObject.uml#_QKA0QopcEe-HyqLczdFqrA"/>
       </type>
     </attributes>
-    <operations xmi:id="_YosRD4pcEe-HyqLczdFqrA" comments="_YomxMYpcEe-HyqLczdFqrA" targetConnectionVisual="_YomxMopcEe-HyqLczdFqrA" name="Flow">
+    <operations xmi:id="_YosRD4pcEe-HyqLczdFqrA" comments="_YnYxMJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YnYxMZY5Ee-ik6OZfiGLiw" name="Flow">
       <modelElement href="SchedulableObject.uml#_QKJXIIpcEe-HyqLczdFqrA"/>
       <visualProperties xmi:id="_uSkjQopcEe-HyqLczdFqrA" visible="false"/>
       <keywords xmi:id="_YosREIpcEe-HyqLczdFqrA" keyword="create"/>
@@ -1370,7 +1291,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_YosRHopcEe-HyqLczdFqrA" comments="_YonYQIpcEe-HyqLczdFqrA" targetConnectionVisual="_YonYQYpcEe-HyqLczdFqrA" name="Flow">
+    <operations xmi:id="_YosRHopcEe-HyqLczdFqrA" comments="_YnZYQJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YnZYQZY5Ee-ik6OZfiGLiw" name="Flow">
       <modelElement href="SchedulableObject.uml#_QKJXJ4pcEe-HyqLczdFqrA"/>
       <visualProperties xmi:id="_uSkjQ4pcEe-HyqLczdFqrA" visible="false"/>
       <keywords xmi:id="_YosRH4pcEe-HyqLczdFqrA" keyword="create"/>
@@ -1383,7 +1304,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_YosRJIpcEe-HyqLczdFqrA" comments="_YonYQopcEe-HyqLczdFqrA" targetConnectionVisual="_YonYQ4pcEe-HyqLczdFqrA" name="getInitialPriority">
+    <operations xmi:id="_YosRJIpcEe-HyqLczdFqrA" comments="_Ynb0gJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_Ynb0gZY5Ee-ik6OZfiGLiw" name="getInitialPriority">
       <modelElement href="SchedulableObject.uml#_QKJ-M4pcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_YosRJYpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YosRJopcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -1394,7 +1315,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_YosRKYpcEe-HyqLczdFqrA" comments="_YonYRIpcEe-HyqLczdFqrA" targetConnectionVisual="_YonYRYpcEe-HyqLczdFqrA" name="getIndex">
+    <operations xmi:id="_YosRKYpcEe-HyqLczdFqrA" comments="_Ynfe4JY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YnllgJY5Ee-ik6OZfiGLiw" name="getIndex">
       <modelElement href="SchedulableObject.uml#_QKJ-NYpcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_YosRKopcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YosRK4pcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -1405,7 +1326,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_YosRLopcEe-HyqLczdFqrA" comments="_YonYRopcEe-HyqLczdFqrA" targetConnectionVisual="_YonYR4pcEe-HyqLczdFqrA" name="getNumTxPerLink">
+    <operations xmi:id="_YosRLopcEe-HyqLczdFqrA" comments="_Ynp28JY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YnxLsJY5Ee-ik6OZfiGLiw" name="getNumTxPerLink">
       <modelElement href="SchedulableObject.uml#_QKJ-N4pcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_YosRL4pcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YosRMIpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -1416,7 +1337,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_YosRM4pcEe-HyqLczdFqrA" comments="_YonYSIpcEe-HyqLczdFqrA" targetConnectionVisual="_YonYSYpcEe-HyqLczdFqrA" name="getNodes">
+    <operations xmi:id="_YosRM4pcEe-HyqLczdFqrA" comments="_Yn8x4JY5Ee-ik6OZfiGLiw" targetConnectionVisual="_Yn9Y8JY5Ee-ik6OZfiGLiw" name="getNodes">
       <modelElement href="SchedulableObject.uml#_QKJ-OYpcEe-HyqLczdFqrA"/>
       <stereotypes xmi:id="_YosRNIpcEe-HyqLczdFqrA" name="Generics">
         <modelElement href="SchedulableObject.uml#_QKKlQIpcEe-HyqLczdFqrA"/>
@@ -1430,7 +1351,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_YosROYpcEe-HyqLczdFqrA" comments="_YonYSopcEe-HyqLczdFqrA" targetConnectionVisual="_YonYS4pcEe-HyqLczdFqrA" name="getEdges">
+    <operations xmi:id="_YosROYpcEe-HyqLczdFqrA" comments="_YoOesJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YoPs0JY5Ee-ik6OZfiGLiw" name="getEdges">
       <modelElement href="SchedulableObject.uml#_QKKlQYpcEe-HyqLczdFqrA"/>
       <stereotypes xmi:id="_YosROopcEe-HyqLczdFqrA" name="Generics">
         <modelElement href="SchedulableObject.uml#_QKKlQopcEe-HyqLczdFqrA"/>
@@ -1444,7 +1365,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_YosRP4pcEe-HyqLczdFqrA" comments="_Yon_UIpcEe-HyqLczdFqrA" targetConnectionVisual="_Yon_UYpcEe-HyqLczdFqrA" name="getLinkTxAndTotalCost">
+    <operations xmi:id="_YosRP4pcEe-HyqLczdFqrA" comments="_YobTAJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_Yob6EJY5Ee-ik6OZfiGLiw" name="getLinkTxAndTotalCost">
       <modelElement href="SchedulableObject.uml#_QKLMUIpcEe-HyqLczdFqrA"/>
       <stereotypes xmi:id="_YosRQIpcEe-HyqLczdFqrA" name="Generics">
         <modelElement href="SchedulableObject.uml#_QKLMUYpcEe-HyqLczdFqrA"/>
@@ -1458,7 +1379,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_YosRRYpcEe-HyqLczdFqrA" comments="_Yon_UopcEe-HyqLczdFqrA" targetConnectionVisual="_Yon_U4pcEe-HyqLczdFqrA" name="setInitialPriority">
+    <operations xmi:id="_YosRRYpcEe-HyqLczdFqrA" comments="_Yom5MJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YosYwJY5Ee-ik6OZfiGLiw" name="setInitialPriority">
       <modelElement href="SchedulableObject.uml#_QKLMUopcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_YosRRopcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YosRR4pcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -1470,7 +1391,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_YosRS4pcEe-HyqLczdFqrA" comments="_Yon_VIpcEe-HyqLczdFqrA" targetConnectionVisual="_Yon_VYpcEe-HyqLczdFqrA" name="setIndex">
+    <operations xmi:id="_YosRS4pcEe-HyqLczdFqrA" comments="_Yo3X4JY5Ee-ik6OZfiGLiw" targetConnectionVisual="_Yo3-8JY5Ee-ik6OZfiGLiw" name="setIndex">
       <modelElement href="SchedulableObject.uml#_QKLMVIpcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_YosRTIpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YosRTYpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -1482,7 +1403,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_YosRUYpcEe-HyqLczdFqrA" comments="_Yon_VopcEe-HyqLczdFqrA" targetConnectionVisual="_Yon_V4pcEe-HyqLczdFqrA" name="setNumTxPerLink">
+    <operations xmi:id="_YosRUYpcEe-HyqLczdFqrA" comments="_YpBv8JY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YpCXAJY5Ee-ik6OZfiGLiw" name="setNumTxPerLink">
       <modelElement href="SchedulableObject.uml#_QKLzYIpcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_YosRUopcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YosRU4pcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -1511,7 +1432,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_YosRXopcEe-HyqLczdFqrA" comments="_Yon_WIpcEe-HyqLczdFqrA" targetConnectionVisual="_Yon_WYpcEe-HyqLczdFqrA" name="addEdge">
+    <operations xmi:id="_YosRXopcEe-HyqLczdFqrA" comments="_YpMvEJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YpNWIJY5Ee-ik6OZfiGLiw" name="addEdge">
       <modelElement href="SchedulableObject.uml#_QWDFIIpcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_YosRX4pcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YosRYIpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -1523,7 +1444,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_YosRZIpcEe-HyqLczdFqrA" comments="_Yon_WopcEe-HyqLczdFqrA" targetConnectionVisual="_YoomYIpcEe-HyqLczdFqrA" name="addNode">
+    <operations xmi:id="_YosRZIpcEe-HyqLczdFqrA" comments="_YpYVQJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YpYVQZY5Ee-ik6OZfiGLiw" name="addNode">
       <modelElement href="SchedulableObject.uml#_QWDFIopcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_YosRZYpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YosRZopcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -1559,7 +1480,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_YosRdIpcEe-HyqLczdFqrA" comments="_YoomYYpcEe-HyqLczdFqrA" targetConnectionVisual="_YoomYopcEe-HyqLczdFqrA" name="setNodes">
+    <operations xmi:id="_YosRdIpcEe-HyqLczdFqrA" comments="_YpjUYJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YpjUYZY5Ee-ik6OZfiGLiw" name="setNodes">
       <modelElement href="SchedulableObject.uml#_QXl9QopcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_YosRdYpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YosRdopcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -1571,7 +1492,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_YosReopcEe-HyqLczdFqrA" comments="_YoomY4pcEe-HyqLczdFqrA" targetConnectionVisual="_YoomZIpcEe-HyqLczdFqrA" name="setLinkTxAndTotalCost">
+    <operations xmi:id="_YosReopcEe-HyqLczdFqrA" comments="_YpzMAJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_Yp0aIJY5Ee-ik6OZfiGLiw" name="setLinkTxAndTotalCost">
       <modelElement href="SchedulableObject.uml#_QXmkUYpcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_YosRe4pcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YosRfIpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -1615,9 +1536,9 @@
     </attributes>
     <attributes xmi:id="_YovUH4pcEe-HyqLczdFqrA" name="edges">
       <modelElement href="SchedulableObject.uml#_QYlbx4pcEe-HyqLczdFqrA"/>
-      <stereotypes xmi:id="_YovUIIpcEe-HyqLczdFqrA" name="Generics">
-        <modelElement href="SchedulableObject.uml#_QYmC0IpcEe-HyqLczdFqrA"/>
-      </stereotypes>
+      <stereotypes xmi:id="_VldRQZY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_Vld4UJY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_VliJwJY5Ee-ik6OZfiGLiw" name="Generics"/>
       <visibility xmi:id="_YovUIYpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_YovUIopcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
       <type xmi:id="_YovUI4pcEe-HyqLczdFqrA" name="ArrayList">
@@ -1920,12 +1841,12 @@
     <attributes xmi:id="_VcUbrIpcEe-HyqLczdFqrA" name="endTimes">
       <modelElement href="SchedulableObject.uml#_QZFyE4pcEe-HyqLczdFqrA"/>
       <visualProperties xmi:id="_uSlKWYpcEe-HyqLczdFqrA" visible="false"/>
-      <stereotypes xmi:id="_VcUbrYpcEe-HyqLczdFqrA" name="Generics">
-        <modelElement href="SchedulableObject.uml#_QZFyFIpcEe-HyqLczdFqrA"/>
-      </stereotypes>
-      <stereotypes xmi:id="_VcUbropcEe-HyqLczdFqrA" name="LegacyStyledElement">
-        <modelElement href="SchedulableObject.uml#_QZFyFYpcEe-HyqLczdFqrA"/>
-      </stereotypes>
+      <stereotypes xmi:id="_VlVVcJY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_VlV8gJY5Ee-ik6OZfiGLiw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_VlV8gZY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_VlV8gpY5Ee-ik6OZfiGLiw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_Vlj-8JY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_Vlj-8ZY5Ee-ik6OZfiGLiw" name="LegacyStyledElement"/>
       <visibility xmi:id="_VcUbr4pcEe-HyqLczdFqrA" label="-"/>
       <cardinality xmi:id="_VcUbsIpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
       <type xmi:id="_VcUbsYpcEe-HyqLczdFqrA" name="PriorityQueue">
@@ -1934,9 +1855,9 @@
     </attributes>
     <attributes xmi:id="_VcUbsopcEe-HyqLczdFqrA" name="subObjects">
       <modelElement href="SchedulableObject.uml#_QZGZIIpcEe-HyqLczdFqrA"/>
-      <stereotypes xmi:id="_VcUbs4pcEe-HyqLczdFqrA" name="Generics">
-        <modelElement href="SchedulableObject.uml#_QZGZIYpcEe-HyqLczdFqrA"/>
-      </stereotypes>
+      <stereotypes xmi:id="_VlWjkJY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_VlWjkZY5Ee-ik6OZfiGLiw" name="Generics"/>
+      <stereotypes xmi:id="_Vlj-8pY5Ee-ik6OZfiGLiw" name="Generics"/>
       <visibility xmi:id="_VcUbtIpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_VcUbtYpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
       <type xmi:id="_VcUbtopcEe-HyqLczdFqrA" name="Queue">
@@ -2051,7 +1972,7 @@
       <visibility xmi:id="_VcVCnYpcEe-HyqLczdFqrA" label="-"/>
       <cardinality xmi:id="_VcVCnopcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
     </operations>
-    <operations xmi:id="_VcVCn4pcEe-HyqLczdFqrA" comments="_VbulgIpcEe-HyqLczdFqrA" targetConnectionVisual="_VcD8sIpcEe-HyqLczdFqrA" name="getAllEndTimes">
+    <operations xmi:id="_VcVCn4pcEe-HyqLczdFqrA" comments="_YqBOcJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YqB1gJY5Ee-ik6OZfiGLiw" name="getAllEndTimes">
       <modelElement href="SchedulableObject.uml#_QMybeopcEe-HyqLczdFqrA"/>
       <stereotypes xmi:id="_VcVCoIpcEe-HyqLczdFqrA" name="Generics">
         <modelElement href="SchedulableObject.uml#_QMzCgIpcEe-HyqLczdFqrA"/>
@@ -2093,7 +2014,7 @@
       <visibility xmi:id="_VcVCsYpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_VcVCsopcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
     </operations>
-    <operations xmi:id="_VcVCs4pcEe-HyqLczdFqrA" comments="_VcL4gIpcEe-HyqLczdFqrA" targetConnectionVisual="_VcL4gYpcEe-HyqLczdFqrA" name="getName">
+    <operations xmi:id="_VcVCs4pcEe-HyqLczdFqrA" comments="_YqS7QJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YqUJYJY5Ee-ik6OZfiGLiw" name="getName">
       <modelElement href="SchedulableObject.uml#_QMzChopcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_VcVCtIpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_VcVCtYpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -2104,7 +2025,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_VcVCuIpcEe-HyqLczdFqrA" comments="_VcL4gopcEe-HyqLczdFqrA" targetConnectionVisual="_VcL4g4pcEe-HyqLczdFqrA" name="setName">
+    <operations xmi:id="_VcVCuIpcEe-HyqLczdFqrA" comments="_YqehcJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YqfIgJY5Ee-ik6OZfiGLiw" name="setName">
       <modelElement href="SchedulableObject.uml#_QMzpkIpcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_VcVCuYpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_VcVCuopcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -2116,7 +2037,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_VcVCvopcEe-HyqLczdFqrA" comments="_VcMfkIpcEe-HyqLczdFqrA" targetConnectionVisual="_VcMfkYpcEe-HyqLczdFqrA" name="getReleaseTime">
+    <operations xmi:id="_VcVCvopcEe-HyqLczdFqrA" comments="_YqqusJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YqqusZY5Ee-ik6OZfiGLiw" name="getReleaseTime">
       <modelElement href="SchedulableObject.uml#_QMzpkopcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_VcVCv4pcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_VcVCwIpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -2127,7 +2048,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_VcVCw4pcEe-HyqLczdFqrA" comments="_VcMfkopcEe-HyqLczdFqrA" targetConnectionVisual="_VcNGoIpcEe-HyqLczdFqrA" name="getPhase">
+    <operations xmi:id="_VcVCw4pcEe-HyqLczdFqrA" comments="_Yq1GwJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_Yq8bgJY5Ee-ik6OZfiGLiw" name="getPhase">
       <modelElement href="SchedulableObject.uml#_QMzplIpcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_VcVCxIpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_VcVCxYpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -2138,7 +2059,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_VcVCyIpcEe-HyqLczdFqrA" comments="_VcNGoYpcEe-HyqLczdFqrA" targetConnectionVisual="_VcNGoopcEe-HyqLczdFqrA" name="getStartTime">
+    <operations xmi:id="_VcVCyIpcEe-HyqLczdFqrA" comments="_YrFlcJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YrGzkJY5Ee-ik6OZfiGLiw" name="getStartTime">
       <modelElement href="SchedulableObject.uml#_QMzplopcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_VcVCyYpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_VcVCyopcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -2149,7 +2070,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_VcVCzYpcEe-HyqLczdFqrA" comments="_VcNtsIpcEe-HyqLczdFqrA" targetConnectionVisual="_VcNtsYpcEe-HyqLczdFqrA" name="setEndTime">
+    <operations xmi:id="_VcVCzYpcEe-HyqLczdFqrA" comments="_YrRLoJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YrRysJY5Ee-ik6OZfiGLiw" name="setEndTime">
       <modelElement href="SchedulableObject.uml#_QMzpmIpcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_VcVCzopcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_VcVCz4pcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -2161,7 +2082,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_VcVC04pcEe-HyqLczdFqrA" comments="_VcNtsopcEe-HyqLczdFqrA" targetConnectionVisual="_VcOUwIpcEe-HyqLczdFqrA" name="setStartTime">
+    <operations xmi:id="_VcVC04pcEe-HyqLczdFqrA" comments="_Yrd_8JY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YrlUsJY5Ee-ik6OZfiGLiw" name="setStartTime">
       <modelElement href="SchedulableObject.uml#_QM0QoIpcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_VcVC1IpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_VcVC1YpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -2173,7 +2094,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_VcVC2YpcEe-HyqLczdFqrA" comments="_VcOUwYpcEe-HyqLczdFqrA" targetConnectionVisual="_VcOUwopcEe-HyqLczdFqrA" name="setReleaseTime">
+    <operations xmi:id="_VcVC2YpcEe-HyqLczdFqrA" comments="_YrwT0JY5Ee-ik6OZfiGLiw" targetConnectionVisual="_Yrxh8JY5Ee-ik6OZfiGLiw" name="setReleaseTime">
       <modelElement href="SchedulableObject.uml#_QM0QoopcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_VcVC2opcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_VcVC24pcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -2185,7 +2106,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_VcVC34pcEe-HyqLczdFqrA" comments="_VcOUw4pcEe-HyqLczdFqrA" targetConnectionVisual="_VcO70IpcEe-HyqLczdFqrA" name="setPeriod">
+    <operations xmi:id="_VcVC34pcEe-HyqLczdFqrA" comments="_YsDOwJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YsD10JY5Ee-ik6OZfiGLiw" name="setPeriod">
       <modelElement href="SchedulableObject.uml#_QM0QpIpcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_VcVC4IpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_VcVC4YpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -2197,7 +2118,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_VcVC5YpcEe-HyqLczdFqrA" comments="_VcO70YpcEe-HyqLczdFqrA" targetConnectionVisual="_VcO70opcEe-HyqLczdFqrA" name="setPhase">
+    <operations xmi:id="_VcVC5YpcEe-HyqLczdFqrA" comments="_YsNm0JY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YsO08JY5Ee-ik6OZfiGLiw" name="setPhase">
       <modelElement href="SchedulableObject.uml#_QM0QpopcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_VcVC5opcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_VcVC54pcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -2209,7 +2130,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_VcVC64pcEe-HyqLczdFqrA" comments="_VcPi4IpcEe-HyqLczdFqrA" targetConnectionVisual="_VcPi4YpcEe-HyqLczdFqrA" name="setNextReleaseTime">
+    <operations xmi:id="_VcVC64pcEe-HyqLczdFqrA" comments="_YsiW8JY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YsiW8ZY5Ee-ik6OZfiGLiw" name="setNextReleaseTime">
       <modelElement href="SchedulableObject.uml#_QM03sIpcEe-HyqLczdFqrA"/>
       <visibility xmi:id="_VcVC7IpcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_VcVC7YpcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
@@ -2288,7 +2209,7 @@
       <visibility xmi:id="_VcVDDopcEe-HyqLczdFqrA" label="+"/>
       <cardinality xmi:id="_VcVDD4pcEe-HyqLczdFqrA" label="1" max="1" min="1"/>
     </operations>
-    <operations xmi:id="_VcVDEIpcEe-HyqLczdFqrA" comments="_VcQJ8IpcEe-HyqLczdFqrA" targetConnectionVisual="_VcQxAIpcEe-HyqLczdFqrA" name="SchedulableObject">
+    <operations xmi:id="_VcVDEIpcEe-HyqLczdFqrA" comments="_YskzMJY5Ee-ik6OZfiGLiw" targetConnectionVisual="_YskzMZY5Ee-ik6OZfiGLiw" name="SchedulableObject">
       <modelElement href="SchedulableObject.uml#_QXJ4YIpcEe-HyqLczdFqrA"/>
       <visualProperties xmi:id="_uSlxZIpcEe-HyqLczdFqrA" visible="false"/>
       <keywords xmi:id="_VcVDEYpcEe-HyqLczdFqrA" keyword="create"/>
@@ -2585,5 +2506,131 @@
         </type>
       </parameters>
     </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YioNAJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_Yio0EJY5Ee-ik6OZfiGLiw" text="@return the edgesByReleaseTime" item="_YohRz4pcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiPygJY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Yi4EoJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_Yi4rsJY5Ee-ik6OZfiGLiw" text="@return the edgesByReleaseTime" item="_YohR1YpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiPygZY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YjMNsJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YjM0wJY5Ee-ik6OZfiGLiw" text="@return the edgesByPeriod" item="_YohR24pcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiPygpY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YjfvsJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YjgWwJY5Ee-ik6OZfiGLiw" text="@return the edgesByDeadline" item="_YohR4YpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiPyg5Y5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Yj0f0JY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_Yj0f0ZY5Ee-ik6OZfiGLiw" text="@return the edgesByPriority" item="_YohR54pcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiPyhJY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YkFlkJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YkGzsJY5Ee-ik6OZfiGLiw" text="Increase the phase of each edge by the input parameter.&#xA;&#x9; * &#xA;&#x9; * @param additionalOffset" item="_YohR7YpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiPyhZY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YkRLwJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YkSZ4JY5Ee-ik6OZfiGLiw" text="Updates priority and release time of &#xA;&#x9; * this activation.&lt;br>&#xA;&#x9; * &#xA;&#x9; * The priority of the element is equal to the&#xA;&#x9; * edge priority with the earliest release time.&#xA;&#x9; * Thus, it can change dynamically. &lt;br>&#xA;&#x9; *&#xA;&#x9; * The release time of the element is equal to the&#xA;&#x9; * edge priority with the earliest release time.&#xA;&#x9; * Thus, it can change dynamically. &lt;br>" item="_YohR84pcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiPyhpY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YkdZAJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YkeAEJY5Ee-ik6OZfiGLiw" text="getNextScheduleTime returns the next entry in the additional&#xA;&#x9; * schedule time array list whose start time is greater than the input&#xA;&#x9; * parameter time. MAX_INT is returned if such a time&#xA;&#x9; * is not found&#xA;&#x9; * @param next&#xA;&#x9; * @param time&#xA;&#x9; * @return next schedule time or MAX_VALUEs if not found" item="_YohSBYpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiPyiJY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YkuewJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_Ykvs4JY5Ee-ik6OZfiGLiw" text="getMatchingEndTime returns the next end time in the additional&#xA;&#x9; * schedule time array list that is greater than the input&#xA;&#x9; * parameter time. MAX_INT is returned if such a time&#xA;&#x9; * is not found&#xA;&#x9; * @param next&#xA;&#x9; * @param time&#xA;&#x9; * @return next start time or MAX_VALUE if not found" item="_YohSDYpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiPyiZY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Yk6E8JY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_Yk7TEJY5Ee-ik6OZfiGLiw" text="getNextStartTime returns the next start time in the additional&#xA;&#x9; * schedule time array list that is greater than the input&#xA;&#x9; * parameter time. MAX_INT is returned if such a time&#xA;&#x9; * is not found&#xA;&#x9; * @param next&#xA;&#x9; * @param time&#xA;&#x9; * @return next start time or MAX_VALUE if not found" item="_YohSFYpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiPyipY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YlFrIJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YlFrIZY5Ee-ik6OZfiGLiw" text="getNextEndTime returns the next end time in the additional&#xA;&#x9; * schedule time array list that is greater than the input&#xA;&#x9; * parameter time. MAX_INT is returned if such a time&#xA;&#x9; * is not found&#xA;&#x9; * @param next&#xA;&#x9; * @param time&#xA;&#x9; * @return next start time or MAX_VALUE if not found" item="_YohSHYpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiPyi5Y5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YlWw4JY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YlabQJY5Ee-ik6OZfiGLiw" text="Returns the maximum number of transmissions&#xA;&#x9; * needed on any link in activation to ensure e2e &#xA;&#x9; * reliability is met." item="_YohSKopcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiPyjJY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YltWMJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YlukUJY5Ee-ik6OZfiGLiw" text="@param additionalScheduleTimes" item="_Yoh4_4pcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiPyh5Y5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YmnVIJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_Ymn8MJY5Ee-ik6OZfiGLiw" text="@author sgoddard&#xA;@author jcbates&#xA;Allows for Schedulable Objects to be compared to flow charataristics and tracks faults  &#xA; *" item="_YosQyYpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiPylZY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YnYxMJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YnYxMZY5Ee-ik6OZfiGLiw" text="Constructor that sets name, priority, and index" item="_YosRD4pcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiQZkJY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YnZYQJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YnZYQZY5Ee-ik6OZfiGLiw" text="Constructor" item="_YosRHopcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiQZkZY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Ynb0gJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_Ynb0gZY5Ee-ik6OZfiGLiw" text="@return the initialPriority" item="_YosRJIpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiQZkpY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Ynfe4JY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YnllgJY5Ee-ik6OZfiGLiw" text="@return the index" item="_YosRKYpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiQZk5Y5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Ynp28JY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YnxLsJY5Ee-ik6OZfiGLiw" text="@return the numTxPerLink" item="_YosRLopcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiQZlJY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Yn8x4JY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_Yn9Y8JY5Ee-ik6OZfiGLiw" text="@return the nodes" item="_YosRM4pcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiQZlZY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YoOesJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YoPs0JY5Ee-ik6OZfiGLiw" text="@return the nodes" item="_YosROYpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiQZlpY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YobTAJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_Yob6EJY5Ee-ik6OZfiGLiw" text="@return the linkTxAndTotalCost" item="_YosRP4pcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiQZmZY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Yom5MJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YosYwJY5Ee-ik6OZfiGLiw" text="@param initialPriority the initialPriority to set" item="_YosRRYpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiQZmpY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Yo3X4JY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_Yo3-8JY5Ee-ik6OZfiGLiw" text="@param index the index to set" item="_YosRS4pcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiQZm5Y5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YpBv8JY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YpCXAJY5Ee-ik6OZfiGLiw" text="@param numTxPerLink the numTxPerLink to set" item="_YosRUYpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiQZnJY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YpMvEJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YpNWIJY5Ee-ik6OZfiGLiw" text="@param takes in an edge &#xA;&#x9; * Add and edge to the flow." item="_YosRXopcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiQZl5Y5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YpYVQJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YpYVQZY5Ee-ik6OZfiGLiw" text="@param takes in a node&#xA;&#x9; * Add and edge to the flow." item="_YosRZIpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiQZmJY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YpjUYJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YpjUYZY5Ee-ik6OZfiGLiw" text="@param nodes the nodes to set" item="_YosRdIpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiQZnZY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YpzMAJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_Yp0aIJY5Ee-ik6OZfiGLiw" text="@param linkTxAndTotalCost the linkTxAndTotalCost to set" item="_YosReopcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiQZnpY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YqBOcJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YqB1gJY5Ee-ik6OZfiGLiw" text="@return the endTimes queue" item="_VcVCn4pcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiSOwZY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YqS7QJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YqUJYJY5Ee-ik6OZfiGLiw" text="@return the name" item="_VcVCs4pcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiSOwpY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YqehcJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YqfIgJY5Ee-ik6OZfiGLiw" text="@param name the name to set" item="_VcVCuIpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiSOw5Y5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YqqusJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YqqusZY5Ee-ik6OZfiGLiw" text="@return the releaseTime" item="_VcVCvopcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiSOxJY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Yq1GwJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_Yq8bgJY5Ee-ik6OZfiGLiw" text="@return the phase" item="_VcVCw4pcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiSOxZY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YrFlcJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YrGzkJY5Ee-ik6OZfiGLiw" text="@return the startTime" item="_VcVCyIpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiSOxpY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YrRLoJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YrRysJY5Ee-ik6OZfiGLiw" text="@param endTime the endTime to set" item="_VcVCzYpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiSOx5Y5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Yrd_8JY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YrlUsJY5Ee-ik6OZfiGLiw" text="@param startTime the startTime to set" item="_VcVC04pcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiSOyJY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YrwT0JY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_Yrxh8JY5Ee-ik6OZfiGLiw" text="@param releaseTime the releaseTime to set" item="_VcVC2YpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiSOyZY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YsDOwJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YsD10JY5Ee-ik6OZfiGLiw" text="@param period the period to set" item="_VcVC34pcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiSOypY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YsNm0JY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YsO08JY5Ee-ik6OZfiGLiw" text="@param phase the phase to set" item="_VcVC5YpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiSOy5Y5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YsiW8JY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YsiW8ZY5Ee-ik6OZfiGLiw" text="@param releaseTime the releaseTime to set" item="_VcVC64pcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiSOzJY5Ee-ik6OZfiGLiw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_YskzMJY5Ee-ik6OZfiGLiw" sourceConnectionVisual="_YskzMZY5Ee-ik6OZfiGLiw" text="Constructor that creates a copy of schedulable &#xA;&#x9; * parameters of the input obj, but setting its&#xA;&#x9; * lastUpdateTime to input time.&#xA;&#x9; * &#xA;&#x9; * @param obj&#xA;&#x9; * @param time" item="_VcVDEIpcEe-HyqLczdFqrA">
+    <modelElement href="SchedulableObject.uml#_YiSOwJY5Ee-ik6OZfiGLiw"/>
   </nodes>
 </com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
