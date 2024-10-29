@@ -42,9 +42,25 @@ import java.util.Collections;
  *
  */
 public class ReliabilityAnalysis {
+	
+  /**
+   * The end-to-end reliability target.
+   */
   private Double e2e = 0.0;
+  
+  /**
+   * The minimum packet reception rate.
+   */
   private Double minPacketReceptionRate = 0.0;
+  
+  /**
+   * The number of faults tolerated per edge.
+   */
   private Integer numFaults = 0;
+  
+  /**
+   * A boolean indicator that determines which helper method is used.
+   */
   private boolean constructorIndicator;
 
   /**
@@ -76,61 +92,92 @@ public class ReliabilityAnalysis {
    * Estimates the worst-case number of transmissions needed across a flow to meet
    * the end-to-end reliability target.
    *
-   * @param flow  given flow where transmissions attempts are measured
+   * @param flow  given flow where transmission attempts are measured
    * @return      ArrayList of transmission attempts for each node pair in flow
    */
   public ArrayList<Integer> numTxPerLinkAndTotalTxCost(Flow flow) {
-    var nodesInFlow = flow.nodes;
-	//last entry is worst-case cost of isolated e2e transmission
-	var nNodesInFlow = nodesInFlow.size(); 
-	//ArrayList to store transmission attempts per link & total cost at the end
-	ArrayList<Integer> txAttempts = new ArrayList<>(Collections.nCopies(nNodesInFlow + 1, 0));
-	var nHops = nNodesInFlow - 1;
-	// get min reliability for each link in the flow
-	Double minLinkReliablityNeded = Math.max(e2e, Math.pow(e2e, (1.0 / (double) nHops))); 
-	//create ReliabilityTable with a row for each time slot
-	ReliabilityTable reliabilityWindow = new ReliabilityTable();
-	//initialize first time slot with reliability 1.0
-	ReliabilityRow initialRow = new ReliabilityRow(nNodesInFlow, 0.0);
-	initialRow.set(0, 1.0);  
-	reliabilityWindow.add(initialRow);
-	Double e2eReliabilityState = initialRow.get(nNodesInFlow - 1);                                                                          
-	var timeSlot = 0; //start time at 0
-	while (e2eReliabilityState < e2e) { //change to while and increment timeSlot 	                                        
-	  //retrieve previous row and create new row for current time slot
-	  ReliabilityRow prevRow = reliabilityWindow.get(timeSlot);
-	  ReliabilityRow currentRow = new ReliabilityRow(nNodesInFlow, 0.0);
-	  //loop through nodes to update reliabilities
-	  for (int nodeIndex = 0; nodeIndex < nHops; nodeIndex++) { 
-	    double prevSrcState = prevRow.get(nodeIndex);//reliability at source node
-	    double prevSnkState = prevRow.get(nodeIndex + 1);//reliability at sink node
-	    double nextSnkState;
-	    //if sink node hasn't reached min reliability and source has the packet
-	    if (prevSnkState < minLinkReliablityNeded && prevSrcState > 0) {
-	      nextSnkState = (1.0 - minPacketReceptionRate) * prevSnkState 
-	                                + minPacketReceptionRate * prevSrcState;
-	      txAttempts.set(nodeIndex, txAttempts.get(nodeIndex) + 1);//increment transmission attempt
-	    } else {
-	      nextSnkState = prevSnkState;//carry forward  previous state
-	    }
-	    //update current row with max reliability for each node
-	    currentRow.set(nodeIndex, Math.max(currentRow.get(nodeIndex), prevSrcState));
-	    currentRow.set(nodeIndex + 1, nextSnkState);
-	    }
-	    //update the E2E reliability state with last node's value
-	    e2eReliabilityState = currentRow.get(nNodesInFlow - 1);
-        //add current row to reliability window
-	    reliabilityWindow.add(currentRow);
-	    timeSlot++;
+	  ArrayList<Node> nodesInFlow = flow.nodes;
+	  ArrayList<Integer> numTxArrayList = new ArrayList<>();
+	  if(constructorIndicator) {
+		  numTxArrayList = helperForConstructorWithNumFaults(nodesInFlow);		  
+	  } else {
+		  numTxArrayList = helperForConstructorWithE2EAndMinPacketReceptionRate(nodesInFlow);
 	  }
-	  //set total transmission cost as last element
-	  txAttempts.set(nNodesInFlow, reliabilityWindow.size());
-	  //if the case of second constructor usage
-	  if (constructorIndicator) {
-	    var maxFaultsInFlow = nHops * numFaults;
-	    txAttempts.add(nHops + maxFaultsInFlow);
-	  } 
-	  return txAttempts;   
+	  return numTxArrayList;
+  }
+  
+  /**
+   * Helper method for computing the transmission costs for each node and the total transmission cost 
+   * in a given flow where transmission costs for each node are variable.
+   * 
+   * @param flowNodes ArrayList of nodes in the given flow
+   * @return          ArrayList of the transmission costs for each node and the given flow
+   */
+  public ArrayList<Integer> helperForConstructorWithE2EAndMinPacketReceptionRate(ArrayList<Node> nodesInFlow) {
+	    var nNodesInFlow = nodesInFlow.size(); 
+	    ArrayList<Integer> txAttempts = new ArrayList<>(Collections.nCopies(nNodesInFlow + 1, 0));
+	    var nHops = nNodesInFlow - 1;
+	    Double minLinkReliablityNeded = Math.max(e2e, Math.pow(e2e, (1.0 / (double) nHops))); 
+	    //create ReliabilityTable with a row for each time slot
+	    ReliabilityTable reliabilityWindow = new ReliabilityTable();
+	    //initialize first time slot with reliability 1.0
+	    ReliabilityRow currentRow = new ReliabilityRow(nNodesInFlow, 0.0);
+	    currentRow.set(0, 1.0);
+	    reliabilityWindow.add(currentRow);
+	    Double e2eReliabilityState = currentRow.get(nNodesInFlow - 1);                                                                          
+	    var timeSlot = 0; // start time at 0
+	    while (e2eReliabilityState < e2e) { // change to while and increment increment timeSlot becuase
+	                                        // we don't know how long this schedule window will last
+	      //retrieve previous row and create new row for current time slot
+	      ReliabilityRow prevRow = reliabilityWindow.get(timeSlot);
+	      //loop through nodes to update reliabilities
+	      for (int nodeIndex = 0; nodeIndex < nHops; nodeIndex++) { 
+	    	  int srcNodeIndex = nodeIndex;
+	    	  int snkNodeIndex = nodeIndex + 1;     //reliability at source node
+	    	    double prevSrcState = prevRow.get(srcNodeIndex);
+	            double prevSnkState = prevRow.get(snkNodeIndex); //reliability at sink node
+	            double nextSnkState;
+	            //if sink node hasn't reached min reliability and source has the packet
+	            //System.out.println(reliabilityWindow.size());
+	            if (prevSnkState < minLinkReliablityNeded && prevSrcState > 0) {
+	                nextSnkState = ((1.0 - minPacketReceptionRate) * prevSnkState) 
+	                                + (minPacketReceptionRate * prevSrcState);
+	                txAttempts.set(nodeIndex, txAttempts.get(nodeIndex) + 1);  //increment transmission attempt
+	            } else {
+	                nextSnkState = prevSnkState;  //carry forward  previous state
+	            }
+	            //update current row with max reliability for each node
+	            currentRow.set(nodeIndex, Math.max(currentRow.get(nodeIndex), prevSrcState));
+	            currentRow.set(nodeIndex + 1, nextSnkState);
+	        }
+	       //update the E2E reliability state with last node's value
+	       e2eReliabilityState = currentRow.get(nNodesInFlow - 1);
+           //add current row to reliability window
+	       reliabilityWindow.add(currentRow);
+	       timeSlot++;
+	    }
+	    //set total transmission cost as last element
+	    txAttempts.set(nNodesInFlow, reliabilityWindow.size());
+	    //return list of transmission attempts per link and total cost
+	    return txAttempts;
+  }
+  
+  /**
+   * Helper method for computing the transmission costs for each node and the total transmission cost 
+   * in a given flow where transmission costs for each node are fixed. 
+   * 
+   * @param flowNodes ArrayList of nodes in the given flow
+   * @return          ArrayList of the transmission costs for each node and the given flow
+   */
+  public ArrayList<Integer> helperForConstructorWithNumFaults(ArrayList<Node> flowNodes) {
+	    ArrayList<Integer> numTxArrayList = new ArrayList<>();
+	    for (int i = 0; i < flowNodes.size(); i++) {
+	                numTxArrayList.add(numFaults + 1);
+	    }
+	    int numEdgesInFlow = flowNodes.size() - 1;
+	    int maxFaultsInFlow = numEdgesInFlow * numFaults;
+	    numTxArrayList.add(numEdgesInFlow + maxFaultsInFlow);
+	    return numTxArrayList;
   }
 
   public ReliabilityAnalysis(Program program) {
@@ -167,9 +214,10 @@ public class ReliabilityAnalysis {
     System.out.println(txCostsWithRates);
 
     //case 2: ReliabilityAnalysis(Integer numFaults)
-    ReliabilityAnalysis test2 = new ReliabilityAnalysis(2);  //2 faults allowed
+    ReliabilityAnalysis test2 = new ReliabilityAnalysis(2);  
     ArrayList<Integer> txCostsWithFaults = test2.numTxPerLinkAndTotalTxCost(flow);
     System.out.println("transmission costs with c(numFaults)");
     System.out.println(txCostsWithFaults);
+    
   }
 }
