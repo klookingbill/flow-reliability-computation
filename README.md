@@ -15,6 +15,20 @@ priority or change Warp to not run every option in the --all, otherwise, you wil
 with a load of files. 
 <br>
 <br>
+
+Homework 5: Refactoring WorkLoad Methods in the ReliabilityAnalysis Class
+
+Manthan Shah, Molly Patterson, and Katelyn Lookingbill refactored the 
+getFixedTxPerLinkAndTotalTxCost and numTxAttemptsPerLinkAndTotalTxAttempts
+methods from the WorkLoad class in the WARP package. The methods' functionalities
+were consolidated into the numTxPerLinkAndTotalTxCost method in the
+ReliabilityAnalysis class. The method results in the output of either
+WorkLoad method based on which helper method is used. Katelyn and Molly
+wrote the helper method for numTxAttemptsPerLinkAndTotalTxAttempts, Manthan
+wrote the helper method for getFixedTxPerLinkAndTotalTxCost and 
+numTxPerLinkAndTotalTxCost, and all three worked on JavaDoc comments,
+WorkLoad instantiation, and formatting.
+ 
 Java Doc comments made by jcbates: Workload.java, Flow.java, ProgramVisualization, and Program.java
 <br>
 <br>
