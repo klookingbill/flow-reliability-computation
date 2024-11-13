@@ -33,7 +33,7 @@ implementation. All necessary files were placed in the Artifacts folder in the S
 
 
 
-Homework 5: Refactoring WorkLoad Methods in the ReliabilityAnalysis Class
+## Homework 5: Refactoring WorkLoad Methods in the ReliabilityAnalysis Class
 
 Manthan Shah, Molly Patterson, and Katelyn Lookingbill refactored the 
 getFixedTxPerLinkAndTotalTxCost and numTxAttemptsPerLinkAndTotalTxAttempts
