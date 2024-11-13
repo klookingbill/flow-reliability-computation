@@ -16,6 +16,23 @@ with a load of files.
 <br>
 <br>
 
+# Sprint1
+
+Molly Patterson, Teagan Andrews, Victoria Delgado, Manthan Shah, and Katelyn Lookingbill
+collaborated to complete the first sprint of the final project for CS:2820. Our team
+made a sequence diagram displaying the interactions between Warp classes starting with
+processing the "ra" instruction. Our team met two different times to pair program. 
+We found a website called draw.io where we could work on the same diagram simultaneously.
+Katelyn Lookingbill created a UML Diagram with Visualization to serve as a visual
+supplement to our understanding of the classes' and methods' interactions. Manthan Shah
+managed a document detailing our plans, requirements, and expectations for working on the
+project. All group members gave input when deciding what to include in the document. While
+working on the diagram, each member added their own edits. Ideas were discussed before 
+implementation. All necessary files were placed in the Artifacts folder in the Sprint1 branch. 
+
+
+
+
 Homework 5: Refactoring WorkLoad Methods in the ReliabilityAnalysis Class
 
 Manthan Shah, Molly Patterson, and Katelyn Lookingbill refactored the 
@@ -131,16 +148,3 @@ the parent classes and associated classes only for the ReliabilityVisualization 
 method titled, getReliabilities, that returns a Reliability Table. I then generated code from this which added the method to the 
 ReliabilityAnalysis.java file. 
 <br>
-
-# Sprint1
-Team: Molly Patterson, Teagan Andrews, Victoria Delgado, Manthan Shah, and Katelyn Lookingbill
-
-In this project we made a sequence diagram, created high level plans for this Sprint and future Sprints.
-
-### Sequence Diagram
-In order to work on it together, we met two different times to pair program. We found a website called draw.io where we could work on the same diagram simultaneously. We tracked down the progress of the code starting at the -ra option in the main method of Warp. To help with our sequence diagram, Katelyn Lookingbill created a UML Diagram with Visualization, which screenshots and files are in The Artifacts folder. While working on every aspect of the diagram, each member added small changes and we discussed our ideas before implementing them. The file is in the Artifacts folder. 
-
-### Project Plans
-Manthan Shah wrote the plans during discussion in his computer while getting input from everyone in the group about what to add and consider. The document is a Google Doc with a breakdown of the requirements, plans, and expectations we have for the rest of the Sprints. This file can be found in the Artifacts folder.
-
-
