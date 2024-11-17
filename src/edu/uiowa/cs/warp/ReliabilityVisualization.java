@@ -64,6 +64,41 @@ public class ReliabilityVisualization  extends VisualizationObject {
 	  return footer;
 	}
 	
+	@Override
+	protected String[] createColumnHeader() {
+	  String[] orderedNodes = warp.toWorkload().getNodeNamesOrderedAlphabetically();
+	  String[] columnNames = new String[orderedNodes.length + 1];
+	  columnNames[0] = "Time Slot"; // add the Time Slot column header first
+	  /* loop through the node names, adding each to the header */
+	  for (int i = 0; i < orderedNodes.length; i++) {
+	    columnNames[i + 1] = orderedNodes[i];
+      }
+      return columnNames;
+	}
+	
+	@Override
+	protected String[][] createVisualizationData() {
+	  if (visualizationData == null) {
+	    int numRows = ra.getReliabilities().getNumRows();
+	    int numColumns = ra.getReliabilities().getNumColumns();
+	    visualizationData = new String[numRows][numColumns + 1];
+
+	    for (int row = 0; row < numRows; row++) {
+	      visualizationData[row][0] = String.format("%s", row);
+	      for (int column = 0; column < numColumns; column++) {
+	        visualizationData[row][column + 1] = ra.getReliabilities().get(row, column).toString();
+	      }
+	    }
+	  }
+	  return visualizationData;
+	}
+	
+	@Override
+	public GuiVisualization displayVisualization() {
+	  return new GuiVisualization(createTitle(), createColumnHeader(), createVisualizationData());
+	}
+}
+	
 /* File Visualization for workload defined in Example.txt follows. 
  * Your output in the file ExamplePriority-0.9M-0.99E2E.ra
  * should match this output, where \tab characters are used as column
