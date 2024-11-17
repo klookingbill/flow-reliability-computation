@@ -25,9 +25,43 @@ public class ReliabilityVisualization  extends VisualizationObject {
 	private ReliabilityAnalysis ra;
 	
 	ReliabilityVisualization(WarpInterface warp) {
-		super(new FileManager(), warp, SOURCE_SUFFIX);
-		this.warp = warp;
-		this.ra = warp.toReliabilityAnalysis();
+	  super(new FileManager(), warp, SOURCE_SUFFIX);
+	  this.warp = warp;
+	  this.ra = warp.toReliabilityAnalysis();
+	}
+	
+	private String createTitle() {
+	  return String.format("WARP program for graph %s\n", warp.getName());
+	}
+	
+	@Override
+	protected Description createHeader() {
+	  Description header = new Description();
+
+	  header.add(createTitle());
+	  header.add(String.format("Scheduler Name: %s\n", warp.getSchedulerName()));
+
+	  /* The following parameters are output based on a special schedule or the fault model */
+	  if (warp.getNumFaults() > 0) { // only specify when deterministic fault model is assumed
+	    header.add(String.format("numFaults: %d\n", warp.getNumFaults()));
+	  }
+	  header.add(String.format("M: %s\n", String.valueOf(warp.getMinPacketReceptionRate())));
+	  header.add(String.format("E2E: %s\n", String.valueOf(warp.getE2e())));
+	  header.add(String.format("nChannels: %d\n", warp.getNumChannels()));
+	  return header;
+	}
+	
+	protected Description createFooter() {
+	  Description footer = new Description();
+	  String deadlineMsg = null;
+
+	  if (warp.deadlinesMet()) {
+	    deadlineMsg = "All flows meet their deadlines\n";
+	  } else {
+	    deadlineMsg = "WARNING: NOT all flows meet their deadlines. See deadline analysis report.\n";
+	  }
+	  footer.add(String.format("// %s", deadlineMsg));
+	  return footer;
 	}
 	
 /* File Visualization for workload defined in Example.txt follows. 
