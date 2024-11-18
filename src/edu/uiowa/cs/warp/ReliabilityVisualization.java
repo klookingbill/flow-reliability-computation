@@ -51,6 +51,7 @@ public class ReliabilityVisualization  extends VisualizationObject {
 	  return header;
 	}
 	
+	
 	protected Description createFooter() {
 	  Description footer = new Description();
 	  String deadlineMsg = null;
@@ -97,7 +98,7 @@ public class ReliabilityVisualization  extends VisualizationObject {
 	public GuiVisualization displayVisualization() {
 	  return new GuiVisualization(createTitle(), createColumnHeader(), createVisualizationData());
 	}
-}
+
 	
 /* File Visualization for workload defined in Example.txt follows. 
  * Your output in the file ExamplePriority-0.9M-0.99E2E.ra
