@@ -31,7 +31,7 @@ public class ReliabilityVisualization  extends VisualizationObject {
 	}
 	
 	private String createTitle() {
-	  return String.format("WARP program for graph %s\n", warp.getName());
+	  return String.format(OBJECT_NAME + " for graph %s\n", warp.getName());
 	}
 	
 	@Override
@@ -51,7 +51,7 @@ public class ReliabilityVisualization  extends VisualizationObject {
 	  return header;
 	}
 	
-	
+	@Override
 	protected Description createFooter() {
 	  Description footer = new Description();
 	  String deadlineMsg = null;
