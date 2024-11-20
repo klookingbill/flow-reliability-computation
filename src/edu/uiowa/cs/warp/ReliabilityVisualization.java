@@ -16,14 +16,35 @@ package edu.uiowa.cs.warp;
  *
  */
 public class ReliabilityVisualization  extends VisualizationObject {
-
-	// TODO Auto-generated class stub for unimplemented visualization
+	/**
+	 * The suffix denoting a ReliabilityAnalysis object.
+	 */
+	private static final String SOURCE_SUFFIX = ".ra"; 
 	
-	private static final String SOURCE_SUFFIX = ".ra";
+	/**
+	 * The name of the ReliabilityAnalysis object.
+	 */
 	private static final String OBJECT_NAME = "Reliability Analysis";
+	
+	/**
+	 * The WARP interface used to visualize the ReliabilityAnalysis object.
+	 */
 	private WarpInterface warp;
+	
+	/**
+	 * The ReliabilityAnalysis object that the visualization will be created for.
+	 */
 	private ReliabilityAnalysis ra;
 	
+	/**
+	 * Constructor used to initialize the ReliabilityVisualization object 
+	 * using a FileManager object, the WARP interface, and the suffix
+	 * denoting a ReliabilityAnalysis object. The ReliabilityAnalysis
+	 * object is initialized by converting the WARP interface into a 
+	 * ReliabilityAnalysis object.
+	 * 
+	 * @param warp the given WARP interface
+	 */
 	ReliabilityVisualization(WarpInterface warp) {
 	  super(new FileManager(), warp, SOURCE_SUFFIX);
 	  this.warp = warp;
