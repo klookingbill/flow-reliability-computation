@@ -51,10 +51,22 @@ public class ReliabilityVisualization  extends VisualizationObject {
 	  this.ra = warp.toReliabilityAnalysis();
 	}
 	
+	/**
+	 * Creates a string title for the current WARP reliability visualization.
+	 *
+	 * @return string title of current visualization
+	 */
 	private String createTitle() {
 	  return String.format(OBJECT_NAME + " for graph %s\n", warp.getName());
 	}
 	
+	/**
+	 * Creates header description object including information regarding the reliability.
+     * Begins with a title and WARP scheduler name. Outputs number of faults in case of
+     * e2e and the number of channels.
+     *
+     * @return description serving as a header
+	 */
 	@Override
 	protected Description createHeader() {
 	  Description header = new Description();
@@ -72,6 +84,12 @@ public class ReliabilityVisualization  extends VisualizationObject {
 	  return header;
 	}
 	
+    /**
+	 * Creates footer description object for the reliability. Outputs whether or not all flows
+	 * met their deadlines based on the deadlinesMet Boolean variable.
+	 * 
+     * @return description serving as a footer
+	 */
 	@Override
 	protected Description createFooter() {
 	  Description footer = new Description();
@@ -86,6 +104,13 @@ public class ReliabilityVisualization  extends VisualizationObject {
 	  return footer;
 	}
 	
+	/**
+	  * Creates column header by alphabetically ordering node names and adding them to an array.
+	  * The first element in the list reads "Time Slot", and each subsequent line represents a
+	  * time slot.
+	  * 
+	  * @return array of column names
+	  */
 	@Override
 	protected String[] createColumnHeader() {
 	  String[] orderedNodes = warp.toWorkload().getNodeNamesOrderedAlphabetically();
@@ -98,6 +123,11 @@ public class ReliabilityVisualization  extends VisualizationObject {
       return columnNames;
 	}
 	
+	/**
+	  * Populates a string matrix of the reliability source code if none exists.
+	  * 
+	  * @return matrix of visualization data
+	  */
 	@Override
 	protected String[][] createVisualizationData() {
 	  if (visualizationData == null) {
@@ -115,6 +145,12 @@ public class ReliabilityVisualization  extends VisualizationObject {
 	  return visualizationData;
 	}
 	
+	/**
+	 * Creates a GuiVisualization containing the new reliability title, column
+	 * header, and data visualization.
+	 * 
+	 * @return GuiVisualization for the given reliability
+	 */
 	@Override
 	public GuiVisualization displayVisualization() {
 	  return new GuiVisualization(createTitle(), createColumnHeader(), createVisualizationData());
