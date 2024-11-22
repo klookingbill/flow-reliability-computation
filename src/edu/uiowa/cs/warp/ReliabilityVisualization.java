@@ -1,5 +1,7 @@
 package edu.uiowa.cs.warp;
 
+import java.util.ArrayList;
+
 /**
  * ReliabilityVisualization creates the visualizations for
  * the reliability analysis of the WARP program. <p>
@@ -156,6 +158,22 @@ public class ReliabilityVisualization  extends VisualizationObject {
 	  return new GuiVisualization(createTitle(), createColumnHeader(), createVisualizationData());
 	}
 
+	public ReliabilityTable getReliabilities() {
+      ReliabilityTable dummyReliabilities;
+	  String [] header = getReliabilityHeaderRow();
+	  int numColumns = header.length;
+	  int numRows = program.getSchedule().getNumRows();
+	  dummyReliabilities = new ReliabilityTable(numRows, numColumns);
+	  return dummyReliabilities;
+	}
+	  
+	private void setReliablityRow(ArrayList<String> reliabilityHeaderRow) {
+      this.reliabilityHeaderRow = reliabilityHeaderRow;
+	}
+	
+	public String[] getReliabilityHeaderRow() {
+      return reliabilityHeaderRow.toArray(new String[reliabilityHeaderRow]);
+	}
 	
 /* File Visualization for workload defined in Example.txt follows. 
  * Your output in the file ExamplePriority-0.9M-0.99E2E.ra
