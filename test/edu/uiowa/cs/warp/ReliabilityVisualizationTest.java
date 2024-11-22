@@ -27,7 +27,7 @@ class ReliabilityVisualizationTest {
 	
 	
 	  @BeforeEach 
-	  void setUp(){ // e2e = 1, min = 1
+	  void setUp(){ 
 		 workload = new WorkLoad(0.9,	0.99, "StressTest4.txt"); 
 		 numChannels = 16; 
 		 warp = SystemFactory.create(workload, numChannels, ScheduleChoices.PRIORITY);
@@ -153,10 +153,14 @@ class ReliabilityVisualizationTest {
 		  assertEquals(footer.get(0), "// All flows meet their deadlines\n");
 	  }
 	  
+<<<<<<< HEAD
 	 
 	  
 	
 	  
+=======
+	
+>>>>>>> 23ff9fbde5415fe5d872893ae30d0568549aca08
 	  
 
 }
