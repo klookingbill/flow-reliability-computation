@@ -20,8 +20,15 @@ with a load of files.
 
 The collaboration of Molly Patterson, Teagan Andrews, Victoria Delgado, Manthan, Shah, 
 and Katelyn Lookingbill ensured the completion of the second sprint of the final project
-for CS:2820. Teagan Andrews and Katelyn Lookingbill used pair programming techniques to 
+for CS:2820. 
+
+Teagan Andrews and Katelyn Lookingbill used pair programming techniques to 
 implement the ReliabilityVisualization class.
+Victoria Delgado and Molly Patterson developed JUnit test cases for the newly implemented 
+methods in ReliabilityVisualization class.
+Manthan Shah wrote JavaDoc comments for all attributes, methods, and constructors for 
+ReliabilityVisualization.
+
 
 # Sprint1
 
