@@ -16,6 +16,13 @@ with a load of files.
 <br>
 <br>
 
+# Sprint2
+
+The collaboration of Molly Patterson, Teagan Andrews, Victoria Delgado, Manthan, Shah, 
+and Katelyn Lookingbill ensured the completion of the second sprint of the final project
+for CS:2820. Teagan Andrews and Katelyn Lookingbill used pair programming techniques to 
+implement the ReliabilityVisualization class.
+
 # Sprint1
 
 Molly Patterson, Teagan Andrews, Victoria Delgado, Manthan Shah, and Katelyn Lookingbill
