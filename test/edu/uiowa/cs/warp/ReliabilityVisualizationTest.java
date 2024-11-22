@@ -153,14 +153,7 @@ class ReliabilityVisualizationTest {
 		  assertEquals(footer.get(0), "// All flows meet their deadlines\n");
 	  }
 	  
-<<<<<<< HEAD
-	 
-	  
-	
-	  
-=======
-	
->>>>>>> 23ff9fbde5415fe5d872893ae30d0568549aca08
+
 	  
 
 }
