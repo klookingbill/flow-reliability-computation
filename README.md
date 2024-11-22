@@ -23,11 +23,25 @@ and Katelyn Lookingbill ensured the completion of the second sprint of the final
 for CS:2820. 
 
 Teagan Andrews and Katelyn Lookingbill used pair programming techniques to 
-implement the ReliabilityVisualization class.
-Victoria Delgado and Molly Patterson developed JUnit test cases for the newly implemented 
+**implement the ReliabilityVisualization class.**
+
+Victoria Delgado and Molly Patterson **developed JUnit test cases** for the newly implemented 
 methods in ReliabilityVisualization class.
-Manthan Shah wrote JavaDoc comments for all attributes, methods, and constructors for 
-ReliabilityVisualization.
+
+Manthan Shah **wrote JavaDoc comments** for all attributes, methods, and constructors in 
+ReliabilityVisualization class.
+
+The entire team collaborated to **update the UML class diagram and sequence diagram,** accounting
+for our updates to ReliabilityVisualization. 
+
+Victoria Delgado **updated the README file** to include the tasks of Sprint2 and where files 
+are located. 
+
+All necessary files including **project plans,** **a UML class diagram of ReliabilityVisualization,** 
+including an updated version from Sprint2, and an **updated sequence diagram** of warp processing
+the -ra flag can be found in the **ARTIFACTS folder** inside the Sprint2 branch. **Tests** for methods
+in the ReliabilityVisualization class are found in the **test folder** in the 
+ReliabilityVisualizationTest file.
 
 
 # Sprint1
