@@ -21,7 +21,6 @@ class ReliabilityVisualizationTest {
 	private WorkLoad workload;
 	private Integer numChannels;
 	private WarpInterface warp;
-	private ReliabilityAnalysis ra;
 	private ReliabilityVisualization viz;
 	private static final String OBJECT_NAME = "Reliability Analysis";
 	
@@ -31,7 +30,6 @@ class ReliabilityVisualizationTest {
 	  workload = new WorkLoad(0.9,	0.99, "StressTest4.txt"); 
 	  numChannels = 16; 
 	  warp = SystemFactory.create(workload, numChannels, ScheduleChoices.PRIORITY);
-	  ra = warp.toReliabilityAnalysis();
 	  viz = new ReliabilityVisualization(warp); 
 	}
 	  

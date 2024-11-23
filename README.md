@@ -22,20 +22,23 @@ The collaboration of Molly Patterson, Teagan Andrews, Victoria Delgado, Manthan,
 and Katelyn Lookingbill ensured the completion of the second sprint of the final project
 for CS:2820. 
 
-Teagan Andrews and Katelyn Lookingbill used pair programming techniques to 
+Manthan Shah, Victoria Delgado, and Katelyn Lookingbill used pair programming techniques to 
 **implement the ReliabilityVisualization class.**
 
-Victoria Delgado and Molly Patterson **developed JUnit test cases** for the newly implemented 
+Teagan Andrews, Manthan Shah, and Molly Patterson **developed JUnit test cases** for the newly implemented 
 methods in ReliabilityVisualization class.
 
-Manthan Shah **wrote JavaDoc comments** for all attributes, methods, and constructors in 
+Molly Patterson **wrote JavaDoc comments** for all attributes, methods, and constructors in 
 ReliabilityVisualization class.
 
 The entire team collaborated to **update the UML class diagram and sequence diagram,** accounting
 for our updates to ReliabilityVisualization. 
 
-Victoria Delgado **updated the README file** to include the tasks of Sprint2 and where files 
+Katelyn Lookingbill **updated the README file** to include the tasks of Sprint2 and where files 
 are located. 
+
+Victoria Delgado **updated the project plans** document to reflect who completed what tasks
+and the order that they were completed.
 
 All necessary files including **project plans,** **a UML class diagram of ReliabilityVisualization,** 
 including an updated version from Sprint2, and an **updated sequence diagram** of warp processing
