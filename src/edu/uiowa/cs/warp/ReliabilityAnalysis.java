@@ -62,6 +62,20 @@ public class ReliabilityAnalysis {
    * A boolean indicator that determines which helper method is used.
    */
   private boolean constructorIndicator;
+  
+  //Create new var of type Program
+ 
+  
+  private WarpDSL myDSL = new WarpDSL();
+  
+  private static FileManager myFile = new FileManager();
+  
+  private static String myFileName = "Example1a.txt";
+  
+  private static String readMyFile = myFile.readFile(myFileName);
+  
+  private static Program myProgram;
+
 
   /**
    * Constructor initializing an object with the specified end-to-end reliability 
@@ -89,10 +103,16 @@ public class ReliabilityAnalysis {
   }
   
   public ReliabilityAnalysis(Program program) {
-    // TODO Auto-generated constructor stub
+    this.myDSL = myDSL;
+    this.myFile = myFile;
+    this.myProgram = myProgram(readMyFile);
   }
 
-  /**
+  private Program myProgram(FileManager myFile2) {
+	// TODO Auto-generated method stub
+	return null;
+}
+/**
    * Estimates the worst-case number of transmissions needed across a flow to meet
    * the end-to-end reliability target.
    *
@@ -181,12 +201,23 @@ public class ReliabilityAnalysis {
   }
   
   public ReliabilityTable getReliabilities() {
-    // TODO implement this operation
-    throw new UnsupportedOperationException("not implemented");
+    myProgram.buildOriginalProgram();
+    ProgramSchedule returnedProgram = myProgram.getSchedule();
+    int numColumns = returnedProgram.getNumColumns();
+    int numRows = returnedProgram.getNumRows();
+    ReliabilityTable data = new ReliabilityTable(numRows, numColumns);
+    return data;
   }
 
   public Boolean verifyReliabilities() {
     // TODO Auto-generated method stub
     return true;
+  }
+  
+  public static void main(String[] args) {
+	  	
+	    System.out.println(readMyFile);
+	    ReliabilityAnalysis ra = new ReliabilityAnalysis(myProgram);
+	    System.out.println(ra.getReliabilities());
   }
 }
