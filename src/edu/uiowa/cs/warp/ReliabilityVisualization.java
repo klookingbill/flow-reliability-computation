@@ -84,26 +84,6 @@ public class ReliabilityVisualization  extends VisualizationObject {
 	  return header;
 	}
 	
-    /**
-	 * Creates footer description object for the reliability. Outputs whether or not all flows
-	 * met their deadlines based on the deadlinesMet Boolean variable.
-	 * 
-     * @return description serving as a footer
-	 */
-	@Override
-	protected Description createFooter() {
-	  Description footer = new Description();
-	  String deadlineMsg = null;
-
-	  if (warp.deadlinesMet()) {
-	    deadlineMsg = "All flows meet their deadlines\n";
-	  } else {
-	    deadlineMsg = "WARNING: NOT all flows meet their deadlines. See deadline analysis report.\n";
-	  }
-	  footer.add(String.format("// %s", deadlineMsg));
-	  return footer;
-	}
-	
 	/**
 	  * Creates column header by alphabetically ordering node names and adding them to an array.
 	  * The first element in the list reads "Time Slot", and each subsequent line represents a
