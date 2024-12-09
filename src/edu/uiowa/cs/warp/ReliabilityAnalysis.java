@@ -204,6 +204,22 @@ public class ReliabilityAnalysis {
     int numColumns = returnedProgram.getNumColumns();
     int numRows = returnedProgram.getNumRows();
     ReliabilityTable data = new ReliabilityTable(numRows, numColumns);
+    FlowMap flow = myProgram.toWorkLoad().getFlows();
+//    for (String f: flow.keySet()) {
+//    	System.out.println(f);
+//    }
+    ArrayList<String> flowNames = myProgram.toWorkLoad().getFlowNamesInPriorityOrder();
+    for (String flowName: flowNames) {
+    	Flow f = flow.get(flowName);
+    	ArrayList<Integer> costsTX = numTxPerLinkAndTotalTxCost(f);
+    	ReliabilityRow rr = new ReliabilityRow(f.getNodes().size(), 0.0);
+    	for (int i = 0; i < f.getNodes().size(); i++) {
+    		rr.set(i, (double) costsTX.get(i));
+//    		System.out.println(rr);
+//    		System.out.println(costsTX.get(i));
+    	}
+    	data.add(rr);
+    }
     return data;
   }
 
@@ -217,13 +233,14 @@ public class ReliabilityAnalysis {
 	  	double teste2e = 0.99;
 	  	double testMinPacketReceptionRate = 0.9;
 	  	String testFileName = "Example1a.txt";
-	  	WorkLoad testWorkload = new WorkLoad(teste2e, testMinPacketReceptionRate, testFileName);
+	  	WorkLoad testWorkload = new WorkLoad(testMinPacketReceptionRate, teste2e, testFileName);
 	  	Integer nChannels = 16;
 	  	Program testProgram = new Program(testWorkload, nChannels, ScheduleChoices.PRIORITY);
 	  	
 	    //System.out.println(readMyFile);
 	    ReliabilityAnalysis ra = new ReliabilityAnalysis(testProgram);
 	    System.out.println(ra.getReliabilities());
+	    System.out.println(testProgram.getSchedule()); //:)
   }
   
 }
