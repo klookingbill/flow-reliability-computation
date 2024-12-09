@@ -3,6 +3,8 @@ package edu.uiowa.cs.warp;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import edu.uiowa.cs.warp.SystemAttributes.ScheduleChoices;
+
 /**
  * ReliabilityAnalysis analyzes the end-to-end reliability of messages transmitted in flows for the
  * WARP system.
@@ -68,13 +70,13 @@ public class ReliabilityAnalysis {
   
   private WarpDSL myDSL = new WarpDSL();
   
-  private static FileManager myFile = new FileManager();
+  private  FileManager myFile = new FileManager();
   
-  private static String myFileName = "Example1a.txt";
+  private  String myFileName = "Example1a.txt";
   
-  private static String readMyFile = myFile.readFile(myFileName);
+  private  String readMyFile = myFile.readFile(myFileName);
   
-  private static Program myProgram;
+  private Program myProgram;
 
 
   /**
@@ -105,13 +107,9 @@ public class ReliabilityAnalysis {
   public ReliabilityAnalysis(Program program) {
     this.myDSL = myDSL;
     this.myFile = myFile;
-    this.myProgram = myProgram(readMyFile);
+    this.myProgram = program;
   }
 
-  private Program myProgram(FileManager myFile2) {
-	// TODO Auto-generated method stub
-	return null;
-}
 /**
    * Estimates the worst-case number of transmissions needed across a flow to meet
    * the end-to-end reliability target.
@@ -214,10 +212,18 @@ public class ReliabilityAnalysis {
     return true;
   }
   
+  
   public static void main(String[] args) {
+	  	double teste2e = 0.99;
+	  	double testMinPacketReceptionRate = 0.9;
+	  	String testFileName = "Example1a.txt";
+	  	WorkLoad testWorkload = new WorkLoad(teste2e, testMinPacketReceptionRate, testFileName);
+	  	Integer nChannels = 16;
+	  	Program testProgram = new Program(testWorkload, nChannels, ScheduleChoices.PRIORITY);
 	  	
-	    System.out.println(readMyFile);
-	    ReliabilityAnalysis ra = new ReliabilityAnalysis(myProgram);
+	    //System.out.println(readMyFile);
+	    ReliabilityAnalysis ra = new ReliabilityAnalysis(testProgram);
 	    System.out.println(ra.getReliabilities());
   }
+  
 }
