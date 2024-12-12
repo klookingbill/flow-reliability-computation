@@ -107,6 +107,8 @@ public class ReliabilityAnalysis {
   }
   
   public ReliabilityAnalysis(Program program) {
+	this.e2e = 0.99;
+	this.minPacketReceptionRate = 0.9;
     this.myDSL = myDSL;
     this.myFile = myFile;
     this.myProgram = program;
@@ -272,18 +274,24 @@ public class ReliabilityAnalysis {
     //create ReliabilityTable data, and init. with the needed amount of columns and rows. Inits probabilities for all nodes
     //if necessary values will be set to 1.0- this is when the source node starts 
     ReliabilityTable data = getNodeInfo(numColumns, numRows, flow);
-    
+    System.out.println(data.size());
     //double[] currentProb = hashmap(numcol, headerlength)?
+//    ArrayList<Double> currentProb = new ArrayList<>();
+//    for (int i=0; i<data.size(); i++) {
+//    	currentProb.add(data.get)
+//    }
     //TODO: is this the correct way of getting the length of header? For example, running with curr test will give 3. Not correct?
     HashMap<Integer, String> colIndexes = new HashMap<>(); //hashmap to store index of columns. We need to populate this with the below for loop
-    for (int i = 0; i < headerLength; i++) {}
+    for (int i = 0; i < headerLength; i++) {
+    	colIndexes.put(i, header[i]);
+    }
     	//colIndexes.put(, i); //need to make a way to put where it is
     
     //iterate through the numRows, increasing timeSlot param each iteration
     for (int timeSlot = 0; timeSlot < numRows; timeSlot++) {
     	//TODO: we need to figure out a way to reset the flows if a new period releases-
     	//that will be the current probability we are working with for this loop
-  
+    	double[] nextProb = new double[numRows];
     	for (int scheduleCol = 0; scheduleCol < numColumns; scheduleCol++) {
     		String instruction = returnedProgramSchedule.get(timeSlot, scheduleCol);
     		if (instruction != null && !(instruction.isEmpty())) {
@@ -302,17 +310,21 @@ public class ReliabilityAnalysis {
     				String srcNodeColumnKey = flowName + ":" + srcNode;
     				String snkNodeColumnKey = flowName + ":" + snkNode;
     				
+    				
+    				
     				//need to add integer of srcCol and snkCol where we take srcColKey and snkColKey from hashmap
     				//then use these integers to update the hashmap below w/ the doubles
     				
-    				Integer srcNodeColumn = 0;
+    				Integer srcNodeColumn = map.get(srcNodeColumnKey);
+    				Integer snkNodeColumn = map.get(snkNodeColumnKey);
     				
     				//need to update current probabilties for prevSnk and prevSrc by taking current prob from hashmap
-    				//double prevSnk = 
-    				//double prevSrc = 
-    				//double updatedSnk = (1.0 - minPacketReceptionRate) * prevSnk + minPacketReceptionRate * prevSrc;
-    				
+    				double prevSnk = data.get(timeSlot, snkNodeColumn);
+    				double prevSrc = data.get(timeSlot, srcNodeColumn);
+    				double updatedSnk = (1.0 - minPacketReceptionRate) * prevSnk + minPacketReceptionRate * prevSrc;
+    				data.set(timeSlot, snkNodeColumn, updatedSnk);
     				//nextProb will be used here, assign nextProb[snkCol] = updatedSnk;
+    				//nextProb[snkNodeColumn] = updatedSnk;
     			}	
     			
     		}
@@ -320,7 +332,7 @@ public class ReliabilityAnalysis {
     	}
     	ReliabilityRow row = new ReliabilityRow();
     	for (int j = 0; j < numColumns; j++) {
-    		//row.add(nextProb[j]);
+    		row.add(nextProb[j]);
     	}
     	data.add(row);
     	//currentProb = nextProb;
@@ -349,6 +361,7 @@ public class ReliabilityAnalysis {
 	    //System.out.println(readMyFile);
 	    ReliabilityAnalysis ra = new ReliabilityAnalysis(testProgram);
 	    ra.getReliabilities();
+	    //System.out.println(ra.getReliabilities());
         //System.out.println(testProgram.getSchedule()); //:)
 	    
   }
