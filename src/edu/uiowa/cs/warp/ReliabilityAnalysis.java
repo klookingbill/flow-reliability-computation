@@ -2,8 +2,10 @@ package edu.uiowa.cs.warp;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 
 import edu.uiowa.cs.warp.SystemAttributes.ScheduleChoices;
+import edu.uiowa.cs.warp.WarpDSL.InstructionParameters;
 
 /**
  * ReliabilityAnalysis analyzes the end-to-end reliability of messages transmitted in flows for the
@@ -199,29 +201,92 @@ public class ReliabilityAnalysis {
   }
   
   public ReliabilityTable getReliabilities() {
+	//build new program
     myProgram.buildOriginalProgram();
-    ProgramSchedule returnedProgram = myProgram.getSchedule();
-    int numColumns = returnedProgram.getNumColumns();
-    int numRows = returnedProgram.getNumRows();
-    ReliabilityTable data = new ReliabilityTable(numRows, numColumns);
-    FlowMap flow = myProgram.toWorkLoad().getFlows();
-//    for (String f: flow.keySet()) {
-//    	System.out.println(f);
-//    }
+    //Create ProgramSchedule containing instructions
+    ProgramSchedule returnedProgramSchedule = myProgram.getSchedule();
+    //create vars to store numColumns & numRows
+    int numColumns = returnedProgramSchedule.getNumColumns();
+    int numRows = returnedProgramSchedule.getNumRows();
+    //Store names of flows in Priority order in ArrayList
     ArrayList<String> flowNames = myProgram.toWorkLoad().getFlowNamesInPriorityOrder();
-    for (String flowName: flowNames) {
-    	Flow f = flow.get(flowName);
-    	ArrayList<Integer> costsTX = numTxPerLinkAndTotalTxCost(f);
-    	ReliabilityRow rr = new ReliabilityRow(f.getNodes().size(), 0.0);
-    	for (int i = 0; i < f.getNodes().size(); i++) {
-    		rr.set(i, (double) costsTX.get(i));
-//    		System.out.println(rr);
-//    		System.out.println(costsTX.get(i));
-    	}
-    	data.add(rr);
+    //create new ReliabilityAnalysis object
+    ReliabilityAnalysis ra = new ReliabilityAnalysis(myProgram);
+    //Create FlowMap flow containing flows of curr program
+    FlowMap flow = myProgram.toWorkLoad().getFlows();
+    //create ReliabilityTable data, and init. with the needed amount of columns and rows. Inits probabilities for all nodes
+    //if necessary values will be set to 1.0- this is when the source node starts 
+    //TODO: DOES THIS NEED TO BE MADE INTO A METHOD? WOULD THESE PARAMETERS HAVE TO BE RESTARTED IF NEW PERIOD RELEASE OCCURS? OR IS IT FINE TO INIT ONLY @ THE BEGINNING?
+    ReliabilityTable data = new ReliabilityTable();
+    for (int i=0; i<numRows; i++) {
+        ReliabilityRow rr = new ReliabilityRow(numColumns*flow.size(), 0.0);
+                for (int j=0; j < numColumns * flow.size(); j++) {
+                                if (j % (flow.size()+1) == 0) {
+                                                rr.set(j, 1.0);
+                                }
+                }
+                //System.out.println(rr);
+                data.add(rr);
     }
+    
+    //double[] currentProb = hashmap(numcol, headerlength)?
+    int headerLength = returnedProgramSchedule.getNumColumns(); //TODO: is this the correct way of getting the length of header? For example, running with curr test will give 3. Not correct?
+    System.out.println(headerLength);
+    HashMap<Integer, String> colIndexes = new HashMap<>(); //hashmap to store index of columns. We need to populate this with the below for loop
+    for (int i = 0; i < headerLength; i++) //TODO: check to make sure this is iterating the correct amt of times, look at latter comment
+    	//colIndexes.put(, i); //need to make a way to put where it is
+    
+    //iterate through the numRows, increasing timeSlot param each iteration
+    for (int timeSlot = 0; timeSlot < numRows; timeSlot++) {
+    	//TODO: we need to figure out a way to reset the flows if a new period releases-
+    	//that will be the current probability we are working with for this loop
+  
+    	for (int scheduleCol = 0; scheduleCol < numColumns; scheduleCol++) {
+    		String instruction = returnedProgramSchedule.get(timeSlot, scheduleCol);
+    		if (instruction != null && !(instruction.isEmpty())) {
+    			var myDSLLoop = new WarpDSL();
+    			ArrayList<InstructionParameters> instructionsArrayList = myDSL.getInstructionParameters(instruction);
+    			
+    			for (InstructionParameters param: instructionsArrayList) {
+    				String flowName = param.getFlow();
+    				String srcNode = param.getSrc();
+    				String snkNode = param.getSnk();
+    				
+    				if (flowName.equals(WarpDSL.UNUSED) || srcNode.equals(WarpDSL.UNUSED) || snkNode.equals(WarpDSL.UNUSED)) {
+    					continue;
+    				}
+    			
+    				String srcNodeColumnKey = flowName + ":" + srcNode;
+    				String snkNodeColumnKey = flowName + ":" + snkNode;
+    				
+    				//need to add integer of srcCol and snkCol where we take srcColKey and snkColKey from hashmap
+    				//then use these integers to update the hashmap below w/ the doubles
+    				
+    				Integer srcNodeColumn = 0;
+    				
+    				//need to update current probabilties for prevSnk and prevSrc by taking current prob from hashmap
+    				//double prevSnk = 
+    				//double prevSrc = 
+    				//double updatedSnk = (1.0 - minPacketReceptionRate) * prevSnk + minPacketReceptionRate * prevSrc;
+    				
+    				//nextProb will be used here, assign nextProb[snkCol] = updatedSnk;
+    			}	
+    			
+    		}
+    	
+    	}
+    	ReliabilityRow row = new ReliabilityRow();
+    	for (int j = 0; j < numColumns; j++) {
+    		//row.add(nextProb[j]);
+    	}
+    	data.add(row);
+    	//currentProb = nextProb;
+    }
+
     return data;
-  }
+    
+    }
+    
 
   public Boolean verifyReliabilities() {
     // TODO Auto-generated method stub
@@ -239,8 +304,9 @@ public class ReliabilityAnalysis {
 	  	
 	    //System.out.println(readMyFile);
 	    ReliabilityAnalysis ra = new ReliabilityAnalysis(testProgram);
-	    System.out.println(ra.getReliabilities());
-	    System.out.println(testProgram.getSchedule()); //:)
+	    ra.getReliabilities();
+        //System.out.println(testProgram.getSchedule()); //:)
+	    
   }
   
 }
