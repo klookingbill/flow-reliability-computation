@@ -200,6 +200,26 @@ public class ReliabilityAnalysis {
     return numTxArrayList;
   }
   
+  /**
+   * getReliabilityHeader() creates an ArrayList<String> for the columnHeader, consisting of the flow names combined with their nodes. 
+   * @return columnHeader
+   */
+  public ArrayList<String> getReliabilityHeader() {
+	  ArrayList<String> columnHeader = new ArrayList<String>();
+		var prioritizedFlows = myProgram.toWorkLoad().getFlowNamesInPriorityOrder().toArray(new String[0]);
+	    for (int i = 0; i < prioritizedFlows.length; i++) {
+	    	var flowName = prioritizedFlows[i];
+	    	var nodesInFlow = myProgram.toWorkLoad().getNodesInFlow(flowName);
+	    	var numNodesInFlow = nodesInFlow.length;
+	    	for (int j = 0; j < numNodesInFlow; j++) {
+	    		String nodeName = nodesInFlow[j];
+	    		String entryName = flowName + ":" + nodeName;
+	    		columnHeader.add(entryName);
+	    		}
+	    	}
+	  return columnHeader;
+  }
+ 
   public ReliabilityTable getReliabilities() {
 	//build new program
     myProgram.buildOriginalProgram();
@@ -210,10 +230,28 @@ public class ReliabilityAnalysis {
     int numRows = returnedProgramSchedule.getNumRows();
     //Store names of flows in Priority order in ArrayList
     ArrayList<String> flowNames = myProgram.toWorkLoad().getFlowNamesInPriorityOrder();
+    ArrayList<String> headerPlaceholder = getReliabilityHeader();
+    
+    String[] header = headerPlaceholder.toArray(new String[0]);
+    System.out.println(getReliabilityHeader());
+    HashMap<String, Integer> map = new HashMap<>();
+    int headerLength = header.length;
+    for (int column = 0; column < header.length; column++) {
+    	map.put(header[column], column);
+    }
+    
+    myProgram.toWorkLoad().displayVisualization();
+    //new ReliabilityTable w/ num columns.size x numrows
+    //once you have columnheader, when parse the instruction, get the parameters ie flow name and syncnode, can rebuild 
+    //
+  
     //create new ReliabilityAnalysis object
-    ReliabilityAnalysis ra = new ReliabilityAnalysis(myProgram);
-    //Create FlowMap flow containing flows of curr program
+    //ReliabilityAnalysis ra = new ReliabilityAnalysis(myProgram);
+    //Create FlowMap flow containing flows of curr program TODO might not need to be used, can get it straight from workload
+    //use getFlowPhase and getFLOW PERIOD FOR EACH ENTRY IN INSTRUCTION PARAMETERS
     FlowMap flow = myProgram.toWorkLoad().getFlows();
+   
+    
     //create ReliabilityTable data, and init. with the needed amount of columns and rows. Inits probabilities for all nodes
     //if necessary values will be set to 1.0- this is when the source node starts 
     //TODO: DOES THIS NEED TO BE MADE INTO A METHOD? WOULD THESE PARAMETERS HAVE TO BE RESTARTED IF NEW PERIOD RELEASE OCCURS? OR IS IT FINE TO INIT ONLY @ THE BEGINNING?
@@ -225,13 +263,11 @@ public class ReliabilityAnalysis {
                                                 rr.set(j, 1.0);
                                 }
                 }
-                //System.out.println(rr);
                 data.add(rr);
     }
     
     //double[] currentProb = hashmap(numcol, headerlength)?
-    int headerLength = returnedProgramSchedule.getNumColumns(); //TODO: is this the correct way of getting the length of header? For example, running with curr test will give 3. Not correct?
-    System.out.println(headerLength);
+     //TODO: is this the correct way of getting the length of header? For example, running with curr test will give 3. Not correct?
     HashMap<Integer, String> colIndexes = new HashMap<>(); //hashmap to store index of columns. We need to populate this with the below for loop
     for (int i = 0; i < headerLength; i++) //TODO: check to make sure this is iterating the correct amt of times, look at latter comment
     	//colIndexes.put(, i); //need to make a way to put where it is
@@ -290,6 +326,7 @@ public class ReliabilityAnalysis {
 
   public Boolean verifyReliabilities() {
     // TODO Auto-generated method stub
+	//Check bottom right corner of the map, check prob
     return true;
   }
   
