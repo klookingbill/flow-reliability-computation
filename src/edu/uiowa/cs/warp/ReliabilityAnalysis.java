@@ -232,6 +232,7 @@ public class ReliabilityAnalysis {
 	  //create ReliabilityTable with a row for each time slot
 	  ReliabilityTable reliabilityWindow = new ReliabilityTable();
 	  for (Flow f : flow.values()) {
+		  System.out.println(f);
 		  Double minLinkReliablityNeded = Math.max(e2e, Math.pow(e2e, (1.0 / (double) f.getNodes().size()-1)));
 		  ReliabilityRow currentRow = new ReliabilityRow(f.getNodes().size(), 0.0);
 		  currentRow.set(0, 1.0);
@@ -241,6 +242,7 @@ public class ReliabilityAnalysis {
 		  while (e2eReliabilityState < e2e) {
 		    //retrieve previous row and create new row for current time slot
 		    ReliabilityRow prevRow = reliabilityWindow.get(timeSlot);
+		    ReliabilityRow nextRow = new ReliabilityRow(f.getNodes().size(), 0.0);
 		    //loop through nodes to update reliabilities
 		    for (int nodeIndex = 0; nodeIndex < f.getNodes().size()-1; nodeIndex++) { 
 		      int srcNodeIndex = nodeIndex;
@@ -256,13 +258,14 @@ public class ReliabilityAnalysis {
 		        nextSnkState = prevSnkState;
 		      }
 		      //update current row with max reliability for each node
-		      currentRow.set(nodeIndex, Math.max(currentRow.get(nodeIndex), prevSrcState));
-		      currentRow.set(nodeIndex + 1, nextSnkState);
+		      nextRow.set(nodeIndex, Math.max(nextRow.get(nodeIndex), prevSrcState));
+		      nextRow.set(nodeIndex + 1, nextSnkState);
 		    }
 		    //update the E2E reliability state with last node's value
-		    e2eReliabilityState = currentRow.get(f.getNodes().size() - 1);
-		    reliabilityWindow.add(currentRow);
+		    e2eReliabilityState = nextRow.get(f.getNodes().size() - 1);
+		    reliabilityWindow.add(nextRow);
 		    timeSlot++;
+	
 		  }
 	  }
 	  return reliabilityWindow;

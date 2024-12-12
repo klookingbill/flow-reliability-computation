@@ -633,7 +633,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
   }
 
   // private function to the flow node with specified name
-  private Flow getFlow(String flowName) {
+  Flow getFlow(String flowName) {
     var flow = flows.get(flowName); // get the requested flow node
     if (flow == null) {// return empty node if not found
       flow = new Flow();
