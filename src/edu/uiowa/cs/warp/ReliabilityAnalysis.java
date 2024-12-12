@@ -219,6 +219,26 @@ public class ReliabilityAnalysis {
 	    	}
 	  return columnHeader;
   }
+  /**
+   * 
+   * @param numColumns
+   * @param numRows
+   * @param flow
+   * @return ReliabilityTable data (containing nodes that are src nodes set to default 1.0)
+   */
+  public ReliabilityTable getNodeInfo(int numColumns, int numRows, FlowMap flow) {
+  	ReliabilityTable data = new ReliabilityTable();
+  	for (int i=0; i<numRows; i++) {
+  	     ReliabilityRow rr = new ReliabilityRow(numColumns*flow.size(), 0.0);
+  	     for (int j=0; j < numColumns * flow.size(); j++) {
+  	          if (j % (flow.size()+1) == 0) {
+  	              rr.set(j, 1.0);
+  	              }
+  	      }
+  	    data.add(rr);
+  	    }
+  	return data;
+  }
  
   public ReliabilityTable getReliabilities() {
 	//build new program
@@ -228,10 +248,9 @@ public class ReliabilityAnalysis {
     //create vars to store numColumns & numRows
     int numColumns = returnedProgramSchedule.getNumColumns();
     int numRows = returnedProgramSchedule.getNumRows();
-    //Store names of flows in Priority order in ArrayList
-    ArrayList<String> flowNames = myProgram.toWorkLoad().getFlowNamesInPriorityOrder();
-    ArrayList<String> headerPlaceholder = getReliabilityHeader();
     
+
+    ArrayList<String> headerPlaceholder = getReliabilityHeader();
     String[] header = headerPlaceholder.toArray(new String[0]);
     System.out.println(getReliabilityHeader());
     HashMap<String, Integer> map = new HashMap<>();
@@ -239,8 +258,6 @@ public class ReliabilityAnalysis {
     for (int column = 0; column < header.length; column++) {
     	map.put(header[column], column);
     }
-    
-    myProgram.toWorkLoad().displayVisualization();
     //new ReliabilityTable w/ num columns.size x numrows
     //once you have columnheader, when parse the instruction, get the parameters ie flow name and syncnode, can rebuild 
     //
@@ -254,22 +271,12 @@ public class ReliabilityAnalysis {
     
     //create ReliabilityTable data, and init. with the needed amount of columns and rows. Inits probabilities for all nodes
     //if necessary values will be set to 1.0- this is when the source node starts 
-    //TODO: DOES THIS NEED TO BE MADE INTO A METHOD? WOULD THESE PARAMETERS HAVE TO BE RESTARTED IF NEW PERIOD RELEASE OCCURS? OR IS IT FINE TO INIT ONLY @ THE BEGINNING?
-    ReliabilityTable data = new ReliabilityTable();
-    for (int i=0; i<numRows; i++) {
-        ReliabilityRow rr = new ReliabilityRow(numColumns*flow.size(), 0.0);
-                for (int j=0; j < numColumns * flow.size(); j++) {
-                                if (j % (flow.size()+1) == 0) {
-                                                rr.set(j, 1.0);
-                                }
-                }
-                data.add(rr);
-    }
+    ReliabilityTable data = getNodeInfo(numColumns, numRows, flow);
     
     //double[] currentProb = hashmap(numcol, headerlength)?
-     //TODO: is this the correct way of getting the length of header? For example, running with curr test will give 3. Not correct?
+    //TODO: is this the correct way of getting the length of header? For example, running with curr test will give 3. Not correct?
     HashMap<Integer, String> colIndexes = new HashMap<>(); //hashmap to store index of columns. We need to populate this with the below for loop
-    for (int i = 0; i < headerLength; i++) //TODO: check to make sure this is iterating the correct amt of times, look at latter comment
+    for (int i = 0; i < headerLength; i++) {}
     	//colIndexes.put(, i); //need to make a way to put where it is
     
     //iterate through the numRows, increasing timeSlot param each iteration
