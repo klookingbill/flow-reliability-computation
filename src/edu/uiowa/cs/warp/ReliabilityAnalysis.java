@@ -113,6 +113,12 @@ public class ReliabilityAnalysis {
     this.constructorIndicator = true;
   }
   
+  /**
+   * Constructor initializing an object with a specified program, workLoad, dsl,
+   * FileManager, end-to-end reliability target, and minimum packet reception rate.
+   * 
+   * @param program Program used to initialize the fields
+   */
   public ReliabilityAnalysis(Program program) {
 	this.myProgram = program;
 	this.workLoad = program.toWorkLoad();
@@ -124,7 +130,7 @@ public class ReliabilityAnalysis {
 	reliabilities = getReliabilities();
   }
 
-/**
+ /**
    * Estimates the worst-case number of transmissions needed across a flow to meet
    * the end-to-end reliability target.
    *
@@ -232,7 +238,6 @@ public class ReliabilityAnalysis {
 			  headerList.add(String.format("F" + flowIndex + ":" + node));
 			}
 		}
-		
 		var header = headerList.toArray(new String[0]);
 		return header;
 	}
@@ -258,8 +263,8 @@ public class ReliabilityAnalysis {
    * Takes in reliabilities, numRows, and sourceCol to set sourceNodes with value 1.0.
    * 
    * @param reliabilities ReliabilityTable containing node probabilities
-   * @param numRows       Number of rows in the table
-   * @param sourceCol     Source column for a specific flow
+   * @param numRows       number of rows in the table
+   * @param sourceCol     source column for a specific flow
    */
   private void initializeSourceNodes(ReliabilityTable reliabilities, int numRows, int sourceCol) {
 	    for (int row = 0; row < numRows; row++) {
@@ -304,6 +309,7 @@ public class ReliabilityAnalysis {
 	}
   
  /**
+  * 
   * 
   * @return
   */
