@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import edu.uiowa.cs.warp.SystemAttributes.ScheduleChoices;
 import edu.uiowa.cs.warp.WarpDSL.InstructionParameters;
@@ -83,6 +84,8 @@ public class ReliabilityAnalysis {
   private Program myProgram;
 
   private WorkLoad workLoad;
+
+  private ReliabilityTable reliabilities;
 
 
   /**
@@ -304,7 +307,7 @@ public class ReliabilityAnalysis {
 	  String[] flows = workLoad.getFlowNames();
 	  int numRows = schedule.getNumRows();
 	  int numColumns = headers.length;
-	  ReliabilityTable reliabilities = new ReliabilityTable(numRows, numColumns);
+	  reliabilities = new ReliabilityTable(numRows, numColumns);
 	  //headerMap stores each header w/ its column index
 	  var headerMap = createHeaderMap(headers);
 	  //nonSourceColumns will hold the columns that are not src Nodes
@@ -396,13 +399,51 @@ public class ReliabilityAnalysis {
 	 
 	  return reliabilities;
 	}  
-    
-
+  
+//TODO: this is very long implementation, maybe we can trim it down somewhat?
+  
+ /**
+  * Checks if the flow success probability for each sink node
+  * at the end of each period meets the end-to-end reliability
+  * for the program.
+  * 
+  * @return true if the end-to-end reliability is met, false otherwise
+  */
   public Boolean verifyReliabilities() {
-    // TODO Auto-generated method stub
-	//Check bottom right corner of the map, check prob
-    return true;
+	  // TODO Auto-generated method stub
+		//Check bottom right corner of the map, check prob
+		/* ArrayList to store time slots we will have to check. */
+		List<Integer> timeSlotChecks = new ArrayList<>();
+		/* Look at each flow in the program. */
+		for (Flow f : myProgram.toWorkLoad().getFlows().values()) {
+			for (int timeslot = 0; timeslot< reliabilities.getNumRows(); timeslot++) {
+				/* Makes sure that the first time slot after the reset due to period is added to arrayList. */
+				if (timeslot % f.getPeriod() == f.getPeriod() - 1) {
+					timeSlotChecks.add(timeslot);
+				}
+			}
+		}
+		/* Removes any duplicates from the arrayList (looked this up on Stack Overflow). 
+		 * Had to import Collectors from the stream library. */
+		timeSlotChecks = timeSlotChecks.stream().distinct().collect(Collectors.toList());
+		
+		/* Runs through each time slot stored in the arrayList, 
+		 * checks the snk node probability for each flow at 
+		 * the ReliabilityRow at this time slot to see if it fails meets 
+		 * end-to-end reliability. */
+		for (Integer integer : timeSlotChecks) {
+			for (int i=0; i<reliabilities.get(integer).size(); i++) {
+				if (i % myProgram.toWorkLoad().getFlows().size() == myProgram.toWorkLoad().getFlows().size() - 1) {
+					if (reliabilities.get(integer).get(i) < e2e) {
+						return false;
+					}
+				}
+			}
+		}
+	    return true;
   }
+
+ 
   
   
   public static void main(String[] args) {
@@ -417,6 +458,7 @@ public class ReliabilityAnalysis {
 	    ReliabilityAnalysis ra = new ReliabilityAnalysis(testProgram);
 	    //ra.getReliabilities();
 	    System.out.println(ra.getReliabilities());
+	    System.out.println(ra.verifyReliabilities());
 	  
         
 	    
