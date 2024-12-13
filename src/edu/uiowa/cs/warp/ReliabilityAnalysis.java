@@ -325,12 +325,8 @@ public class ReliabilityAnalysis {
 	  WarpDSL instructions = new WarpDSL();
 	  //loop through each time slot in the schedule (loops through each row)
 	  for (int timeSlot = 0; timeSlot < numRows; timeSlot++) {
-		  //TODO: THIS NEEDS TO BE CHANGED TO USE MOD BY THE PERIOD, NOT BY 10! 
-		  //int flowPeriod = myProgram.toWorkLoad().getFlows().get(flows[timeSlot]).getPeriod();
-		  //reset the columns if period is completed
-		  //TODO: the below line needs to be altered. Ideally, it would be (timeSlot % period == 0)... 10 is a placeholder for now, but it works
-		  //TODO: right now, there is an index out of bounds exception for getting the flow period... figure out why this is happening
-	      if (timeSlot % 10 == 0 && timeSlot > 0) {
+		  //check if period has been reached- if so, reset columns
+	      if (timeSlot % myProgram.toWorkLoad().getFlows().get(flows[timeSlot % flows.length]).getPeriod() == 0 && timeSlot > 0) {
 	    	  resetColumns(nonSourceColumns.get(0), reliabilities, timeSlot);
 	            
 	      }
@@ -363,8 +359,8 @@ public class ReliabilityAnalysis {
 	              }
 	              if (flowIndex == -1) continue;
 	            //format src and snk headers with the flowIndex and parameters 
-	              String srcHeader = String.format("F%d:%s", flowIndex, param.getSrc());
-	              String snkHeader = String.format("F%d:%s", flowIndex, param.getSnk());
+	              String srcHeader = String.format("F" + flowIndex + ":" + param.getSrc());
+	              String snkHeader = String.format("F" + flowIndex + ":" + param.getSnk());
 	            //use headerMap to get column index
 	              Integer srcCol = headerMap.get(srcHeader);
 	              Integer snkCol = headerMap.get(snkHeader);
@@ -387,9 +383,9 @@ public class ReliabilityAnalysis {
 	         
 	            //updates the reliability value for the sink node at the curr time slot  
 	              reliabilities.get(timeSlot).set(snkCol, newSinkNodeState);     
-	            //TODO: THIS NEEDS TO BE FIXED!!! SHOULD BE MODDED BY PERIOD OF THE CURR FLOW!
+	            //note: fixed to mod correctly by flowperiod
 	              for (int nextRow = timeSlot + 1; nextRow < numRows; nextRow++) {
-	                  	if (flowIndex == 0 && nextRow % 10 == 0) {
+	                  	if (flowIndex == 0 && nextRow % myProgram.toWorkLoad().getFlowPeriod(flowName) == 0) {
 	                       break;
 	                    }
 	                  reliabilities.get(nextRow).set(snkCol, newSinkNodeState);
@@ -399,108 +395,7 @@ public class ReliabilityAnalysis {
 	    }
 	 
 	  return reliabilities;
-	}
-	/*//build new program
-    myProgram.buildOriginalProgram();
-    //Create ProgramSchedule containing instructions
-    ProgramSchedule returnedProgramSchedule = myProgram.getSchedule();
-    //create vars to store numColumns & numRows
-    int numColumns = returnedProgramSchedule.getNumColumns();
-    int numRows = returnedProgramSchedule.getNumRows();
-    
-
-    String[] header = getReliabilityHeader();
-    System.out.println(getReliabilityHeader());
-    HashMap<String, Integer> map = new HashMap<>();
-    int headerLength = header.length;
-    for (int column = 0; column < header.length; column++) {
-    	map.put(header[column], column);
-    }
-    //new ReliabilityTable w/ num columns.size x numrows
-    //once you have columnheader, when parse the instruction, get the parameters ie flow name and syncnode, can rebuild 
-    //
-  
-    //create new ReliabilityAnalysis object
-    //ReliabilityAnalysis ra = new ReliabilityAnalysis(myProgram);
-    //Create FlowMap flow containing flows of curr program TODO might not need to be used, can get it straight from workload
-    //use getFlowPhase and getFLOW PERIOD FOR EACH ENTRY IN INSTRUCTION PARAMETERS
-    FlowMap flow = myProgram.toWorkLoad().getFlows();
-   
-    
-    //create ReliabilityTable data, and init. with the needed amount of columns and rows. Inits probabilities for all nodes
-    //if necessary values will be set to 1.0- this is when the source node starts 
-    ReliabilityTable data = getNodeInfo(numColumns, numRows, flow);
-    //double[] currentProb = hashmap(numcol, headerlength)?
-//    ArrayList<Double> currentProb = new ArrayList<>();
-//    for (int i=0; i<data.size(); i++) {
-//    	currentProb.add(data.get)
-//    }
-    //TODO: is this the correct way of getting the length of header? For example, running with curr test will give 3. Not correct?
-//    HashMap<Integer, String> colIndexes = new HashMap<>(); //hashmap to store index of columns. We need to populate this with the below for loop
-//    for (int i = 0; i < headerLength; i++) {
-//    	colIndexes.put(i, header[i]);
-//    }
-//    	//colIndexes.put(, i); //need to make a way to put where it is
-//    //int timeSlot = 0;
-//    ArrayList<Double> updatedSnkProbs = new ArrayList<>();
-//    //iterate through the numRows, increasing timeSlot param each iteration
-//    for (int timeSlot = 0; timeSlot < numRows; timeSlot++) {
-//    	//TODO: we need to figure out a way to reset the flows if a new period releases-
-//    	//that will be the current probability we are working with for this loop
-//    	//double[] nextProb = new double[numRows];
-//    	for (int scheduleCol = 0; scheduleCol < numColumns; scheduleCol++) {
-//    		
-//    		String instruction = returnedProgramSchedule.get(timeSlot, scheduleCol);
-//    		if (!(instruction.isEmpty())) {
-//    			ArrayList<InstructionParameters> instructionsArrayList = myDSL.getInstructionParameters(instruction);
-//    			
-//    			for (InstructionParameters param: instructionsArrayList) {
-//    				String flowName = param.getFlow();
-//    				//Flow f = flow.get(flowName);
-//    				//Integer period = f.getPeriod();
-//    				//Integer phase = f.getPhase();
-//    				String srcNode = param.getSrc();
-//    				String snkNode = param.getSnk();
-//    				
-//    				if (flowName.equals(WarpDSL.UNUSED) || srcNode.equals(WarpDSL.UNUSED) || snkNode.equals(WarpDSL.UNUSED)) {
-//    					continue;
-//    				}
-//    			
-//    				String srcNodeColumnKey = flowName + ":" + srcNode;
-//    				System.out.println(srcNodeColumnKey);
-//    				String snkNodeColumnKey = flowName + ":" + snkNode;
-//    				
-//    				
-//    				
-//    				//need to add integer of srcCol and snkCol where we take srcColKey and snkColKey from hashmap
-//    				//then use these integers to update the hashmap below w/ the doubles
-//    				
-//    				Integer srcNodeColumn = map.get(srcNodeColumnKey);
-//    				Integer snkNodeColumn = map.get(snkNodeColumnKey);
-//    				
-//    				//need to update current probabilties for prevSnk and prevSrc by taking current prob from hashmap
-//    				double prevSnk = data.get(timeSlot, snkNodeColumn);
-//    				double prevSrc = data.get(timeSlot, srcNodeColumn);
-//    				double updatedSnk = (1.0 - minPacketReceptionRate) * prevSnk + minPacketReceptionRate * prevSrc;
-//    				//nextProb will be used here, assign nextProb[snkCol] = updatedSnk;
-//    				//nextProb[snkNodeColumn] = updatedSnk;
-//    			}	
-//    			
-//    		}
-//    	
-//    	}
-//    	//ReliabilityRow row = new ReliabilityRow();
-//    	//for (int j = 0; j < numColumns; j++) {
-//    	//	row.add(nextProb[j]);
-//    	//}
-//    	//data.add(row);
-//    	//currentProb = nextProb;
-//    }
-//    System.out.println(updatedSnkProbs);
-
-    return data;
-    */
-    
+	}  
     
 
   public Boolean verifyReliabilities() {
@@ -522,7 +417,8 @@ public class ReliabilityAnalysis {
 	    ReliabilityAnalysis ra = new ReliabilityAnalysis(testProgram);
 	    //ra.getReliabilities();
 	    System.out.println(ra.getReliabilities());
-        //System.out.println(testProgram.getSchedule()); //:)
+	  
+        
 	    
   }
   

@@ -1,7 +1,5 @@
 package edu.uiowa.cs.warp;
 
-import java.util.ArrayList;
-
 /**
  * ReliabilityVisualization creates the visualizations for the reliability
  * analysis of the WARP program.
@@ -39,6 +37,7 @@ public class ReliabilityVisualization extends VisualizationObject {
 	 * The ReliabilityAnalysis object that the visualization will be created for.
 	 */
 	private ReliabilityAnalysis ra;
+	private Program program;
 
 	/**
 	 * Constructor used to initialize the ReliabilityVisualization object using a
@@ -50,8 +49,8 @@ public class ReliabilityVisualization extends VisualizationObject {
 	 */
 	ReliabilityVisualization(WarpInterface warp) {
 		super(new FileManager(), warp, SOURCE_SUFFIX);
-		this.warp = warp;
-		this.ra = warp.toReliabilityAnalysis();
+		this.program = warp.toProgram();
+		this.ra = new ReliabilityAnalysis(this.program);
 	}
 
 	/**
@@ -111,14 +110,15 @@ public class ReliabilityVisualization extends VisualizationObject {
 	@Override
 	protected String[][] createVisualizationData() {
 		if (visualizationData == null) {
-			int numRows = ra.getReliabilities().getNumRows();
-			int numColumns = ra.getReliabilities().getNumColumns();
-			visualizationData = new String[numRows][numColumns + 1];
+			ReliabilityTable rt = ra.getReliabilities();
+			int numRows = rt.getNumRows();
+			int numColumns = rt.getNumColumns();
+			visualizationData = new String[numRows][numColumns];
 
-			for (int row = 0; row < numRows; row++) {
-				visualizationData[row][0] = String.format("%s", row);
-				for (int column = 0; column < numColumns; column++) {
-					visualizationData[row][column + 1] = ra.getReliabilities().get(row, column).toString();
+			for (int i = 0; i < numRows; i++) {
+				ReliabilityRow row = rt.get(i);
+				for (int k = 0; k < numColumns; k++) {
+					visualizationData[i][k] = row.get(k).toString();
 				}
 			}
 		}
