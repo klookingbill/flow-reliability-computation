@@ -51,6 +51,7 @@ public class ReliabilityVisualization extends VisualizationObject {
 		super(new FileManager(), warp, SOURCE_SUFFIX);
 		this.program = warp.toProgram();
 		this.ra = new ReliabilityAnalysis(this.program);
+		this.warp = warp;
 	}
 
 	/**

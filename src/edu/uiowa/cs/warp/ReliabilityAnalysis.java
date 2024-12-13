@@ -121,6 +121,7 @@ public class ReliabilityAnalysis {
     this.myProgram = program;
     this.e2e = myProgram.getE2e();
 	this.minPacketReceptionRate = myProgram.getMinPacketReceptionRate();
+	reliabilities = getReliabilities();
   }
 
 /**
@@ -444,7 +445,6 @@ public class ReliabilityAnalysis {
   }
 
  
-  
   
   public static void main(String[] args) {
 	  	double teste2e = 0.99;
