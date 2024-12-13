@@ -99,7 +99,7 @@ public class ReliabilityVisualization extends VisualizationObject {
 	 */
 	@Override
 	protected String[] createColumnHeader() {
-		String[] header = ra.getReliabilityHeader().toArray(new String[0]);
+		String[] header = ra.getReliabilityHeader();
 		return header;
 	}
 

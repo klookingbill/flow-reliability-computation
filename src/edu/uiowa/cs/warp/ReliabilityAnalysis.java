@@ -3,6 +3,8 @@ package edu.uiowa.cs.warp;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import edu.uiowa.cs.warp.SystemAttributes.ScheduleChoices;
 import edu.uiowa.cs.warp.WarpDSL.InstructionParameters;
@@ -80,6 +82,8 @@ public class ReliabilityAnalysis {
   
   private Program myProgram;
 
+  private WorkLoad workLoad;
+
 
   /**
    * Constructor initializing an object with the specified end-to-end reliability 
@@ -107,6 +111,8 @@ public class ReliabilityAnalysis {
   }
   
   public ReliabilityAnalysis(Program program) {
+	this.myProgram = program;
+	this.workLoad = program.toWorkLoad();
     this.myDSL = myDSL;
     this.myFile = myFile;
     this.myProgram = program;
@@ -203,76 +209,198 @@ public class ReliabilityAnalysis {
   }
   
   /**
-   * getReliabilityHeader() creates an ArrayList<String> for the columnHeader, consisting of the flow names combined with their nodes. 
-   * @return columnHeader
+   * getReliabilityHeader() generates a an array of strings containing the header, which is used in GetReliabilities().
+   * It iterates through each flow and its respective nodes, and then adds them to the header object.
+   * @return header
    */
-  public ArrayList<String> getReliabilityHeader() {
-	  ArrayList<String> columnHeader = new ArrayList<String>();
-		var prioritizedFlows = myProgram.toWorkLoad().getFlowNamesInPriorityOrder().toArray(new String[0]);
-	    for (int i = 0; i < prioritizedFlows.length; i++) {
-	    	var flowName = prioritizedFlows[i];
-	    	var nodesInFlow = myProgram.toWorkLoad().getNodesInFlow(flowName);
-	    	var numNodesInFlow = nodesInFlow.length;
-	    	for (int j = 0; j < numNodesInFlow; j++) {
-	    		String nodeName = nodesInFlow[j];
-	    		String entryName = flowName + ":" + nodeName;
-	    		columnHeader.add(entryName);
-	    		}
-	    	}
-	  return columnHeader;
-  }
+  
+  public String[] getReliabilityHeader() {
+	  var workload = myProgram.toWorkLoad();
+	  var flows = workload.getFlowNames();
+	  List<String> headerList = new ArrayList<>();
+	  
+	  //iterate through each flow in flows; get the nodes in the flow and add nodes + flows to header
+	  for (int flowIndex = 0; flowIndex < flows.length; flowIndex++) {
+		  String flowName = flows[flowIndex];
+		  String[] nodes = workload.getNodesInFlow(flowName);
+		  for (String node : nodes) {
+			  headerList.add(String.format("F" + flowIndex + ":" + node));
+			}
+		}
+		
+		var header = headerList.toArray(new String[0]);
+		return header;
+
+	}
   /**
-   * 
-   * @param numColumns
-   * @param numRows
-   * @param flow
-   * @return ReliabilityTable data (containing nodes that are src nodes set to default 1.0)
+   * createHeaderMap() takes the header and assigns it as a key in the map, with a corresponding integer value to designate the index of that key.
+   * @param headers
+   * @return headerMap
    */
-  public ReliabilityTable getNodeInfo(int numColumns, int numRows, FlowMap flow) { 
-	  //create ReliabilityTable with a row for each time slot
-	  ReliabilityTable reliabilityWindow = new ReliabilityTable();
-	  for (Flow f : flow.values()) {
-		  System.out.println(f);
-		  Double minLinkReliablityNeded = Math.max(e2e, Math.pow(e2e, (1.0 / (double) f.getNodes().size()-1)));
-		  ReliabilityRow currentRow = new ReliabilityRow(f.getNodes().size(), 0.0);
-		  currentRow.set(0, 1.0);
-		  reliabilityWindow.add(currentRow);
-		  Double e2eReliabilityState = currentRow.get(f.getNodes().size() - 1);
-		  int timeSlot = 0; //start time at 0
-		  while (e2eReliabilityState < e2e) {
-		    //retrieve previous row and create new row for current time slot
-		    ReliabilityRow prevRow = reliabilityWindow.get(timeSlot);
-		    ReliabilityRow nextRow = new ReliabilityRow(f.getNodes().size(), 0.0);
-		    //loop through nodes to update reliabilities
-		    for (int nodeIndex = 0; nodeIndex < f.getNodes().size()-1; nodeIndex++) { 
-		      int srcNodeIndex = nodeIndex;
-		      int snkNodeIndex = nodeIndex + 1;
-		      double prevSrcState = prevRow.get(srcNodeIndex);
-		      double prevSnkState = prevRow.get(snkNodeIndex);
-		      double nextSnkState;
-		      //if sink node hasn't reached min reliability and source has the packet
-		      if (prevSnkState < minLinkReliablityNeded && prevSrcState > 0) {
-		        nextSnkState = ((1.0 - minPacketReceptionRate) * prevSnkState) 
-		                              + (minPacketReceptionRate * prevSrcState);
-		      } else {
-		        nextSnkState = prevSnkState;
-		      }
-		      //update current row with max reliability for each node
-		      nextRow.set(nodeIndex, Math.max(nextRow.get(nodeIndex), prevSrcState));
-		      nextRow.set(nodeIndex + 1, nextSnkState);
-		    }
-		    //update the E2E reliability state with last node's value
-		    e2eReliabilityState = nextRow.get(f.getNodes().size() - 1);
-		    reliabilityWindow.add(nextRow);
-		    timeSlot++;
-	
-		  }
-	  }
-	  return reliabilityWindow;
-  }
+ 
+  private Map<String, Integer> createHeaderMap(String[] headers) {
+	  //create a new map to hold header and its val
+	   Map<String, Integer> headerMap = new HashMap<>();
+	   //iterate through length of headers and put each header as a key w/ i as its value
+	   for (int i = 0; i < headers.length; i++) {
+	       headerMap.put(headers[i], i);
+	    }
+	    return headerMap;
+	}
+  /**
+   * initializeSourceNodes() takes in reliabilities, numRows, and sourceCol to set sourceNodes
+   * with value 1.0. 
+   * @param reliabilities
+   * @param numRows
+   * @param sourceCol
+   */
+  
+  private void initializeSourceNodes(ReliabilityTable reliabilities, int numRows, int sourceCol) {
+	    for (int row = 0; row < numRows; row++) {
+	        reliabilities.get(row).set(sourceCol, 1.0);
+	    }
+	}
+  /**
+   * resetColumns() iterates through each column in the columns list and resets reliabilities at the designated timeSlot.
+   * @param columns
+   * @param reliabilities
+   * @param timeSlot
+   */
+  
+  private void resetColumns(List<Integer> columns, ReliabilityTable reliabilities, int timeSlot) {
+	    if (columns != null) {
+	        for (int col : columns) {
+	            reliabilities.get(timeSlot).set(col, 0.0);
+	        }
+	    }
+	}
+  /**
+   * getNonSourceColumns() starts iterating at nodeIndex 1 and iterates until the integer val of nodesInFlow. 
+   * It ignores the first val of the nodesInFlow (src node), and then creates columns that will be populated with 
+   * probability vals (Src columns are populated with 1.0 in initializeSourceColumn)
+   * @param nodesInFlow
+   * @param flowIndex
+   * @param headerMap
+   * @return flowNonSourceColumns
+   */
+  private List<Integer> getNonSourceColumns(String[] nodesInFlow, int flowIndex, Map<String, Integer> headerMap) {
+	    List<Integer> flowNonSourceColumns = new ArrayList<>();
+	    for (int nodeIndex = 1; nodeIndex < nodesInFlow.length; nodeIndex++) {
+	        String header = "F" + flowIndex + ":" + nodesInFlow[nodeIndex];
+	        flowNonSourceColumns.add(headerMap.get(header));
+	    }
+	    return flowNonSourceColumns;
+	}
+/**
+ * 
+ * @return
+ */
  
   public ReliabilityTable getReliabilities() {
-	//build new program
+	  //Initialize variables
+	  String[] headers = getReliabilityHeader(); 
+	  ProgramSchedule schedule = myProgram.getSchedule();
+	  WorkLoad workLoad = myProgram.toWorkLoad();
+	  String[] flows = workLoad.getFlowNames();
+	  int numRows = schedule.getNumRows();
+	  int numColumns = headers.length;
+	  ReliabilityTable reliabilities = new ReliabilityTable(numRows, numColumns);
+	  //headerMap stores each header w/ its column index
+	  var headerMap = createHeaderMap(headers);
+	  //nonSourceColumns will hold the columns that are not src Nodes
+	  Map<Integer, List<Integer>> nonSourceColumns = new HashMap<>();
+	  //iterate through each flow
+	  for (int flowIndex = 0; flowIndex < flows.length; flowIndex++) {
+		  //get nodes in the designated flow
+	      String[] nodesInFlow = workLoad.getNodesInFlow(flows[flowIndex]);
+	      //generate header to find column index in headerMap
+	      String sourceHeader = String.format("F" + flowIndex + ":" + nodesInFlow[0]);
+	      int sourceCol = headerMap.get(sourceHeader);
+	      //Configures sourceNode to 1.0
+	      initializeSourceNodes(reliabilities, numRows, sourceCol);
+	      //calls getNonSourceColumns to configure
+	      nonSourceColumns.put(flowIndex, getNonSourceColumns(nodesInFlow, flowIndex, headerMap));
+	  }
+	  //instantiate WarpDSL object    
+	  WarpDSL instructions = new WarpDSL();
+	  //loop through each time slot in the schedule (loops through each row)
+	  for (int timeSlot = 0; timeSlot < numRows; timeSlot++) {
+		  //TODO: THIS NEEDS TO BE CHANGED TO USE MOD BY THE PERIOD, NOT BY 10! 
+		  //int flowPeriod = myProgram.toWorkLoad().getFlows().get(flows[timeSlot]).getPeriod();
+		  //reset the columns if period is completed
+		  //TODO: the below line needs to be altered. Ideally, it would be (timeSlot % period == 0)... 10 is a placeholder for now, but it works
+		  //TODO: right now, there is an index out of bounds exception for getting the flow period... figure out why this is happening
+	      if (timeSlot % 10 == 0 && timeSlot > 0) {
+	    	  resetColumns(nonSourceColumns.get(0), reliabilities, timeSlot);
+	            
+	      }
+	      //iterate through each column in schedule
+	      for (int nodeColumn = 0; nodeColumn < schedule.getNumColumns(); nodeColumn++) {
+	    	//get instruction @ current time slot and node
+	          String instruction = schedule.get(timeSlot, nodeColumn);
+	          //checks to make sure instruction isn't empty/not populated 
+	          if (instruction == null || instruction.trim().isEmpty()) {
+	              continue;
+	          }
+	          //create an array list of InstructionParameters    
+	          ArrayList<WarpDSL.InstructionParameters> params = instructions.getInstructionParameters(instruction);
+	        //iterate through each parameter in params ArrayList, check to make sure the param is able to be used
+	          for (WarpDSL.InstructionParameters param : params) {
+	              if (!param.getName().equals("push") && !param.getName().equals("pull")) {
+	                    continue;
+	              }
+	            //get curr flowName from curr param  
+	              String flowName = param.getFlow();
+	            //set default val to -1 in case no match found
+	              int flowIndex = -1;
+	            //make sure flow is at the correct index in the flows array
+	              //TODO: might need to modify this?
+	              for (int i = 0; i < flows.length; i++) {
+	                  if (flows[i].equals(flowName)) {
+	                      flowIndex = i;
+	                      break;
+	                   }
+	              }
+	              if (flowIndex == -1) continue;
+	            //format src and snk headers with the flowIndex and parameters 
+	              String srcHeader = String.format("F%d:%s", flowIndex, param.getSrc());
+	              String snkHeader = String.format("F%d:%s", flowIndex, param.getSnk());
+	            //use headerMap to get column index
+	              Integer srcCol = headerMap.get(srcHeader);
+	              Integer snkCol = headerMap.get(snkHeader);
+	            //TODO: not sure if this is needed? Here for safekeeping rn
+	              if (srcCol == null || snkCol == null) continue;
+	           // retrieves the reliability of the sink node at the curr time slot from the reliabilities  
+	              double PrevSnkNodeState = reliabilities.get(timeSlot).get(snkCol);
+	              //initialize var
+	              double PrevSrcNodeState;
+	              
+	            //retrieve srcNodeState; if timeSlot is not zero, retrieve from previous time slot 
+	              if (timeSlot > 0) {
+	                PrevSrcNodeState = reliabilities.get(timeSlot - 1).get(srcCol);
+	                } 
+	              else {
+	                	PrevSrcNodeState = reliabilities.get(timeSlot).get(srcCol);
+	                }
+	            //update state of SinkNode using formula listed under #6 in the project guide  
+	              double newSinkNodeState = (1-minPacketReceptionRate)* PrevSnkNodeState + minPacketReceptionRate * PrevSrcNodeState;
+	         
+	            //updates the reliability value for the sink node at the curr time slot  
+	              reliabilities.get(timeSlot).set(snkCol, newSinkNodeState);     
+	            //TODO: THIS NEEDS TO BE FIXED!!! SHOULD BE MODDED BY PERIOD OF THE CURR FLOW!
+	              for (int nextRow = timeSlot + 1; nextRow < numRows; nextRow++) {
+	                  	if (flowIndex == 0 && nextRow % 10 == 0) {
+	                       break;
+	                    }
+	                  reliabilities.get(nextRow).set(snkCol, newSinkNodeState);
+	                }
+	            }
+	        }
+	    }
+	 
+	  return reliabilities;
+	}
+	/*//build new program
     myProgram.buildOriginalProgram();
     //Create ProgramSchedule containing instructions
     ProgramSchedule returnedProgramSchedule = myProgram.getSchedule();
@@ -281,8 +409,7 @@ public class ReliabilityAnalysis {
     int numRows = returnedProgramSchedule.getNumRows();
     
 
-    ArrayList<String> headerPlaceholder = getReliabilityHeader();
-    String[] header = headerPlaceholder.toArray(new String[0]);
+    String[] header = getReliabilityHeader();
     System.out.println(getReliabilityHeader());
     HashMap<String, Integer> map = new HashMap<>();
     int headerLength = header.length;
@@ -372,8 +499,8 @@ public class ReliabilityAnalysis {
 //    System.out.println(updatedSnkProbs);
 
     return data;
+    */
     
-    }
     
 
   public Boolean verifyReliabilities() {
