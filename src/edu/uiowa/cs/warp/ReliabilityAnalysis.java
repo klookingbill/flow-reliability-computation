@@ -213,11 +213,12 @@ public class ReliabilityAnalysis {
   }
   
   /**
-   * getReliabilityHeader() generates a an array of strings containing the header, which is used in GetReliabilities().
-   * It iterates through each flow and its respective nodes, and then adds them to the header object.
-   * @return header
-   */
-  
+   * Generates an array of strings containing the header, which is used in getReliabilities().
+   * It iterates through each flow and its respective nodes, and then adds them to the header 
+   * object.
+   *
+   * @return header Header object that flows and nodes are added to
+   */ 
   public String[] getReliabilityHeader() {
 	  var workload = myProgram.toWorkLoad();
 	  var flows = workload.getFlowNames();
@@ -234,14 +235,15 @@ public class ReliabilityAnalysis {
 		
 		var header = headerList.toArray(new String[0]);
 		return header;
-
 	}
+  
   /**
-   * createHeaderMap() takes the header and assigns it as a key in the map, with a corresponding integer value to designate the index of that key.
-   * @param headers
-   * @return headerMap
+   * Takes the header and assigns it as a key in the map, with a corresponding integer value to 
+   * designate the index of that key.
+   *
+   * @param  headers   String array of paired flow names and nodes to be put in the map
+   * @return headerMap Map containing headers and their corresponding column indices
    */
- 
   private Map<String, Integer> createHeaderMap(String[] headers) {
 	  //create a new map to hold header and its val
 	   Map<String, Integer> headerMap = new HashMap<>();
@@ -251,26 +253,28 @@ public class ReliabilityAnalysis {
 	    }
 	    return headerMap;
 	}
-  /**
-   * initializeSourceNodes() takes in reliabilities, numRows, and sourceCol to set sourceNodes
-   * with value 1.0. 
-   * @param reliabilities
-   * @param numRows
-   * @param sourceCol
-   */
   
+  /**
+   * Takes in reliabilities, numRows, and sourceCol to set sourceNodes with value 1.0.
+   * 
+   * @param reliabilities ReliabilityTable containing node probabilities
+   * @param numRows       Number of rows in the table
+   * @param sourceCol     Source column for a specific flow
+   */
   private void initializeSourceNodes(ReliabilityTable reliabilities, int numRows, int sourceCol) {
 	    for (int row = 0; row < numRows; row++) {
 	        reliabilities.get(row).set(sourceCol, 1.0);
 	    }
 	}
-  /**
-   * resetColumns() iterates through each column in the columns list and resets reliabilities at the designated timeSlot.
-   * @param columns
-   * @param reliabilities
-   * @param timeSlot
-   */
   
+  /**
+   * Iterates through each column in the columns list and resets reliabilities at the designated 
+   * timeSlot.
+   *
+   * @param columns       List of integers representing columns in the table
+   * @param reliabilities ReliabilityTable containing node probabilities
+   * @param timeSlot      Integer equivalent to a row in the ReliabilityTable
+   */ 
   private void resetColumns(List<Integer> columns, ReliabilityTable reliabilities, int timeSlot) {
 	    if (columns != null) {
 	        for (int col : columns) {
@@ -278,14 +282,17 @@ public class ReliabilityAnalysis {
 	        }
 	    }
 	}
+  
   /**
-   * getNonSourceColumns() starts iterating at nodeIndex 1 and iterates until the integer val of nodesInFlow. 
-   * It ignores the first val of the nodesInFlow (src node), and then creates columns that will be populated with 
-   * probability vals (Src columns are populated with 1.0 in initializeSourceColumn)
-   * @param nodesInFlow
-   * @param flowIndex
-   * @param headerMap
-   * @return flowNonSourceColumns
+   * Iterates through nodesInFlow and returns a list of integers representing the indices for
+   * all non-source columns in the array. The first value (src node) is ignored, and columns are 
+   * created to be populated with probability values (Src columns are populated with 1.0 in 
+   * initializeSourceColumn).
+   *
+   * @param nodesInFlow String array of nodes in their respective flow
+   * @param flowIndex   Integer index of a specific flow
+   * @param headerMap   Map containing headers and their corresponding indices
+   * @return            Integer list of indices for all non-source columns
    */
   private List<Integer> getNonSourceColumns(String[] nodesInFlow, int flowIndex, Map<String, Integer> headerMap) {
 	    List<Integer> flowNonSourceColumns = new ArrayList<>();
@@ -295,11 +302,11 @@ public class ReliabilityAnalysis {
 	    }
 	    return flowNonSourceColumns;
 	}
-/**
- * 
- * @return
- */
- 
+  
+ /**
+  * 
+  * @return
+  */
   public ReliabilityTable getReliabilities() {
 	  //Initialize variables
 	  String[] headers = getReliabilityHeader(); 
