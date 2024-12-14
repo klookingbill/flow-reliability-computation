@@ -175,37 +175,29 @@ class ReliabilityAnalysisTest {
 	
 	@Test
 	void testVerifyReliabilities_UnderE2e() {
-	    // Arrange
-	    Double e2e = 0.95; // End-to-end reliability threshold
+	    Double e2e = 0.95; 
 	    Double mprr = 0.85;
 	    WorkLoad workLoad = new WorkLoad(mprr, e2e, "Example1a.txt");
 
-	    // Configure WorkLoad to generate flows with one low-reliability value
 	    Program program = new Program(workLoad, 16, ScheduleChoices.PRIORITY);
 	    ReliabilityAnalysis analysis = new ReliabilityAnalysis(program);
 
-	    // Act
 	    boolean result = analysis.verifyReliabilities();
 
-	    // Assert
-	    assertTrue(result, "All reliabilities are less than e2e");
+	    assertTrue(result);
 	}
 	@Test
 	void testVerifyReliabilities_OverE2e() {
-	    // Arrange
-	    Double e2e = 1.0; // End-to-end reliability threshold
+	    Double e2e = 1.0; 
 	    Double mprr = 0.85;
 	    WorkLoad workLoad = new WorkLoad(mprr, e2e, "Example1a.txt");
 
-	    // Configure WorkLoad to generate flows with one low-reliability value
 	    Program program = new Program(workLoad, 16, ScheduleChoices.PRIORITY);
 	    ReliabilityAnalysis analysis = new ReliabilityAnalysis(program);
 
-	    // Act
 	    boolean result = analysis.verifyReliabilities();
 
-	    // Assert
-	    assertFalse(result, "All reliabilities are less than e2e");
+	    assertFalse(result);
 	}
 
 }
