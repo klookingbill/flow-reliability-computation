@@ -14,7 +14,26 @@ scheduler, and --all runs all options. Whenever using --all, you will want to us
 priority or change Warp to not run every option in the --all, otherwise, you will end up 
 with a load of files. 
 <br>
-<br>
+
+# Sprint3
+
+Teagan Andrews, Manthan Shah, Katelyn Lookingbill, Victoria Delgado, and Molly Patterson worked in collaboration to complete the third and final sprint of the final project for CS:2820.
+
+Teagan Andrews, Manthan Shah, and Katelyn Lookingbill used pair programming techniques to **implement getReliabilities and verifyReliabilities methods** in the ReliabilityAnalysis class with the assistance of helper methods. This implementation allows ReliabilityVisualization to create the output table of probabilities. 
+
+Molly Patterson **wrote JavaDoc comments** for all attributes, methods, and constructors in ReliabilityAnalysis and **fixed formatting errors** with CheckStyle to ensure that our code matches the style guide for this class. 
+
+Victoria Delgado, Katelyn Lookingbill, and Molly Patterson **developed JUnit test cases** for newly implemented methods in ReliabilityAnalysis class.
+
+Katelyn Lookingbill **updated the README file** to include each member's tasks for Sprint3 and to ensure every artifact can easily be found.
+
+Molly Patterson **updated the sequence diagram** to account for changes made in ReliabilityVisualization class, as we did not do this in Sprint2. 
+
+Katelyn Lookingbill **updated the UML class diagram** of ReliabilityVisualization class to match updates to the createColumnHeader method. She also **populated a new UML class diagram** for ReliabilityAnalysis class to reflect new methods.
+
+All necessary files including our **project plans,** **UML class diagrams of ReliabilityVisualization and ReliabilityAnalysis** with updates from Sprint3, a **sequence diagram** of warp processing the -ra flag with updates to ReliabilityVisualization can all be found in the **ARTIFACTS** folder inside of the Sprint3 branch. 
+
+**Tests** for new methods in ReliabilityAnalysis can be found in the **test** folder in the ReliabilityAnalysisTest.java file. 
 
 # Sprint2
 
