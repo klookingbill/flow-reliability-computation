@@ -175,27 +175,25 @@ class ReliabilityAnalysisTest {
 	
 	@Test
 	void testVerifyReliabilities_UnderE2e() {
-	    Double e2e = 0.95; 
-	    Double mprr = 0.85;
-	    WorkLoad workLoad = new WorkLoad(mprr, e2e, "Example1a.txt");
+	    e2e = 0.95;
+	    workload = new WorkLoad(mprr, e2e, testFileName);
 
-	    Program program = new Program(workLoad, 16, ScheduleChoices.PRIORITY);
-	    ReliabilityAnalysis analysis = new ReliabilityAnalysis(program);
+	    program = new Program(workload, numChannels, ScheduleChoices.PRIORITY);
+	    ra = new ReliabilityAnalysis(program);
 
-	    boolean result = analysis.verifyReliabilities();
+	    boolean result = ra.verifyReliabilities();
 
 	    assertTrue(result);
 	}
 	@Test
 	void testVerifyReliabilities_OverE2e() {
-	    Double e2e = 1.0; 
-	    Double mprr = 0.85;
-	    WorkLoad workLoad = new WorkLoad(mprr, e2e, "Example1a.txt");
+		e2e = 1.0; 
+	    workload = new WorkLoad(mprr, e2e, testFileName);
 
-	    Program program = new Program(workLoad, 16, ScheduleChoices.PRIORITY);
-	    ReliabilityAnalysis analysis = new ReliabilityAnalysis(program);
+	    program = new Program(workload, numChannels, ScheduleChoices.PRIORITY);
+	    ra = new ReliabilityAnalysis(program);
 
-	    boolean result = analysis.verifyReliabilities();
+	    boolean result = ra.verifyReliabilities();
 
 	    assertFalse(result);
 	}
