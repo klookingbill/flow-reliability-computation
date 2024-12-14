@@ -3,6 +3,8 @@ package edu.uiowa.cs.warp;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -98,6 +100,52 @@ class ReliabilityAnalysisTest {
 	    flowsWithNodesAsArray[i] = flowsWithNodes.get(i);
 	  }
 	  assertArrayEquals(flowsWithNodesAsArray, ra.getReliabilityHeader());
+	}
+	
+	@Test
+	void testCreateHeaderMap_MapIsActuallyPopulated() {
+	  ra = new ReliabilityAnalysis(program);
+	  Map<String, Integer> headerMap = ra.createHeaderMap(ra.getReliabilityHeader());
+	  assertNotNull(headerMap);
+	}
+	
+	@Test
+	void testCreateHeaderMap_MapIsTheCorrectSize() {
+	  ra = new ReliabilityAnalysis(program);
+	  Map<String, Integer> headerMap = ra.createHeaderMap(ra.getReliabilityHeader());
+	  assertEquals(ra.getReliabilityHeader().length, headerMap.size());
+	}
+	
+	@Test
+	void testInitializeSourceNodes_ReliabilityTableChangesAfterMethodInvocation() {
+	  ra = new ReliabilityAnalysis(program);
+	  reliabilities = new ReliabilityTable(ra.getReliabilities().getNumRows(), ra.getReliabilities().getNumColumns());
+	  ra.initializeSourceNodes(reliabilities, reliabilities.getNumRows(), 0);
+	  ReliabilityTable reliabilitiesCopy = new ReliabilityTable(ra.getReliabilities().getNumRows(), ra.getReliabilities().getNumColumns());
+	  assertNotEquals(reliabilities, reliabilitiesCopy);
+	}
+	
+	@Test
+	void testResetColumns_ReliabilityTableChangesAfterMethodInvocation() {
+	  ra = new ReliabilityAnalysis(program);
+	  reliabilities = ra.getReliabilities();
+	  ra.resetColumns(ra.getNonSourceColumns(program.toWorkLoad().getNodesInFlow("F0"), 0, ra.createHeaderMap(ra.getReliabilityHeader())), reliabilities, 9);
+	  ReliabilityTable reliabilitiesCopy = ra.getReliabilities();
+	  assertNotEquals(reliabilities, reliabilitiesCopy);
+	}
+	
+	@Test
+	void testGetNonSourceColumns_NonSourceColumnsInFlowArrayListIsActuallyPopulated() {
+	  ra = new ReliabilityAnalysis(program);
+	  List<Integer> nonSourceCols = ra.getNonSourceColumns(program.toWorkLoad().getNodesInFlow("F0"), 0, ra.createHeaderMap(ra.getReliabilityHeader()));
+	  assertNotNull(nonSourceCols);
+	}
+	
+	@Test
+	void testGetNonSourceColumns_NonSourceColumnsInFlowArrayListIsCorrectSize() {
+	  ra = new ReliabilityAnalysis(program);
+	  List<Integer> nonSourceCols = ra.getNonSourceColumns(program.toWorkLoad().getNodesInFlow("F0"), 0, ra.createHeaderMap(ra.getReliabilityHeader()));
+	  assertEquals(nonSourceCols.size(), program.toWorkLoad().getNodesInFlow("F0").length - 1);
 	}
 	
 	@Test

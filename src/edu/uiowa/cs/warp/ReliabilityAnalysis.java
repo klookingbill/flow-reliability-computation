@@ -237,7 +237,7 @@ public class ReliabilityAnalysis {
    * @param  headers   String array of paired flow names and nodes to be put in the map
    * @return headerMap Map containing headers and their corresponding column indices
    */
-  private Map<String, Integer> createHeaderMap(String[] headers) {
+  protected Map<String, Integer> createHeaderMap(String[] headers) {
     //create a new map to hold header and its val
     Map<String, Integer> headerMap = new HashMap<>();
     //iterate through length of headers and put each header as a key w/ i as its value
@@ -254,7 +254,7 @@ public class ReliabilityAnalysis {
    * @param numRows       number of rows in the table
    * @param sourceCol     source column for a specific flow
    */
-  private void initializeSourceNodes(ReliabilityTable reliabilities, int numRows, int sourceCol) {
+  protected void initializeSourceNodes(ReliabilityTable reliabilities, int numRows, int sourceCol) {
     for (int row = 0; row < numRows; row++) {
       reliabilities.get(row).set(sourceCol, 1.0);
     }
@@ -268,7 +268,7 @@ public class ReliabilityAnalysis {
    * @param reliabilities ReliabilityTable containing node probabilities
    * @param timeSlot      Integer equivalent to a row in the ReliabilityTable
    */ 
-  private void resetColumns(List<Integer> columns, ReliabilityTable reliabilities, int timeSlot) {
+  protected void resetColumns(List<Integer> columns, ReliabilityTable reliabilities, int timeSlot) {
     if (columns != null) {
       for (int col : columns) {
         reliabilities.get(timeSlot).set(col, 0.0);
@@ -287,7 +287,7 @@ public class ReliabilityAnalysis {
    * @param headerMap   Map containing headers and their corresponding indices
    * @return            Integer list of indices for all non-source columns
    */
-  private List<Integer> getNonSourceColumns(String[] nodesInFlow, int flowIndex, Map<String, 
+  protected List<Integer> getNonSourceColumns(String[] nodesInFlow, int flowIndex, Map<String, 
       Integer> headerMap) {
     List<Integer> flowNonSourceColumns = new ArrayList<>();
     for (int nodeIndex = 1; nodeIndex < nodesInFlow.length; nodeIndex++) {
@@ -409,8 +409,8 @@ public class ReliabilityAnalysis {
     timeSlotChecks = timeSlotChecks.stream().distinct().collect(Collectors.toList());
     /* Runs through each time slot stored in the arrayList, 
      * checks the snk node probability for each flow at 
-     * the ReliabilityRow at this time slot to see if it fails meets 
-     * end-to-end reliability. */
+     * the ReliabilityRow at this time slot to see if it fails 
+     * to meet end-to-end reliability. */
     for (Integer integer : timeSlotChecks) {
       for (int i = 0; i < reliabilities.get(integer).size(); i++) {
         if (i % myProgram.toWorkLoad().getFlows().size() 
