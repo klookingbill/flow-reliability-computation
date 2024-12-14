@@ -17,12 +17,12 @@
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_eorqULndEe-n0JNl5fHqGg" sourceAnchor="298.0,309.0" targetAnchor="0.0,438.0" target="_fVdQwLndEe-n0JNl5fHqGg" source="_eosRabndEe-n0JNl5fHqGg">
     <modelElement href="ReliabilityAnalysis.uml#_ZQbMMbndEe-n0JNl5fHqGg"/>
     <visualProperties xmi:id="_fVfF8rndEe-n0JNl5fHqGg" position="295.0,201.0"/>
-    <bendpoints xmi:id="_gyWFg7ndEe-n0JNl5fHqGg" sourceY="691" targetX="-218"/>
+    <bendpoints xmi:id="_lj_IM7ngEe-n0JNl5fHqGg" sourceY="691" targetX="-218"/>
     <stereotypes xmi:id="_eorqUbndEe-n0JNl5fHqGg" name="Reference">
       <modelElement href="ReliabilityAnalysis.uml#_ZQbMM7ndEe-n0JNl5fHqGg"/>
     </stereotypes>
     <nameVisual xmi:id="_eorqUrndEe-n0JNl5fHqGg" text="">
-      <visualProperties xmi:id="_fjYYALndEe-n0JNl5fHqGg" position="54.5,-7.5"/>
+      <visualProperties xmi:id="_fjYYALndEe-n0JNl5fHqGg" position="57.0,-7.5"/>
     </nameVisual>
     <sourceRole xmi:id="_eorqU7ndEe-n0JNl5fHqGg" aggregationKind="NONE" name="">
       <modelElement href="ReliabilityAnalysis.uml#_ZQbMMrndEe-n0JNl5fHqGg"/>
@@ -34,6 +34,9 @@
       <modelElement href="ReliabilityAnalysis.uml#_ZORQGLndEe-n0JNl5fHqGg"/>
       <visualProperties xmi:id="_fjYYAbndEe-n0JNl5fHqGg" position="-79.0,5.5"/>
       <stereotypes xmi:id="_AheUQrnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH1TQLngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZORQGbndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_eorqV7ndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_eorqWLndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
@@ -45,7 +48,7 @@
       <modelElement href="ReliabilityAnalysis.uml#_ZQbMNrndEe-n0JNl5fHqGg"/>
     </stereotypes>
     <nameVisual xmi:id="_eosRYrndEe-n0JNl5fHqGg" text="">
-      <visualProperties xmi:id="_fjY_EbndEe-n0JNl5fHqGg" position="6.5,-7.5"/>
+      <visualProperties xmi:id="_fjY_EbndEe-n0JNl5fHqGg" position="9.0,-7.5"/>
     </nameVisual>
     <sourceRole xmi:id="_eosRY7ndEe-n0JNl5fHqGg" aggregationKind="NONE" name="">
       <modelElement href="ReliabilityAnalysis.uml#_ZQbMNbndEe-n0JNl5fHqGg"/>
@@ -55,8 +58,11 @@
     </sourceRole>
     <targetRole xmi:id="_eosRZrndEe-n0JNl5fHqGg" aggregationKind="NONE" name="reliabilities" navigable="true">
       <modelElement href="ReliabilityAnalysis.uml#_ZORQGrndEe-n0JNl5fHqGg"/>
-      <visualProperties xmi:id="_fjY_ErndEe-n0JNl5fHqGg" position="5.5,-46.49999999999977"/>
+      <visualProperties xmi:id="_fjY_ErndEe-n0JNl5fHqGg" position="5.5,-46.5"/>
       <stereotypes xmi:id="_AheUQbnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH1TQbngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZORQG7ndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_eosRZ7ndEe-n0JNl5fHqGg" label="+"/>
       <cardinality xmi:id="_eosRaLndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
@@ -64,12 +70,12 @@
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_fVGrcLndEe-n0JNl5fHqGg" sourceAnchor="0.0,86.0" targetAnchor="285.0,309.0" target="_eosRabndEe-n0JNl5fHqGg" source="_fVK86LndEe-n0JNl5fHqGg">
     <modelElement href="ReliabilityAnalysis.uml#_ZQbzQbndEe-n0JNl5fHqGg"/>
     <visualProperties xmi:id="_fVee-bndEe-n0JNl5fHqGg" position="295.0,201.0"/>
-    <bendpoints xmi:id="_gyVecLndEe-n0JNl5fHqGg" sourceX="-1030" targetY="1406"/>
+    <bendpoints xmi:id="_lj96ELngEe-n0JNl5fHqGg" sourceX="-1030" targetY="1406"/>
     <stereotypes xmi:id="_fVH5lLndEe-n0JNl5fHqGg" name="Reference">
       <modelElement href="ReliabilityAnalysis.uml#_ZQbzQ7ndEe-n0JNl5fHqGg"/>
     </stereotypes>
     <nameVisual xmi:id="_fVH5kbndEe-n0JNl5fHqGg" text="">
-      <visualProperties xmi:id="_fjUGkbndEe-n0JNl5fHqGg" position="-23.5,-33.5"/>
+      <visualProperties xmi:id="_fjUGkbndEe-n0JNl5fHqGg" position="-23.500000000000227,-33.5"/>
     </nameVisual>
     <sourceRole xmi:id="_fVH5krndEe-n0JNl5fHqGg" aggregationKind="NONE" name="">
       <modelElement href="ReliabilityAnalysis.uml#_ZQbzQrndEe-n0JNl5fHqGg"/>
@@ -81,6 +87,9 @@
       <modelElement href="ReliabilityAnalysis.uml#_ZOSeM7ndEe-n0JNl5fHqGg"/>
       <visualProperties xmi:id="_fjUGkrndEe-n0JNl5fHqGg" position="0.5000000000005684,695.9999999999995"/>
       <stereotypes xmi:id="_AheUQLnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH16ULngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZOSeNLndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_fVJuwLndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVJHs7ndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
@@ -104,6 +113,9 @@
       <modelElement href="ReliabilityAnalysis.uml#_ZOSeNbndEe-n0JNl5fHqGg"/>
       <visualProperties xmi:id="_fjUtorndEe-n0JNl5fHqGg" position="9.5,5.0"/>
       <stereotypes xmi:id="_AhdtMLnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH16UbngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZOSeNrndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_fVKV0bndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVKV0LndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
@@ -124,6 +136,9 @@
     <targetRole xmi:id="_fVK85bndEe-n0JNl5fHqGg" aggregationKind="NONE" name="warp" navigable="true">
       <modelElement href="ReliabilityAnalysis.uml#_ZOSeMbndEe-n0JNl5fHqGg"/>
       <stereotypes xmi:id="_AhdGILnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH16UrngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZOSeMrndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_fVK85rndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVK857ndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
@@ -135,7 +150,7 @@
       <modelElement href="ReliabilityAnalysis.uml#_ZQfdoLndEe-n0JNl5fHqGg"/>
     </stereotypes>
     <nameVisual xmi:id="_fVMLBLndEe-n0JNl5fHqGg" text="">
-      <visualProperties xmi:id="_fjVUsbndEe-n0JNl5fHqGg" position="218.5,-7.5"/>
+      <visualProperties xmi:id="_fjVUsbndEe-n0JNl5fHqGg" position="221.0,-7.5"/>
     </nameVisual>
     <sourceRole xmi:id="_fVMLBbndEe-n0JNl5fHqGg" aggregationKind="NONE" name="">
       <modelElement href="ReliabilityAnalysis.uml#_ZQe2mLndEe-n0JNl5fHqGg"/>
@@ -147,6 +162,9 @@
       <modelElement href="ReliabilityAnalysis.uml#_ZOYk2LndEe-n0JNl5fHqGg"/>
       <visualProperties xmi:id="_fjVUsrndEe-n0JNl5fHqGg" position="5.0,-46.50000000000034"/>
       <stereotypes xmi:id="_AhcfEbnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH16U7ngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZOZL4LndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_fVOnR7ndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVOnRrndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
@@ -171,8 +189,11 @@
     </sourceRole>
     <targetRole xmi:id="_fVOnQrndEe-n0JNl5fHqGg" aggregationKind="NONE" name="program" navigable="true">
       <modelElement href="ReliabilityAnalysis.uml#_ZOYk1LndEe-n0JNl5fHqGg"/>
-      <visualProperties xmi:id="_fjV7wbndEe-n0JNl5fHqGg" position="-68.5,-45.99999999999977"/>
+      <visualProperties xmi:id="_fjV7wbndEe-n0JNl5fHqGg" position="-68.5,-46.0"/>
       <stereotypes xmi:id="_AhcfELnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH2hYLngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZOYk1bndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_fVP1Y7ndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVP1YrndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
@@ -192,6 +213,9 @@
     <targetRole xmi:id="_fVQcdrndEe-n0JNl5fHqGg" aggregationKind="NONE" name="workLoad" navigable="true">
       <modelElement href="ReliabilityAnalysis.uml#_ZOYk1rndEe-n0JNl5fHqGg"/>
       <stereotypes xmi:id="_Ahb4ALnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH2hYbngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZOYk17ndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_fVQcd7ndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVQceLndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
@@ -210,6 +234,9 @@
     <targetRole xmi:id="_fVRDhrndEe-n0JNl5fHqGg" aggregationKind="NONE" name="la" navigable="true">
       <modelElement href="ReliabilityAnalysis.uml#_ZOZL4bndEe-n0JNl5fHqGg"/>
       <stereotypes xmi:id="_AhbQ8LnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH2hYrngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZOZL4rndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_fVRDh7ndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVRDiLndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
@@ -228,6 +255,9 @@
     <targetRole xmi:id="_fVRDj7ndEe-n0JNl5fHqGg" aggregationKind="NONE" name="ca" navigable="true">
       <modelElement href="ReliabilityAnalysis.uml#_ZOZL47ndEe-n0JNl5fHqGg"/>
       <stereotypes xmi:id="_Ahap4LnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH3IcLngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZOZL5LndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_fVRDkLndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVRDkbndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
@@ -251,6 +281,9 @@
       <modelElement href="ReliabilityAnalysis.uml#_ZOkLA7ndEe-n0JNl5fHqGg"/>
       <visualProperties xmi:id="_fjWi0rndEe-n0JNl5fHqGg" position="-25.5,-45.5"/>
       <stereotypes xmi:id="_AhaC0LnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH3IcbngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZOkLBLndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_fVUG27ndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVUG2rndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
@@ -269,19 +302,22 @@
     <targetRole xmi:id="_fVUG0rndEe-n0JNl5fHqGg" aggregationKind="NONE" name="workload" navigable="true">
       <modelElement href="ReliabilityAnalysis.uml#_ZOjj-bndEe-n0JNl5fHqGg"/>
       <stereotypes xmi:id="_AhZbwLnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH3IcrngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZOkLALndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_fVUt5rndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVUt5bndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_fVS4sbndEe-n0JNl5fHqGg" sourceAnchor="531.0,244.0" targetAnchor="2034.0,438.0" target="_fVdQwLndEe-n0JNl5fHqGg" source="_fVV8ALndEe-n0JNl5fHqGg">
     <modelElement href="ReliabilityAnalysis.uml#_ZQhS0bndEe-n0JNl5fHqGg"/>
-    <bendpoints xmi:id="_gyWFgLndEe-n0JNl5fHqGg" sourceX="2114" targetX="114" targetY="-1430"/>
-    <bendpoints xmi:id="_gyWFgbndEe-n0JNl5fHqGg" sourceX="2114" sourceY="1430" targetX="114"/>
+    <bendpoints xmi:id="_lj_IMLngEe-n0JNl5fHqGg" sourceX="2114" targetX="114" targetY="-1430"/>
+    <bendpoints xmi:id="_lj_IMbngEe-n0JNl5fHqGg" sourceX="2114" sourceY="1430" targetX="114"/>
     <stereotypes xmi:id="_fVUG17ndEe-n0JNl5fHqGg" name="Reference">
       <modelElement href="ReliabilityAnalysis.uml#_ZQhS07ndEe-n0JNl5fHqGg"/>
     </stereotypes>
     <nameVisual xmi:id="_fVUG1LndEe-n0JNl5fHqGg" text="">
-      <visualProperties xmi:id="_fjXJ4LndEe-n0JNl5fHqGg" position="-23.5,629.5000000000005"/>
+      <visualProperties xmi:id="_fjXJ4LndEe-n0JNl5fHqGg" position="-23.5,629.5"/>
     </nameVisual>
     <sourceRole xmi:id="_fVUG1bndEe-n0JNl5fHqGg" aggregationKind="NONE" name="">
       <modelElement href="ReliabilityAnalysis.uml#_ZQhS0rndEe-n0JNl5fHqGg"/>
@@ -291,20 +327,23 @@
     </sourceRole>
     <targetRole xmi:id="_fVUG1rndEe-n0JNl5fHqGg" aggregationKind="NONE" name="program" navigable="true">
       <modelElement href="ReliabilityAnalysis.uml#_ZOkLAbndEe-n0JNl5fHqGg"/>
-      <visualProperties xmi:id="_fjXJ4bndEe-n0JNl5fHqGg" position="5.0,-46.5"/>
+      <visualProperties xmi:id="_fjXJ4bndEe-n0JNl5fHqGg" position="5.0,-46.50000000000023"/>
       <stereotypes xmi:id="_AhY0sbnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH3vgLngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZOkLArndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_fVVU87ndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVVU8rndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_fVS4trndEe-n0JNl5fHqGg" sourceAnchor="0.0,244.0" targetAnchor="199.0,0.0" target="_fVee4LndEe-n0JNl5fHqGg" source="_fVV8ALndEe-n0JNl5fHqGg">
     <modelElement href="ReliabilityAnalysis.uml#_ZQhS17ndEe-n0JNl5fHqGg"/>
-    <bendpoints xmi:id="_gyWFgrndEe-n0JNl5fHqGg" sourceX="-436" targetY="-541"/>
+    <bendpoints xmi:id="_lj_IMrngEe-n0JNl5fHqGg" sourceX="-436" targetY="-541"/>
     <stereotypes xmi:id="_fVUt4rndEe-n0JNl5fHqGg" name="Reference">
       <modelElement href="ReliabilityAnalysis.uml#_ZQh54LndEe-n0JNl5fHqGg"/>
     </stereotypes>
     <nameVisual xmi:id="_fVUG3bndEe-n0JNl5fHqGg" text="">
-      <visualProperties xmi:id="_fjXw8bndEe-n0JNl5fHqGg" position="-23.500000000000114,434.5000000000002"/>
+      <visualProperties xmi:id="_fjXw8bndEe-n0JNl5fHqGg" position="-23.500000000000114,434.4999999999999"/>
     </nameVisual>
     <sourceRole xmi:id="_fVUt4LndEe-n0JNl5fHqGg" aggregationKind="NONE" name="">
       <modelElement href="ReliabilityAnalysis.uml#_ZQhS2LndEe-n0JNl5fHqGg"/>
@@ -316,6 +355,9 @@
       <modelElement href="ReliabilityAnalysis.uml#_ZOkLBbndEe-n0JNl5fHqGg"/>
       <visualProperties xmi:id="_fjXw8rndEe-n0JNl5fHqGg" position="-74.5,-46.0"/>
       <stereotypes xmi:id="_AhY0sLnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH4WkLngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZOkLBrndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_fVVU-LndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVVU97ndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
@@ -375,6 +417,9 @@
     <targetRole xmi:id="_fVZmarndEe-n0JNl5fHqGg" aggregationKind="NONE" name="workLoad" navigable="true">
       <modelElement href="ReliabilityAnalysis.uml#_ZOOMwbndEe-n0JNl5fHqGg"/>
       <stereotypes xmi:id="_AhYNobnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH6LwLngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZOOMwrndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_fVbbmbndEe-n0JNl5fHqGg" label="~"/>
       <cardinality xmi:id="_fVbbmLndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
@@ -393,6 +438,9 @@
     <targetRole xmi:id="_fVaNc7ndEe-n0JNl5fHqGg" aggregationKind="NONE" name="SchedulerSelected" navigable="true">
       <modelElement href="ReliabilityAnalysis.uml#_ZOOMxbndEe-n0JNl5fHqGg"/>
       <stereotypes xmi:id="_AhYNoLnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH6y0LngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZOOMxrndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_fVbbnrndEe-n0JNl5fHqGg" label="~"/>
       <cardinality xmi:id="_fVbbnbndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
@@ -411,6 +459,9 @@
     <targetRole xmi:id="_fVaNd7ndEe-n0JNl5fHqGg" aggregationKind="NONE" name="deadlineMisses" navigable="true">
       <modelElement href="ReliabilityAnalysis.uml#_ZOPa5LndEe-n0JNl5fHqGg"/>
       <stereotypes xmi:id="_AhXmkLnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH6y0bngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZOPa5bndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_fVbbo7ndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVbborndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
@@ -432,6 +483,9 @@
     <targetRole xmi:id="_fVcptrndEe-n0JNl5fHqGg" aggregationKind="NONE" name="scheduleBuilt" navigable="true">
       <modelElement href="ReliabilityAnalysis.uml#_ZOOMw7ndEe-n0JNl5fHqGg"/>
       <stereotypes xmi:id="_AhW_gLnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH7Z4LngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZOOMxLndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_fVcpt7ndEe-n0JNl5fHqGg" label="~"/>
       <cardinality xmi:id="_fVcpuLndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
@@ -450,6 +504,9 @@
     <targetRole xmi:id="_fVcpv7ndEe-n0JNl5fHqGg" aggregationKind="NONE" name="channelsAvailable" navigable="true">
       <modelElement href="ReliabilityAnalysis.uml#_ZOOz1bndEe-n0JNl5fHqGg"/>
       <stereotypes xmi:id="_AhWYcLnfEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kH7Z4bngEe-n0JNl5fHqGg" name="LegacyStyledElement">
+        <modelElement href="ReliabilityAnalysis.uml#_ZOOz1rndEe-n0JNl5fHqGg"/>
+      </stereotypes>
       <visibility xmi:id="_fVcpwLndEe-n0JNl5fHqGg" label="~"/>
       <cardinality xmi:id="_fVcpwbndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
     </targetRole>
@@ -542,9 +599,9 @@
     </attributes>
     <attributes xmi:id="_fVK887ndEe-n0JNl5fHqGg" name="warp">
       <modelElement href="ReliabilityAnalysis.uml#_ZOSeMbndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_fVK89LndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZOSeMrndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kIKqcrngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kILRgLngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kITNULngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_fVK89bndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVK89rndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_fVK897ndEe-n0JNl5fHqGg" name="WarpInterface">
@@ -553,9 +610,9 @@
     </attributes>
     <attributes xmi:id="_fVK8-LndEe-n0JNl5fHqGg" name="ra">
       <modelElement href="ReliabilityAnalysis.uml#_ZOSeM7ndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_fVK8-bndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZOSeNLndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kIKDYLngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIKDYbngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kITNUbngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_fVK8-rndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVK8-7ndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_fVK8_LndEe-n0JNl5fHqGg" name="ReliabilityAnalysis">
@@ -564,9 +621,9 @@
     </attributes>
     <attributes xmi:id="_fVK8_bndEe-n0JNl5fHqGg" name="program">
       <modelElement href="ReliabilityAnalysis.uml#_ZOSeNbndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_fVK8_rndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZOSeNrndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kIKqcLngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIKqcbngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIT0YLngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_fVK8_7ndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVK9ALndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_fVK9AbndEe-n0JNl5fHqGg" name="Program">
@@ -684,9 +741,9 @@
     <visibility xmi:id="_fVRqkrndEe-n0JNl5fHqGg" label="+"/>
     <attributes xmi:id="_fVRqk7ndEe-n0JNl5fHqGg" name="program">
       <modelElement href="ReliabilityAnalysis.uml#_ZOYk1LndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_fVRqlLndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZOYk1bndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kIL4kbngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIL4krngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIT0YbngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_fVRqlbndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVRqlrndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_fVRql7ndEe-n0JNl5fHqGg" name="Program">
@@ -695,9 +752,9 @@
     </attributes>
     <attributes xmi:id="_fVRqmLndEe-n0JNl5fHqGg" name="workLoad">
       <modelElement href="ReliabilityAnalysis.uml#_ZOYk1rndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_fVRqmbndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZOYk17ndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kIMfoLngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIMfobngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIT0YrngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_fVRqmrndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVRqm7ndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_fVRqnLndEe-n0JNl5fHqGg" name="WorkLoad">
@@ -706,9 +763,9 @@
     </attributes>
     <attributes xmi:id="_fVRqnbndEe-n0JNl5fHqGg" name="ra">
       <modelElement href="ReliabilityAnalysis.uml#_ZOYk2LndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_fVRqnrndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZOZL4LndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kILRgbngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIL4kLngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIUbcLngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_fVRqn7ndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVRqoLndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_fVRqobndEe-n0JNl5fHqGg" name="ReliabilityAnalysis">
@@ -717,9 +774,9 @@
     </attributes>
     <attributes xmi:id="_fVRqorndEe-n0JNl5fHqGg" name="la">
       <modelElement href="ReliabilityAnalysis.uml#_ZOZL4bndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_fVRqo7ndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZOZL4rndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kINGsLngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kINGsbngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIUbcbngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_fVRqpLndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVRqpbndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_fVRqprndEe-n0JNl5fHqGg" name="LatencyAnalysis">
@@ -728,9 +785,9 @@
     </attributes>
     <attributes xmi:id="_fVRqp7ndEe-n0JNl5fHqGg" name="ca">
       <modelElement href="ReliabilityAnalysis.uml#_ZOZL47ndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_fVRqqLndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZOZL5LndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kINtwLngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kINtwbngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIVCgLngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_fVRqqbndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVRqqrndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_fVRqq7ndEe-n0JNl5fHqGg" name="ChannelAnalysis">
@@ -1157,9 +1214,9 @@
     </attributes>
     <attributes xmi:id="_fVV8HLndEe-n0JNl5fHqGg" name="workload">
       <modelElement href="ReliabilityAnalysis.uml#_ZOjj-bndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_fVV8HbndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZOkLALndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kIOU0bngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIO74LngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIVpkLngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_fVV8HrndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVV8H7ndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_fVV8ILndEe-n0JNl5fHqGg" name="WorkLoad">
@@ -1168,9 +1225,9 @@
     </attributes>
     <attributes xmi:id="_fVV8IbndEe-n0JNl5fHqGg" name="program">
       <modelElement href="ReliabilityAnalysis.uml#_ZOkLAbndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_fVV8IrndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZOkLArndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kIO74bngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIO74rngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIVpkbngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_fVV8I7ndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVV8JLndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_fVV8JbndEe-n0JNl5fHqGg" name="Program">
@@ -1179,9 +1236,9 @@
     </attributes>
     <attributes xmi:id="_fVV8JrndEe-n0JNl5fHqGg" name="ra">
       <modelElement href="ReliabilityAnalysis.uml#_ZOkLA7ndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_fVV8J7ndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZOkLBLndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kINtwrngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIOU0LngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIVpkrngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_fVV8KLndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVV8KbndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_fVV8KrndEe-n0JNl5fHqGg" name="ReliabilityAnalysis">
@@ -1190,9 +1247,9 @@
     </attributes>
     <attributes xmi:id="_fVV8K7ndEe-n0JNl5fHqGg" name="reliabilities">
       <modelElement href="ReliabilityAnalysis.uml#_ZOkLBbndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_fVV8LLndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZOkLBrndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kIPi8LngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIPi8bngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIWQoLngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_fVV8LbndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVV8LrndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_fVV8L7ndEe-n0JNl5fHqGg" name="ReliabilityTable">
@@ -1474,9 +1531,9 @@
     </attributes>
     <attributes xmi:id="_fVdQ07ndEe-n0JNl5fHqGg" name="workLoad">
       <modelElement href="ReliabilityAnalysis.uml#_ZOOMwbndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_fVdQ1LndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZOOMwrndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kIQxELngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIQxEbngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIWQobngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_fVdQ1bndEe-n0JNl5fHqGg" label="~"/>
       <cardinality xmi:id="_fVdQ1rndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_fVdQ17ndEe-n0JNl5fHqGg" name="WorkLoad">
@@ -1485,9 +1542,9 @@
     </attributes>
     <attributes xmi:id="_fVdQ2LndEe-n0JNl5fHqGg" name="scheduleBuilt">
       <modelElement href="ReliabilityAnalysis.uml#_ZOOMw7ndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_fVdQ2bndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZOOMxLndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kIR_MbngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIR_MrngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIW3sLngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_fVdQ2rndEe-n0JNl5fHqGg" label="~"/>
       <cardinality xmi:id="_fVdQ27ndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_fVdQ3LndEe-n0JNl5fHqGg" name="ProgramSchedule">
@@ -1496,9 +1553,9 @@
     </attributes>
     <attributes xmi:id="_fVdQ3bndEe-n0JNl5fHqGg" name="SchedulerSelected">
       <modelElement href="ReliabilityAnalysis.uml#_ZOOMxbndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_fVdQ3rndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZOOMxrndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kIQxErngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIRYILngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIW3sbngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_fVdQ37ndEe-n0JNl5fHqGg" label="~"/>
       <cardinality xmi:id="_fVdQ4LndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_fVdQ4bndEe-n0JNl5fHqGg" name="ScheduleChoices">
@@ -1562,9 +1619,9 @@
     </attributes>
     <attributes xmi:id="_fVdQ-7ndEe-n0JNl5fHqGg" name="channelsAvailable">
       <modelElement href="ReliabilityAnalysis.uml#_ZOOz1bndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_fVdQ_LndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZOOz1rndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kISmQLngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kISmQbngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIXewLngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_fVdQ_bndEe-n0JNl5fHqGg" label="~"/>
       <cardinality xmi:id="_fVdQ_rndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_fVdQ_7ndEe-n0JNl5fHqGg" name="Channels">
@@ -1606,9 +1663,9 @@
     </attributes>
     <attributes xmi:id="_fVdRD7ndEe-n0JNl5fHqGg" name="deadlineMisses">
       <modelElement href="ReliabilityAnalysis.uml#_ZOPa5LndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_fVdRELndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZOPa5bndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kIRYIbngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIR_MLngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIYF0LngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_fVdREbndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_fVdRErndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_fVdRE7ndEe-n0JNl5fHqGg" name="Description">
@@ -2452,9 +2509,9 @@
     </attributes>
     <attributes xmi:id="_eosRgLndEe-n0JNl5fHqGg" name="myProgram">
       <modelElement href="ReliabilityAnalysis.uml#_ZORQGLndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_eosRgbndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZORQGbndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kII1QLngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kII1QbngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIYs4LngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_eosRgrndEe-n0JNl5fHqGg" label="-"/>
       <cardinality xmi:id="_eosRg7ndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_eosRhLndEe-n0JNl5fHqGg" name="Program">
@@ -2463,9 +2520,9 @@
     </attributes>
     <attributes xmi:id="_eosRhbndEe-n0JNl5fHqGg" name="reliabilities">
       <modelElement href="ReliabilityAnalysis.uml#_ZORQGrndEe-n0JNl5fHqGg"/>
-      <stereotypes xmi:id="_eosRhrndEe-n0JNl5fHqGg" name="LegacyStyledElement">
-        <modelElement href="ReliabilityAnalysis.uml#_ZORQG7ndEe-n0JNl5fHqGg"/>
-      </stereotypes>
+      <stereotypes xmi:id="_kIJcULngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIJcUbngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_kIYs4bngEe-n0JNl5fHqGg" name="LegacyStyledElement"/>
       <visibility xmi:id="_eosRh7ndEe-n0JNl5fHqGg" label="+"/>
       <cardinality xmi:id="_eosRiLndEe-n0JNl5fHqGg" label="1" max="1" min="1"/>
       <type xmi:id="_eosRibndEe-n0JNl5fHqGg" name="ReliabilityTable">
