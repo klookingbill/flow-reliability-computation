@@ -215,8 +215,8 @@ public class ReliabilityAnalysis {
    * @return header Header object that flows and nodes are added to
    */ 
   public String[] getReliabilityHeader() {
-    var workload = myProgram.toWorkLoad();
-    var flows = workload.getFlowNames();
+    WorkLoad workload = myProgram.toWorkLoad();
+    String[] flows = workload.getFlowNames();
     List<String> headerList = new ArrayList<>(); 
     //iterate through each flow in flows; get the nodes in the flow and add nodes + flows to header
     for (int flowIndex = 0; flowIndex < flows.length; flowIndex++) {
@@ -226,7 +226,7 @@ public class ReliabilityAnalysis {
         headerList.add(String.format("F" + flowIndex + ":" + node));
       }
     }
-    var header = headerList.toArray(new String[0]);
+    String[] header = headerList.toArray(new String[0]);
     return header;
   }
   
@@ -311,7 +311,7 @@ public class ReliabilityAnalysis {
     int numRows = schedule.getNumRows();
     int numColumns = headers.length;
     reliabilities = new ReliabilityTable(numRows, numColumns);
-    var headerMap = createHeaderMap(headers); //stores each header with column index
+    Map<String, Integer> headerMap = createHeaderMap(headers); //stores each header with column index
     Map<Integer, List<Integer>> nonSourceColumns = new HashMap<>();
     //iterate through each flow
     for (int flowIndex = 0; flowIndex < flows.length; flowIndex++) {
@@ -422,26 +422,6 @@ public class ReliabilityAnalysis {
       }
     }
     return true;
-  }
-
- 
-  
-  public static void main(String[] args) {
-	  	double teste2e = 0.99;
-	  	double testMinPacketReceptionRate = 0.9;
-	  	String testFileName = "Example1a.txt";
-	  	WorkLoad testWorkload = new WorkLoad(testMinPacketReceptionRate, teste2e, testFileName);
-	  	Integer nChannels = 16;
-	  	Program testProgram = new Program(testWorkload, nChannels, ScheduleChoices.PRIORITY);
-	  	
-	    //System.out.println(readMyFile);
-	    ReliabilityAnalysis ra = new ReliabilityAnalysis(testProgram);
-	    //ra.getReliabilities();
-	    System.out.println(ra.getReliabilities());
-	    System.out.println(ra.verifyReliabilities());
-	  
-        
-	    
   }
   
 }
