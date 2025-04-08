@@ -1,8 +1,9 @@
 # flow-reliability-computation
 
-Code developed in CS2820: Introduction to Software Development at the University of Iowa. Working
-in groups of five, we implemented missing classes and debugged existing code to successfully compute
-flow reliability through determining if a schedule meets all of its given requirements. 
+Code developed in CS:2820, Introduction to Software Development during the Fall 2024 semester at the 
+University of Iowa. Working in groups of five, we implemented missing classes and debugged existing 
+code to successfully compute flow reliability through determining if a schedule meets all of its 
+given requirements. 
 
 # CS2820 Fall 2024 WARP Project Code
 
